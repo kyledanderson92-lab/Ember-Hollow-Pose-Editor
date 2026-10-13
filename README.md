@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.10. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.11. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -41,7 +41,7 @@ Limits: 100 sequences, 500 keys each, 200 custom definitions, 25 MB JSON imports
 
 ## Unified limb Depth / Extension
 
-Select an arm/leg in **Depth / Extension**, then enable **Depth / Extension Mode**.
+Click **Depth / Extension: Off** in the top toolbar to enable all four limbs with one button. Click again to return all limbs to normal IK. Per-limb controls remain in the sidebar for mixed workflows.
 Pose the bend with Normal IK first. One hand/foot drag rotates the captured bent
 limb around its shoulder/hip and continuously controls compression or separation:
 
@@ -84,13 +84,28 @@ mode enabled through an extension animation for continuous gap interpolation.
 
 **Capture current bend** redefines connected proportions from the current visible
 physical bones without removing open gaps. Capturing while compressed makes those
-shortened proportions the new connected reference. Returning to Normal IK closes
-open gaps while keeping physical lengths/orientations, then permits ordinary IK.
-A conflicting joint/attached-grip pin rejects this change atomically. Explicit
-manual length editing/recovery also reconnects the affected limb and re-captures
-its resulting proportions; other limbs' captures remain intact. Middle-joint drag
-and independent elbow/knee rotation require Normal IK because they change the
-captured bend; endpoint drag and whole-limb rotation remain available.
+shortened proportions the new connected reference. Returning to Normal IK keeps
+all joints, physical bone lengths, gap magnitudes, weapon position and angle exactly
+where they are. It releases the captured bend so elbows/knees can be adjusted
+normally; ordinary hand/foot IK preserves those authored lengths. Shortening an
+arm to 70%, switching Off and bending the elbow therefore keeps both bones at 70%.
+
+For separated limbs, release converts gaps to optional `pose.limb_gaps[limb].offsets`
+(two vectors local to their anchor spans). These offsets rotate with each span
+while IK bends the chain, preserving actual bone lengths and mechanical gaps.
+This state follows pose keys, blending, copy/swap/mirror, views and JSON/local
+storage. Re-enabling captures current physical bones and gap directions without
+moving the joints; subsequent drag keeps that current bend. Unusual folded gaps
+pointing against the connected reach must be reset or reoriented before recapture.
+
+**Reset selected limb lengths** in the Depth / Extension sidebar reconnects that
+limb and restores both bones to the rig baseline. It leaves other limbs alone.
+The existing **Reset segment length**, **Reset chain lengths** and **Reset all
+lengths** remain under Connected segments. Resets/manual length edits are explicit
+geometry changes; incompatible pins reject them atomically. An enabled affected
+limb re-captures restored lengths, while an off limb stays in normal IK. Toggling
+Off itself moves nothing and needs no unpinning. Independent middle-joint drag
+and elbow/knee rotation are available after releasing the fixed-bend mode.
 
 Limits: bones cannot compress below 0.1 local units; total extension gaps clamp to
 2000 units. Fully folded near-zero-reach limbs must be unfolded before capture.

@@ -41,7 +41,7 @@ function renderCharacter(p,parent,ghost=false){
   }
   const extremity=elem('g',{transform:`translate(${j[end].join(' ')}) rotate(${arm?M.projection.lowerAngle(p,side+'_arm')+(p.hand_rotations?.[side]||0):p.foot_rotations[side]})`},layer);
   polygon((rig.curves?G.sampleCurve(M.partCurve(rig,side+'_'+(arm?'hand':'foot'))):parts[arm?'hand':'foot']).map(v=>arm?[v[0]*rig.limb_thickness/dims.limb_thickness,v[1]]:[v[0]*rig.foot_size[0]/dims.foot_size[0],v[1]*rig.foot_size[1]/dims.foot_size[1]]),extremity);
-  circle([0,0],arm?'wrist':'ankle',extremity);circle(bones[0][1],arm?'elbow':'knee',layer);if(p.limb_modes?.[side+'_'+kind]?.gaps?.[0]>0)circle(j[mid],arm?'elbow':'knee',layer);if(p.limb_modes?.[side+'_'+kind]?.gaps?.[1]>0)circle(bones[1][1],arm?'wrist':'ankle',layer);
+  circle([0,0],arm?'wrist':'ankle',extremity);circle(bones[0][1],arm?'elbow':'knee',layer);if(Math.hypot(...M.projection.offsets(p,side+'_'+kind)[0])>0)circle(j[mid],arm?'elbow':'knee',layer);if(Math.hypot(...M.projection.offsets(p,side+'_'+kind)[1])>0)circle(bones[1][1],arm?'wrist':'ankle',layer);
   if(arm)circle(j[base],'shoulder',layer);
  };
  limb('right','leg');limb('right','arm');
