@@ -14,11 +14,11 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.17. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.18. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
-Open **Animation sequences & sprite export**. Choose a weapon family/action and
+Choose/create a sequence in the left **Animations** library, then open **Animation timeline** below the canvas. Choose a weapon family/action and
 click **New animation**. Pose the selected key, duplicate it, edit the duplicate,
 switch views and repeat. Selected key edits autosave locally; key duplication
 preserves the complete pose state. Use previous/next, the key selector/markers,
@@ -213,7 +213,7 @@ animation keys and preview/export to verify the toggle.
 
 ## Authored combat VFX
 
-Open **Authored combat VFX** below the animation panel; it is collapsed by default.
+Choose **Effects** in the right inspector, then open **Authored combat VFX**.
 Create pose keys first, pick a preset/type, then **+ Add effect**. Twelve effects per
 pose are supported. Effects are inserted across the selected animation's keys with
 stable IDs. Edit width/size, opacity, placement or rotation on individual keys to
@@ -291,7 +291,7 @@ remain Godot responsibilities.
 
 ## Approved turnaround rig and hair
 
-Click **Apply approved view rig** to install the five traced, editable view scaffolds and body outlines while retaining your current pose. Choose a Body view, then **Load traced view pose** to start from that view's measured reference pose. Refine the joints in Pose/Rig geometry and the Bézier contours in Outlines; save each finished pose to your library. Loading another reference preserves already-installed contour edits. Applying the approved rig again deliberately restores its original traced contours.
+In **Setup**, click **Apply approved view rig** to install the five traced, editable view scaffolds and body outlines while retaining your current pose. Choose a Body view, then **Load traced view pose** to start from that view's measured reference pose. Refine the joints in Pose/Rig geometry and the Bézier contours in Outlines; save each finished pose to your library. Loading another reference preserves already-installed contour edits. Applying the approved rig again deliberately restores its original traced contours.
 
 All five views include transparent head/hair crops from the supplied approved sheet, using original RGB pixels. Head position, rotation and head-radius scaling move the combined image as one rigid piece. The scarf remains separate. Mirrored left views reflect the right artwork, including its asymmetric hair. Head/hair assets are embedded in sprite exports and retained through project JSON.
 
@@ -299,7 +299,7 @@ Profile far-side joints are inferred where hidden; hands and feet use simplified
 
 ## Manual scarf animation
 
-The compact **Scarf** section offers **Scarf Visible**, **Edit Tail A/B** and independent layer selectors. In Pose mode, select a tail and drag its three blue controls; the hollow root follows the neck and is edited through the existing scarf-root/head joints. Arrow keys nudge a focused control (Shift for a larger step). Select the same tail button again to hide controls; the global Handles checkbox also hides them.
+Choose **Scarf** in the right inspector. Its compact section offers **Scarf Visible**, **Edit Tail A/B** and independent layer selectors. In Pose mode, select a tail and drag its three blue controls; the hollow root follows the neck and is edited through the existing scarf-root/head joints. Arrow keys nudge a focused control (Shift for a larger step). Select the same tail button again to hide controls; the global Handles checkbox also hides them.
 
 Each tail is a broad tapered polygon generated from a short smoothed centerline: one shared neck root plus three downstream controls. There is no physics, collision, wind or automatic lag. Width is initialized from rig scarf width and stored per tail; advanced width adjustments are available through editable JSON. Existing legacy poses without scarf metadata retain their original fixed artwork until scarf authoring begins.
 
@@ -312,3 +312,15 @@ Layers are **Behind Body**, **Between Body and Front Arm/Weapon**, and **In Fron
 The same renderer is used for poses, thumbnails, timeline/blend previews, VFX afterimages and sprite ZIP baking. Both tails, visibility and layer order are included in PNGs and bounds; no separate runtime scarf rig or sprite is needed. Compact controls can produce self-overlapping ribbons at extreme bends; refine those manually.
 
 Manual test: create windup, strike, impact and recovery keys. Pose body, then Tail A/B; duplicate and adjust each to show lag/overshoot. Scrub with easing and Hold, switch all five views, move the head, mix behind/front tail layers, hide the scarf on one key, save/reload and export the sprite ZIP. Inspect the PNGs at gameplay scale for attachment, silhouette and layer readability.
+
+## Workspace and quick navigation
+
+The center canvas stays visible while authoring. The left **Library** contains saved poses and animation sequences; the right **Inspect** selector switches Body/selected point, Weapon, Scarf, Effects or Pose settings. Clicking a joint, weapon, scarf tail or effect opens the corresponding inspector. Selected joint/chain length and limb depth controls are together; selecting a limb also selects its depth controls. The selected handle draws above overlapping handles. **Show all pose angles** exposes the full rotation list when needed.
+
+The header identifies the current pose, animation/key/time, default rig, view outlines or read-only preview. **Changes saved locally** indicates browser storage; **Save to Pose Library** writes a reusable named pose. **Library copy differs** means the local draft has diverged from that library entry. Use **Export → Export Project Backup** for a durable editable copy. If storage fails, the header requests a backup instead of claiming changes were saved.
+
+**File** holds import and previous-project backups. **Setup** holds approved-view rig/reference loading and default-rig adoption/restoration. **Pose tools** contains duplicate/reset, swaps, bend flipping and limb clipboard actions; **Root options** contains view root locks/snapping. Undo/Redo, body view, Mirror and Depth/Extension remain accessible. Reference/ghost controls sit in the inspector; explanatory notes are expandable Help sections.
+
+Choose/create an animation in the left library, then use the **Animation timeline** dock below the canvas for keys, timing and playback. The dock has a bounded height and its own scrolling. Select **Effects** in the inspector for VFX parameters; timing tracks remain in the timeline. **Compare two poses** is a separate optional bottom panel. **Export → Bake sprite frames…** opens baking settings in a dialog; Escape closes dialogs and menus. On narrow screens the canvas comes first, followed by scrollable/reachable library and inspector sections.
+
+Manual check: select an elbow, shorten its chain, pose a scarf tail, duplicate a key and preview. Switch weapon/effect inspectors without losing the viewport, compare saved poses, edit a view outline, export project JSON and bake PNGs. Reopen the project and check that existing authored data remains intact.

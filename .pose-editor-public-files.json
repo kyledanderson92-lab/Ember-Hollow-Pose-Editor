@@ -36,6 +36,8 @@
     "vfx_editor.js",
     "vfx_renderer.js",
     "view_editor.js",
-    "weapons.js"
+    "weapons.js",
+    "workspace_layout.js",
+    "workspace_ui.js"
   ]
 }
