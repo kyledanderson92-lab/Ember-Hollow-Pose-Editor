@@ -10,5 +10,6 @@ function vfxDraw(p,parent,context={}){const E=M.vfx,defs=context.definitions||S.
  if(e.type==='afterimage'&&a){const sourceTime=e.source.key_id?E.keyTime(a,e.source.key_id,time):Math.max(0,time+e.params.time_offset),q=E.samplePose(a,sourceTime,defs,context.weaponId);q.root=E.local(p,q.root);q.facing*=p.facing;const image=elem('g',{'data-vfx-afterimage':'true'},group);renderWithoutVFX(q,image,false);const actor=image.firstElementChild;if(actor)actor.setAttribute('transform',actor.getAttribute('transform').replace(/^scale\([^)]*\)\s*/,''));}
 
  }
+ const back=buckets.get('behind_character');if(back)scene.insertBefore(back,scene.firstChild);const top=buckets.get('front_everything');if(top)scene.append(top);
 }
 renderCharacter=function(p,parent,ghost=false,context=null){renderWithoutVFX(p,parent,ghost);if(!p.vfx?.length)return;const editing=parent===$('character')&&$('mode').value==='pose',a=context?.animation||(editing?currentAnimation():null),time=context?.time??(editing?(currentKey()?.time??p.vfx_frame_time??0):(p.vfx_frame_time??0));vfxDraw(p,parent,{...(context||{}),animation:a,time});};
