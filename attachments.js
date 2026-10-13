@@ -1,7 +1,7 @@
 (function(global){
 'use strict';
 const M=()=>global.SolModel||(typeof require==='function'?require('./model.js'):null);
-function handOrientation(p){const side=M().weaponHand(p);return M().angle(p.joints[side+'_elbow'],p.joints[side+'_hand'])+(p.hand_rotations?.[side]||0);}
+function handOrientation(p){const side=M().weaponHand(p);return M().projection.lowerAngle(p,side+'_arm')+(p.hand_rotations?.[side]||0);}
 function attachment(p){return p.weapon.attachment||{position_locked:true,rotation_locked:false,grip_rotation_offset:0,position_offset:M().sub(p.joints.weapon_socket,p.joints[M().weaponHand(p)+'_hand'])};}
 function capture(p){const a=p.weapon.attachment||(p.weapon.attachment={...attachment(p)});a.grip_rotation_offset=p.weapon.rotation-handOrientation(p);a.position_offset=M().sub(p.joints.weapon_socket,p.joints[M().weaponHand(p)+'_hand']);return a;}
 function setLocks(p,position,rotation){const a=p.weapon.attachment||(p.weapon.attachment={...attachment(p)}),wasPosition=a.position_locked,wasRotation=a.rotation_locked;if(rotation)position=true;if((position&&!wasPosition)||(rotation&&!wasRotation))capture(p);a.position_locked=position;a.rotation_locked=rotation&&position;}
