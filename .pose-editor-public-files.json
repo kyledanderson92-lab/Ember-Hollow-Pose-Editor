@@ -5,12 +5,17 @@
     ".pose-editor-public-files.json",
     "README.md",
     "app.js",
+    "attachments.js",
+    "body_views.js",
+    "chain_editor.js",
+    "chains.js",
     "character_geometry.js",
     "editor_features.js",
     "index.html",
     "model.js",
     "reference/neon_scarf_warrior.png",
     "runtime_rig.js",
-    "style.css"
+    "style.css",
+    "view_editor.js"
   ]
 }
