@@ -2,24 +2,26 @@
 // Extend existing controls, rendering, history, imports and local persistence.
 let selectedSegment='left_lower_arm',chainSelectionAnchor=null;
 function chainControls(){
+ $('center-weapon-grip').disabled=$('mode').value!=='pose'||!M.weapons.enabled(pose);
  M.attachments.apply(pose);const attachment=M.attachments.attachment(pose);$('weapon-position-lock').checked=attachment.position_locked;$('weapon-rotation-lock').checked=attachment.rotation_locked;$('grip-offset').textContent='Grip offset: '+Number(attachment.grip_rotation_offset.toFixed(4))+'°';
- for(const input of $('pose-controls').querySelectorAll('input'))if(input.parentElement.textContent.startsWith('Weapon rotation'))input.disabled=attachment.rotation_locked||$('mode').value!=='pose';
+ for(const input of $('pose-controls').querySelectorAll('input'))if(input.parentElement.textContent.startsWith('Weapon rotation'))input.disabled=$('mode').value!=='pose';
  const p=working(),prior=selected,select=$('selected');
- select.replaceChildren();for(const id of ['pelvis',...Object.keys(p.joints)])select.add(new Option(id.replaceAll('_',' '),id));
- if(prior!=='pelvis'&&!Object.hasOwn(p.joints,prior))selected='left_hand';select.value=selected;
+ select.replaceChildren();for(const id of ['pelvis',...Object.keys(p.joints),...(M.weapons.enabled(p)&&$('mode').value==='pose'?['weapon_tip']:[])])select.add(new Option(id.replaceAll('_',' '),id));
+ if((prior==='weapon_tip'&&(!M.weapons.enabled(p)||$('mode').value!=='pose'))||(prior!=='pelvis'&&prior!=='weapon_tip'&&!Object.hasOwn(p.joints,prior)))selected='left_hand';select.value=selected;
  const edges=M.chains.segments(p,rig);
  if(chainSelectionAnchor!==selected||!edges.some(e=>e.id===selectedSegment)){const e=edges.find(e=>e.end===selected)||edges.find(e=>e.start===selected);selectedSegment=e?.id||edges[0].id;chainSelectionAnchor=selected;}
  $('segment-select').replaceChildren();for(const e of edges)$('segment-select').add(new Option(e.id.replaceAll('_',' '),e.id));$('segment-select').value=selectedSegment;
  const edge=edges.find(e=>e.id===selectedSegment),editable=$('mode').value==='pose';
  $('segment-length').value=Number(edge.current_length.toFixed(5));$('baseline-length').textContent='Rig baseline: '+Number(edge.baseline_length.toFixed(5));
- $('pin-anchor').checked=!!pose.pins?.[selected];$('pin-anchor').disabled=!editable;
+ $('pin-anchor').checked=!!pose.pins?.[selected];$('pin-anchor').disabled=!editable||selected==='weapon_tip';
  for(const id of ['segment-select','segment-length','reset-segment-length','reset-limb-lengths','reset-all-lengths'])$(id).disabled=!editable;
- $('add-segment').disabled=!editable||selected==='pelvis'||edges.some(e=>e.start===selected);
+ $('add-segment').disabled=!editable||selected==='pelvis'||selected==='weapon_tip'||edges.some(e=>e.start===selected);
  $('remove-segment').disabled=!editable||edge.character||edges.some(e=>e.start===edge.end);
  $('remove-branch').disabled=!editable||edge.character||!edges.some(e=>e.start===edge.end);
 }
 function chainAction(action,message){if($('mode').value!=='pose')return;const before=M.clone(pose);try{snapshot();if(action()===false){pose=before;status('Cannot satisfy these lengths with the pinned anchors. Pose unchanged; unpin or adjust the length.',true);}else status(message);controls();render();}catch(e){pose=before;controls();render();status(e.message,true);}}
 for(const id of ['weapon-position-lock','weapon-rotation-lock'])$(id).onchange=()=>chainAction(()=>{let position=$('weapon-position-lock').checked,rotation=$('weapon-rotation-lock').checked;if(id==='weapon-position-lock'&&!position)rotation=false;M.attachments.setLocks(pose,position,rotation);M.attachments.apply(pose);},'Weapon attachment updated; current grip angle preserved.');
+$('center-weapon-grip').onclick=()=>chainAction(()=>{const hand=pose.joints[M.weaponHand(pose)+'_hand'];if(pose.pins?.weapon_socket&&M.dist(hand,pose.joints.weapon_socket)>1e-5)throw Error('Unpin the weapon grip before centering it.');const rotation=M.attachments.attachment(pose).rotation_locked;M.attachments.setLocks(pose,true,rotation);pose.weapon.attachment.position_offset=[0,0];pose.joints.weapon_socket=M.clone(hand);M.attachments.apply(pose);},'Hilt center aligned to the hand anchor.');
 $('capture-grip-offset').onclick=()=>chainAction(()=>M.attachments.capture(pose),'Current relative weapon angle stored as the grip offset.');
 $('pin-anchor').onchange=()=>chainAction(()=>{pose.pins??={};pose.pins[selected]=$('pin-anchor').checked;},'Anchor lock updated. Green anchors stay fixed in world space.');
 $('segment-select').onchange=()=>{selectedSegment=$('segment-select').value;const edge=M.chains.segments(pose,rig).find(e=>e.id===selectedSegment);selected=edge.end;chainSelectionAnchor=selected;controls();render();};

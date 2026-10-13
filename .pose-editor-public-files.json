@@ -20,6 +20,7 @@
     "runtime_rig.js",
     "sprite_export.js",
     "style.css",
-    "view_editor.js"
+    "view_editor.js",
+    "weapons.js"
   ]
 }

@@ -16,7 +16,7 @@ function interpolate(a,b,t,definitions={}){
  const aa=clone(a),bb=clone(b),chosen=t<.5?a:b,compatibleExtras=JSON.stringify(a.extra_segments||[])===JSON.stringify(b.extra_segments||[]);
  bb.facing=aa.facing;bb.weapon.kind=aa.weapon.kind;bb.weapon_hand=M().weaponHand(aa);const attA=M().attachments.attachment(aa),attB=M().attachments.attachment(bb);if(attA.position_locked!==attB.position_locked||attA.rotation_locked!==attB.rotation_locked){delete aa.weapon.attachment;delete bb.weapon.attachment;}
  if(!compatibleExtras){delete aa.extra_segments;delete bb.extra_segments;for(const p of [aa,bb])for(const id of Object.keys(p.joints))if(!M().names.includes(id))delete p.joints[id];}
- const out=M().blendPose(aa,bb,t,{weaponDefinitions:definitions});out.facing=chosen.facing;out.weapon.kind=chosen.weapon.kind;out.weapon_hand=M().weaponHand(chosen);
+ const out=M().blendPose(aa,bb,t,{weaponDefinitions:definitions});out.facing=chosen.facing;out.weapon.kind=chosen.weapon.kind;if(chosen.weapon.visible===false)out.weapon.visible=false;else delete out.weapon.visible;out.weapon_hand=M().weaponHand(chosen);
  if(attA.position_locked!==attB.position_locked||attA.rotation_locked!==attB.rotation_locked){if(chosen.weapon.attachment)out.weapon.attachment=clone(chosen.weapon.attachment);else delete out.weapon.attachment;}
  if(!compatibleExtras){if(chosen.extra_segments){out.extra_segments=clone(chosen.extra_segments);for(const e of out.extra_segments)out.joints[e.end]=M().add(out.joints[e.start],M().sub(chosen.joints[e.end],chosen.joints[e.start]));}}
  if(a.weapon.projected_length!==undefined||b.weapon.projected_length!==undefined)out.weapon.projected_length=M().projection.length(a,definitions)+(M().projection.length(b,definitions)-M().projection.length(a,definitions))*t;

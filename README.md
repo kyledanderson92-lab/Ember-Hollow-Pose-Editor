@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.11. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.12. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -166,3 +166,47 @@ legendary override, export PNGs and reload the editable project.
 Animation/export modules: `animation.js`, `projection.js`, `animation_editor.js`,
 `sprite_export.js`. Existing model, chain/view constraints, rendering, persistence,
 HTML/style and distribution manifest were extended; existing systems remain.
+
+## Weapon grip and tip controls
+
+Weapon artwork now uses the **middle of the five-unit hilt** as local origin.
+The visible grip handle sits exactly at `joints.weapon_socket`; there is no displaced
+handle or offset between pivot and hilt midpoint. Existing authored socket offsets
+are retained. **Center grip on hand** removes that positional offset and aligns the
+hilt midpoint to the existing hand articulation anchor, keeping grip angle settings.
+A pinned grip must be unpinned before centering if it is currently displaced.
+
+Each equipped sword, hammer and baton has a **weapon tip** handle at its actual
+longitudinal distal end, including the weapon's current projected length. It is a
+derived editing handle, not a new bone/joint in exported skeleton topology. Custom
+definition lengths work too; hammer head width and grip dimensions remain unchanged.
+
+Drag the tip around the grip to aim. **Tip drag moves attached arm** defaults On:
+pulling inward/outward from that arc translates the requested grip and moves the
+attached hand through existing current-length IK or Depth / Extension, then aims
+the weapon. Turn it Off for angle-only dragging around a stationary grip. Detached
+weapons also aim around their stationary grip without moving the arm. For attached weapons, both tip aiming and numeric weapon-angle edits turn the wrist
+with the weapon, retaining the hand-to-weapon grip angle. Numeric angle editing
+remains available with rotation inheritance locked; it adjusts the wrist rather
+than fighting that constraint. Detached weapons rotate without changing the hand. Pin conflicts reject moves; unreachable normal-IK targets clamp to arm reach
+and a fixed projected weapon length rather than stretching the weapon. Facing and
+body-view changes use the same derived tip geometry.
+
+The actual grip can overlap the hand handle when aligned. Dragging that shared point
+moves the attached hand unless **weapon socket** was explicitly selected in Selected
+point; select it there to adjust a positional offset independently. The tip supports
+pointer dragging, exact Selected point X/Y coordinates and arrow-key nudges.
+
+**No weapon** in the existing Weapon selector hides both artwork and weapon handles.
+It preserves the last kind, projected length and attachment settings, so selecting
+that weapon again restores them. Poses/keys serialize this as `weapon.visible:false`;
+missing visibility means equipped. Visibility changes discretely at transition
+midpoint (or obeys Hold), while keys/source JSON remain complete. Ghosts, previews,
+local reload, project imports and transparent sprite export honor the same state.
+Weapon-family animation sets remain sword/hammer/baton; unequipped keys can appear in
+any sequence without adding a new weapon family.
+
+Manual test: aim each weapon using its tip, pull an attached hammer to reposition
+its arm, repeat with a shortened/released arm, switch views and verify the hilt
+pivot. Select No weapon, reload, equip again, then duplicate visible/unequipped
+animation keys and preview/export to verify the toggle.
