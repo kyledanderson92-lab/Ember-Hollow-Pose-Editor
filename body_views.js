@@ -38,7 +38,7 @@ function retarget(p,r,next,snap=false,previousRig=r){
  for(const e of q.extra_segments||[])q.joints[e.end]=M().add(before.joints[e.end],M().sub(q.joints[e.start],before.joints[e.start]));
  if(M().attachments.attachment(q).position_locked){const hand=M().weaponHand(q)+'_hand';q.joints.weapon_socket=M().add(before.joints.weapon_socket,M().sub(q.joints[hand],before.joints[hand]));}
  M().attachments.apply(q,before);
- if(!M().enforcePins(q,r,before)||!rootsMatch(q,r)||(snap&&roots.some(id=>M().dist(q.joints[id],target[id])>2e-5)))return false;
+ if(!M().enforcePins(q,r,before)||!rootsMatch(q,r)||!M().projection.retargetMatch(before,q)||(snap&&roots.some(id=>M().dist(q.joints[id],target[id])>2e-5)))return false;
  Object.assign(p,q);return true;
 }
 function displayRig(r,p){if(!p.body_view)return r;const d=data(r,p),s=state(p),mirror=c=>{const out=clone(c);for(const n of out.nodes)for(const field of ['point','in','out'])n[field]=point(n[field],s.side);return out;};return {...r,curves:{...r.curves,chest:mirror(d.outline.chest),pelvis:mirror(d.outline.pelvis)},waist_anchor_ids:d.waist_anchor_ids,parts:{...r.parts,scarf_collar:d.art.scarf_collar.map(v=>point(v,s.side))}};}

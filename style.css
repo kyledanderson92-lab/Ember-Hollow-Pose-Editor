@@ -11,3 +11,5 @@
 aside [hidden]{display:none!important}
 
 #editor-notice{padding:12px 18px;background:#352814;color:#ffdc91;border-bottom:1px solid #826336}#editor-notice[hidden]{display:none}
+
+#animation-panel{padding:10px 12px;background:#101a24;border-top:1px solid #293b4b}#animation-panel summary{cursor:pointer;color:#9fe3ff}#animation-panel .row{align-items:center}#animation-panel input[type=number]{width:85px}#animation-panel input[type=text],#animation-name{width:120px}#animation-panel label{display:flex;gap:5px;align-items:center;margin:5px 0}#animation-panel select{max-width:170px}#animation-scrub{flex:1;min-width:180px}#key-track{height:38px;position:relative;margin:10px 35px;background:linear-gradient(#172534,#172534) center/100% 2px no-repeat;touch-action:none}#key-track button{position:absolute;transform:translateX(-50%);padding:5px;top:3px;font-size:11px}#key-track button.active{border-color:#ffb968;color:#ffb968}#animation-message{font-size:11px;color:#8db6cf}#animation-message.error{color:#ff9987}

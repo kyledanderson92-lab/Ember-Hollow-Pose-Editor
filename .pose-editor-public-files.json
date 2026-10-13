@@ -4,6 +4,8 @@
     ".nojekyll",
     ".pose-editor-public-files.json",
     "README.md",
+    "animation.js",
+    "animation_editor.js",
     "app.js",
     "attachments.js",
     "body_views.js",
@@ -13,8 +15,10 @@
     "editor_features.js",
     "index.html",
     "model.js",
+    "projection.js",
     "reference/neon_scarf_warrior.png",
     "runtime_rig.js",
+    "sprite_export.js",
     "style.css",
     "view_editor.js"
   ]
