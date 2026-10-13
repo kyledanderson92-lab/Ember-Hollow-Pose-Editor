@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "files": [
+    ".nojekyll",
+    ".pose-editor-public-files.json",
+    "README.md",
+    "app.js",
+    "character_geometry.js",
+    "editor_features.js",
+    "index.html",
+    "model.js",
+    "reference/neon_scarf_warrior.png",
+    "runtime_rig.js",
+    "style.css"
+  ]
+}
