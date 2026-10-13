@@ -27,11 +27,12 @@ function ensureCurve(r,key){if(!r.curves[key])r.curves[key]=clone(partCurve(r,ke
 function curveTransform(r,p,key){
  if(key==='chest')return {origin:p.joints.torso,rotation:p.torso_rotation,sx:p.body_view?p.body_view.side:(p.body_facing??1),sy:1};
  if(key==='pelvis')return {origin:[0,0],rotation:0,sx:p.body_view?p.body_view.side:(p.body_facing??1),sy:1};
+ const viewSign=p.body_view?.side===-1&&r.body_views?.[p.body_view.preset]?.approved_trace_version?-1:1;
  const side=key.startsWith('right_')?'right':'left',part=key.replace(/^(left|right)_/,''),arm=part.includes('arm')||part==='hand';
  const base=side+(arm?'_shoulder':'_hip'),mid=side+(arm?'_elbow':'_knee'),end=side+(arm?'_hand':'_foot');
- if(part==='foot')return {origin:p.joints[end],rotation:p.foot_rotations[side],sx:r.foot_size[0]/r.part_dimensions.foot_size[0],sy:r.foot_size[1]/r.part_dimensions.foot_size[1]};
- if(part==='hand')return {origin:p.joints[end],rotation:F.lowerAngle(p,side+'_arm')+(p.hand_rotations?.[side]||0),sx:r.limb_thickness/r.part_dimensions.limb_thickness,sy:1};
- const upper=part.startsWith('upper'),[a,b]=F.bones(p,side+(arm?'_arm':'_leg'))[upper?0:1];return {origin:a,rotation:angle(a,b),sx:r.limb_thickness/r.part_dimensions.limb_thickness,sy:dist(a,b)/(r.part_dimensions[part+'_length']||r[part+'_length'])};
+ if(part==='foot')return {origin:p.joints[end],rotation:p.foot_rotations[side],sx:viewSign*r.foot_size[0]/r.part_dimensions.foot_size[0],sy:r.foot_size[1]/r.part_dimensions.foot_size[1]};
+ if(part==='hand')return {origin:p.joints[end],rotation:F.lowerAngle(p,side+'_arm')+(p.hand_rotations?.[side]||0),sx:viewSign*r.limb_thickness/r.part_dimensions.limb_thickness,sy:1};
+ const upper=part.startsWith('upper'),[a,b]=F.bones(p,side+(arm?'_arm':'_leg'))[upper?0:1];return {origin:a,rotation:angle(a,b),sx:viewSign*r.limb_thickness/r.part_dimensions.limb_thickness,sy:dist(a,b)/(r.part_dimensions[part+'_length']||r[part+'_length'])};
 }
 function contourPoint(r,p,key,v){const t=curveTransform(r,p,key);return add(t.origin,rotate([v[0]*t.sx,v[1]*t.sy],t.rotation));}
 function localContourPoint(r,p,key,v){const t=curveTransform(r,p,key),local=rotate(sub(v,t.origin),-t.rotation);return [local[0]/t.sx,local[1]/t.sy];}

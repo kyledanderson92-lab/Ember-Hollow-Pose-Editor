@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.15. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.16. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -288,3 +288,11 @@ Retiming, duplication, scrub and loop should keep effects synchronized. Save/rel
 export/import the project and bake at 1–2 pixels/unit; check layering, crisp edges and
 smear readability. Runtime damage, collision, particles, hit-stop and camera effects
 remain Godot responsibilities.
+
+## Approved turnaround rig and hair
+
+Click **Apply approved view rig** to install the five traced, editable view scaffolds and body outlines while retaining your current pose. Choose a Body view, then **Load traced view pose** to start from that view's measured reference pose. Refine the joints in Pose/Rig geometry and the Bézier contours in Outlines; save each finished pose to your library. Loading another reference preserves already-installed contour edits. Applying the approved rig again deliberately restores its original traced contours.
+
+All five views include transparent head/hair crops from the supplied approved sheet, using original RGB pixels. Head position, rotation and head-radius scaling move the combined image as one rigid piece. The scarf remains separate. Mirrored left views reflect the right artwork, including its asymmetric hair. Head/hair assets are embedded in sprite exports and retained through project JSON.
+
+Profile far-side joints are inferred where hidden; hands and feet use simplified editable contour fits. These are starting points for your final alignment. Existing saved custom rigs and poses are retained until you explicitly apply/load the reference. **Use pose as rig** can adopt an adjusted pose as your default skeleton. Export Project before significant manual work.
