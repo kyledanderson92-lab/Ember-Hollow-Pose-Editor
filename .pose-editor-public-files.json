@@ -28,6 +28,8 @@
     "reference/heads/sol_head_hair_profile_right.png",
     "reference/neon_scarf_warrior.png",
     "runtime_rig.js",
+    "scarf.js",
+    "scarf_editor.js",
     "sprite_export.js",
     "style.css",
     "vfx.js",

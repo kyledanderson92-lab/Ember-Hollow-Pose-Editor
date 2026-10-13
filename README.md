@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.16. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.17. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -296,3 +296,19 @@ Click **Apply approved view rig** to install the five traced, editable view scaf
 All five views include transparent head/hair crops from the supplied approved sheet, using original RGB pixels. Head position, rotation and head-radius scaling move the combined image as one rigid piece. The scarf remains separate. Mirrored left views reflect the right artwork, including its asymmetric hair. Head/hair assets are embedded in sprite exports and retained through project JSON.
 
 Profile far-side joints are inferred where hidden; hands and feet use simplified editable contour fits. These are starting points for your final alignment. Existing saved custom rigs and poses are retained until you explicitly apply/load the reference. **Use pose as rig** can adopt an adjusted pose as your default skeleton. Export Project before significant manual work.
+
+## Manual scarf animation
+
+The compact **Scarf** section offers **Scarf Visible**, **Edit Tail A/B** and independent layer selectors. In Pose mode, select a tail and drag its three blue controls; the hollow root follows the neck and is edited through the existing scarf-root/head joints. Arrow keys nudge a focused control (Shift for a larger step). Select the same tail button again to hide controls; the global Handles checkbox also hides them.
+
+Each tail is a broad tapered polygon generated from a short smoothed centerline: one shared neck root plus three downstream controls. There is no physics, collision, wind or automatic lag. Width is initialized from rig scarf width and stored per tail; advanced width adjustments are available through editable JSON. Existing legacy poses without scarf metadata retain their original fixed artwork until scarf authoring begins.
+
+Pose/key JSON stores optional `scarf: {version:1, visible:true, tails:{a:{points:[[x,y],[x,y],[x,y]],width,layer},b:{points,width,layer}}}`. Coordinates are local to the scarf root, rotated by the torso; the root follows head translation and view retargeting. Changing views preserves the local tail points; **Mirror Pose** reflects them. Head rotation alone does not rotate the neck attachment. **Use pose as rig** retains the scarf as the New/Reset neutral shape.
+
+Duplicate keys copy the complete scarf state. Points and widths interpolate using the existing outgoing-key easing; Hold keeps the earlier shape until the next key. Visibility and layers switch at the transition midpoint. Legacy keys missing metadata use the standard neutral tail shape when mixed with authored keys. JSON remains canonical.
+
+Layers are **Behind Body**, **Between Body and Front Arm/Weapon**, and **In Front of Body**, independently for each tail. The middle choice uses the front arm according to the current view's draw order; when there is no arm after the torso, it falls back to just before the front weapon/collar. These are whole-group layers, with no masks or wrapping within a single arm. Front-body tails remain behind an equipped front weapon. The collar remains a separate neck piece in its view's existing scarf layer.
+
+The same renderer is used for poses, thumbnails, timeline/blend previews, VFX afterimages and sprite ZIP baking. Both tails, visibility and layer order are included in PNGs and bounds; no separate runtime scarf rig or sprite is needed. Compact controls can produce self-overlapping ribbons at extreme bends; refine those manually.
+
+Manual test: create windup, strike, impact and recovery keys. Pose body, then Tail A/B; duplicate and adjust each to show lag/overshoot. Scrub with easing and Hold, switch all five views, move the head, mix behind/front tail layers, hide the scarf on one key, save/reload and export the sprite ZIP. Inspect the PNGs at gameplay scale for attachment, silhouette and layer readability.
