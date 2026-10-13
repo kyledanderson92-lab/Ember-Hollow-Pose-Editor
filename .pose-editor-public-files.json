@@ -20,6 +20,9 @@
     "runtime_rig.js",
     "sprite_export.js",
     "style.css",
+    "vfx.js",
+    "vfx_editor.js",
+    "vfx_renderer.js",
     "view_editor.js",
     "weapons.js"
   ]

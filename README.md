@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.12. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.13. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -210,3 +210,81 @@ Manual test: aim each weapon using its tip, pull an attached hammer to repositio
 its arm, repeat with a shortened/released arm, switch views and verify the hilt
 pivot. Select No weapon, reload, equip again, then duplicate visible/unequipped
 animation keys and preview/export to verify the toggle.
+
+## Authored combat VFX
+
+Open **Authored combat VFX** below the animation panel; it is collapsed by default.
+Create pose keys first, pick a preset/type, then **+ Add effect**. Twelve effects per
+pose are supported. Effects are inserted across the selected animation's keys with
+stable IDs. Edit width/size, opacity, placement or rotation on individual keys to
+animate them with the existing easing/Hold. Duplicate keys retain independent full
+snapshots. Delete effect removes that ID from the animation; Undo restores it.
+
+Five procedural types are available:
+
+- **Weapon Trail / Swoop:** tip/head/grip path, width, taper, smoothing, curvature,
+  exaggeration, start/end extension, optional progressive reveal, and frozen path.
+- **Impact Burst:** position/rotation, size, ray count, thickness and directional stretch.
+- **Shockwave:** center/rotation, ellipse width/height, thickness, opacity and scale.
+- **Afterimage:** selected source key or negative time offset, opacity, offset and scale;
+  reuses the previous full character/weapon pose without recursive effect rendering.
+- **Speed Lines:** center/anchor, rotation/direction, deterministic count, length, spread
+  and thickness. No random particle simulation is involved.
+
+Eight presets populate editable values: Wide Anime Slash, Heavy Hammer Arc, Fast
+Thin Slash, Ground Slam Burst, Ground Shockwave, Dash Streak, Heavy Impact and
+Character Afterimage. Ground presets use the pelvis plus a 24-unit ground offset;
+adjust it for your actual pose. Presets do not lock any controls.
+
+**Shared active range** accepts seconds or key references. Start/end key references
+follow retiming; conflicting ranges reject a retime. Matching IDs share timing
+edits across keys. Small tracks under the pose-key timeline show those ranges;
+click a track to select its effect. Scrub, Play/Pause and Loop use the same animation
+clock as the character. Geometry/opacity/transform values interpolate between
+adjacent pose keys; effect type, layer, enabled state and source choices are discrete.
+A single-key active interval creates a deliberate impact/smear frame.
+
+For a slash, choose Path start/end keys and **weapon tip**. For hammer arcs choose
+**weapon head**, which samples the head center rather than its distal edge. The
+solver samples 25 poses over the authored range using current weapon projection,
+root/facing, views, attachments and animation easing. A ribbon follows those points;
+width/taper shape its edges, smoothing blends neighboring path samples, and
+curvature/exaggeration/extensions deliberately reshape it. Unequipped motion breaks
+ribbons rather than connecting across missing weapons. **Reveal with motion** grows
+through the source range; otherwise the full swoop is shown during its active range.
+**Freeze current swoop path** stores the longest continuous path as editable source
+geometry for that key, independent of future weapon motion. Parameter and transform
+controls can then produce exaggerated smear frames. Use live weapon path restores
+motion-derived geometry. There is no freehand node/vector editor.
+
+Effects serialize as optional `pose.vfx` objects: unique ID, type, enabled/opacity/
+color, layer, pixel snapping/opacity steps, transform, range, source and typed params.
+Frozen trails also store `path_points`. These complete objects live in animation
+key poses and in project/pose JSON. Source animation/key references and optional
+`vfx_frame_time` preserve saved pose-library presentation. Export Project or animation
+JSON carries motion sources; a standalone pose without its source animation can
+show static primitives/frozen trails but cannot reconstruct afterimages/live trails.
+
+Layer choices are behind character, behind weapon, between character and weapon,
+in front of character and in front of everything. Ordering follows the weapon's
+existing front/behind setting. Each object has one layer; a ribbon cannot wrap
+partially behind/in front without separate authored objects. Afterimages reuse the
+whole source pose, rather than offering per-body-part masks. The shared renderer
+prevents previews and baked output from taking different paths.
+
+Sprite ZIP export includes VFX in bounds, layer order and PNG/sheet pixels. Thick
+strokes get extra padding. Normal FPS exports include authored pose keys plus exact
+VFX appearance boundaries; key-only export intentionally samples pose keys only.
+Editable project JSON in the archive remains the source of truth. Effects rasterize
+directly at selected output resolution, with optional integer vertex/placement
+snapping, crisp edge hints, stepped opacity and no blur filters. This supports pixel
+art workflows but does not guarantee production art style; inspect at gameplay scale.
+Existing frame/pixel limits still reject oversized exports without truncating them.
+
+Manual test: make a four-key sword swing, add Wide Anime Slash, set source keys and
+vary width/opacity on the impact key. Try Heavy Hammer Arc with head sampling; add a
+burst at contact, an expanding/fading ground shockwave, Dash Streak and Afterimage.
+Retiming, duplication, scrub and loop should keep effects synchronized. Save/reload,
+export/import the project and bake at 1–2 pixels/unit; check layering, crisp edges and
+smear readability. Runtime damage, collision, particles, hit-stop and camera effects
+remain Godot responsibilities.
