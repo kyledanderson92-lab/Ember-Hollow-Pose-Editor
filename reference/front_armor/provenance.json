@@ -1,0 +1,378 @@
+{
+  "source_sha256": "5bc33a87b96f254e66771db5c1810fad81874dcf7f7dbd96a37a69923d44b46f",
+  "source_size": [
+    1192,
+    1320
+  ],
+  "method": "RGBA crops retain original colors and transparency. Chest excludes head/neck region above its straps; no head asset extracted. Waist/pelvis remain one original piece. Pivots manually estimated; screen-left maps to editor left.",
+  "parts": {
+    "left_upper_arm": {
+      "file": "reference/front_armor/front_armor_left_upper_arm.png",
+      "width": 116,
+      "height": 230,
+      "origin": [
+        69,
+        43
+      ],
+      "reference_width": 70,
+      "crop": [
+        168,
+        142,
+        284,
+        372
+      ],
+      "source_origin": [
+        237,
+        185
+      ],
+      "source_end": [
+        216,
+        351
+      ],
+      "reference_length": 167.32304085211933,
+      "source_angle": 7.209961845615833
+    },
+    "right_upper_arm": {
+      "file": "reference/front_armor/front_armor_right_upper_arm.png",
+      "width": 114,
+      "height": 230,
+      "origin": [
+        45,
+        43
+      ],
+      "reference_width": 70,
+      "crop": [
+        912,
+        142,
+        1026,
+        372
+      ],
+      "source_origin": [
+        957,
+        185
+      ],
+      "source_end": [
+        983,
+        351
+      ],
+      "reference_length": 168.02380783686579,
+      "source_angle": -8.901716032891995
+    },
+    "left_lower_arm": {
+      "file": "reference/front_armor/front_armor_left_lower_arm.png",
+      "width": 125,
+      "height": 232,
+      "origin": [
+        90,
+        34
+      ],
+      "reference_width": 70,
+      "crop": [
+        97,
+        380,
+        222,
+        612
+      ],
+      "source_origin": [
+        187,
+        414
+      ],
+      "source_end": [
+        131,
+        598
+      ],
+      "reference_length": 192.33304448274092,
+      "source_angle": 16.927513064147043
+    },
+    "right_lower_arm": {
+      "file": "reference/front_armor/front_armor_right_lower_arm.png",
+      "width": 123,
+      "height": 232,
+      "origin": [
+        32,
+        35
+      ],
+      "reference_width": 70,
+      "crop": [
+        972,
+        380,
+        1095,
+        612
+      ],
+      "source_origin": [
+        1004,
+        415
+      ],
+      "source_end": [
+        1060,
+        598
+      ],
+      "reference_length": 191.3765920900464,
+      "source_angle": -17.014683276522966
+    },
+    "left_hand": {
+      "file": "reference/front_armor/front_armor_left_hand.png",
+      "width": 86,
+      "height": 113,
+      "origin": [
+        41,
+        20
+      ],
+      "reference_width": 70,
+      "crop": [
+        89,
+        611,
+        175,
+        724
+      ],
+      "source_origin": [
+        130,
+        631
+      ]
+    },
+    "right_hand": {
+      "file": "reference/front_armor/front_armor_right_hand.png",
+      "width": 85,
+      "height": 113,
+      "origin": [
+        42,
+        20
+      ],
+      "reference_width": 70,
+      "crop": [
+        1018,
+        611,
+        1103,
+        724
+      ],
+      "source_origin": [
+        1060,
+        631
+      ]
+    },
+    "left_upper_leg": {
+      "file": "reference/front_armor/front_armor_left_upper_leg.png",
+      "width": 171,
+      "height": 309,
+      "origin": [
+        84,
+        36
+      ],
+      "reference_width": 95,
+      "crop": [
+        296,
+        401,
+        467,
+        710
+      ],
+      "source_origin": [
+        380,
+        437
+      ],
+      "source_end": [
+        363,
+        691
+      ],
+      "reference_length": 254.568261965234,
+      "source_angle": 3.829046294496537
+    },
+    "right_upper_leg": {
+      "file": "reference/front_armor/front_armor_right_upper_leg.png",
+      "width": 169,
+      "height": 309,
+      "origin": [
+        85,
+        36
+      ],
+      "reference_width": 95,
+      "crop": [
+        728,
+        401,
+        897,
+        710
+      ],
+      "source_origin": [
+        813,
+        437
+      ],
+      "source_end": [
+        831,
+        691
+      ],
+      "reference_length": 254.6369965264278,
+      "source_angle": -4.053554231831407
+    },
+    "left_lower_leg": {
+      "file": "reference/front_armor/front_armor_left_lower_leg.png",
+      "width": 128,
+      "height": 287,
+      "origin": [
+        80,
+        27
+      ],
+      "reference_width": 78,
+      "crop": [
+        279,
+        809,
+        407,
+        1096
+      ],
+      "source_origin": [
+        359,
+        836
+      ],
+      "source_end": [
+        326,
+        1066
+      ],
+      "reference_length": 232.35533133543547,
+      "source_angle": 8.164975009322193
+    },
+    "right_lower_leg": {
+      "file": "reference/front_armor/front_armor_right_lower_leg.png",
+      "width": 126,
+      "height": 287,
+      "origin": [
+        46,
+        27
+      ],
+      "reference_width": 78,
+      "crop": [
+        788,
+        809,
+        914,
+        1096
+      ],
+      "source_origin": [
+        834,
+        836
+      ],
+      "source_end": [
+        867,
+        1066
+      ],
+      "reference_length": 232.35533133543547,
+      "source_angle": -8.164975009322193
+    },
+    "left_knee": {
+      "file": "reference/front_armor/front_armor_left_knee.png",
+      "width": 90,
+      "height": 108,
+      "origin": [
+        44,
+        54
+      ],
+      "reference_width": 70,
+      "crop": [
+        317,
+        711,
+        407,
+        819
+      ],
+      "source_origin": [
+        361,
+        765
+      ]
+    },
+    "right_knee": {
+      "file": "reference/front_armor/front_armor_right_knee.png",
+      "width": 90,
+      "height": 108,
+      "origin": [
+        45,
+        54
+      ],
+      "reference_width": 70,
+      "crop": [
+        786,
+        711,
+        876,
+        819
+      ],
+      "source_origin": [
+        831,
+        765
+      ]
+    },
+    "left_foot": {
+      "file": "reference/front_armor/front_armor_left_foot.png",
+      "width": 133,
+      "height": 189,
+      "origin": [
+        75,
+        29
+      ],
+      "reference_width": 160,
+      "crop": [
+        247,
+        1101,
+        380,
+        1290
+      ],
+      "source_origin": [
+        322,
+        1130
+      ]
+    },
+    "right_foot": {
+      "file": "reference/front_armor/front_armor_right_foot.png",
+      "width": 133,
+      "height": 189,
+      "origin": [
+        56,
+        29
+      ],
+      "reference_width": 160,
+      "crop": [
+        813,
+        1101,
+        946,
+        1290
+      ],
+      "source_origin": [
+        869,
+        1130
+      ]
+    },
+    "chest": {
+      "file": "reference/front_armor/front_armor_chest.png",
+      "width": 202,
+      "height": 251,
+      "origin": [
+        101,
+        248
+      ],
+      "reference_width": 202,
+      "crop": [
+        497,
+        243,
+        699,
+        494
+      ],
+      "source_origin": [
+        598,
+        491
+      ]
+    },
+    "pelvis": {
+      "file": "reference/front_armor/front_armor_pelvis.png",
+      "width": 252,
+      "height": 281,
+      "origin": [
+        127,
+        123
+      ],
+      "reference_width": 252,
+      "crop": [
+        471,
+        493,
+        723,
+        774
+      ],
+      "source_origin": [
+        598,
+        616
+      ]
+    }
+  }
+}

@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.19. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.20. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -326,3 +326,17 @@ Choose/create an animation in the left library, then use the **Animation timelin
 Manual check: select an elbow, shorten its chain, pose a scarf tail, duplicate a key and preview. Switch weapon/effect inspectors without losing the viewport, compare saved poses, edit a view outline, export project JSON and bake PNGs. Reopen the project and check that existing authored data remains intact.
 
 In Rig geometry mode, head and scarf-root handles edit the selected view scaffold and the displayed artwork follows those anchors directly. Neutral authored offsets are retained through default-rig adoption and project reload. Pose mode continues to edit the individual pose/key.
+
+## Front armor image parts
+
+Choose **Body view → Front**. **Front body art → Armor PNG segments** uses 16 cropped parts from the supplied monochrome sheet: two upper arms, forearms, hands, thighs, shins, feet and knee plates, plus chest and combined waist/pelvis. The existing front head/hair and separate animated blue scarf stay in use; the sheet's head is excluded. Other views retain their current artwork. No existing pose or skeleton is replaced.
+
+Images rotate around measured source pivots and stretch along current physical bone lengths. Limb width follows rig thickness, hands/feet keep their existing rotations, and current IK, Depth/Extension, gaps, weapon grip and view layers remain authoritative. Knee plates attach at knee joints. Chest and waist/pelvis follow existing torso/pelvis transforms. Front poses/keys, thumbnails, previews, VFX afterimages and baked sprites share this renderer. Embedded PNG data allows sprite baking without separate image requests.
+
+For final alignment, choose **Rig geometry → Rig settings → Front armor alignment**. Select a part and adjust **offset X/Y** or **scale X/Y**. These alter artwork relative to its bone, without changing skeleton lengths. Optional rig JSON `front_armor` stores `enabled` and per-part `adjustments:{part:{offset:[x,y],scale:[x,y]}}`; source pivots and PNG assets are bundled with the editor. Offsets are local units, scales 0.1–3. Undo/reload/project export retain them. **Front body art → Editable outlines** restores the geometric renderer. Outlines mode always displays the editable vector contours, which do not deform the PNG artwork.
+
+The original RGBA colors/transparency are retained. Cropping separates the body from the connected head/neck region; the connected waist/pelvis remain one image. Source SHA, crop boxes, pivots and reference widths/lengths are in `reference/front_armor/provenance.json`. The development helper `extract_front_armor.py SOURCE.png` regenerates crops and the embedded asset bundle from the original 1192×1320 sheet (Python/Pillow/NumPy).
+
+Limitations: this is front-view artwork with affine segment scaling, without texture mesh deformation or 3D perspective. Pivots/proportions are an initial fit for your final adjustment. Existing weapon grip offsets are retained; refine hand image/grip alignment for individual poses if needed. Colors controls affect geometric art, not source PNG colors. Added custom bone segments retain their geometric artwork.
+
+Manual check: front-view neutral pose, arm and leg bends, shortened/released limbs, mirrored pose, hand/weapon angles, independent scarf layers, animation keys and PNG sprite export. Switch profile/back views and return; inspect alignment at gameplay resolution before adopting final proportions.
