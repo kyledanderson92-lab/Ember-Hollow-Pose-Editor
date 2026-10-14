@@ -17,9 +17,9 @@ function workspaceControls(){
  if(isWeapon||isWrist) $('weapon-angles').append(label);else $('pose-controls').append(label);
  const relevant=isWeapon?inspectorCategory==='weapon':isWrist?inspectorCategory==='weapon'&&M.weapons.enabled(pose)&&M.attachments.attachment(pose).rotation_locked:text.startsWith('torso rotation')?['torso','pelvis'].includes(point):text.startsWith(point.replaceAll('_',' ')+' angle');label.hidden=mode!=='pose'||!relevant;
  }
- $('movement-mode').disabled=mode!=='pose'||!limb||$('animation-preview').checked||$('blend-enabled').checked;
- $('movement-mode').value=limb&&pose.limb_modes?.[limb.side+'_'+limb.limb]?'depth':'normal';
- $('movement-status').textContent=mode==='pose'&&limb&&!$('lock').checked&&$('movement-mode').value==='normal'?'Free Edit':'';
+ const weaponSelected=inspectorCategory==='weapon'&&M.weapons.enabled(pose),selectedMode=weaponSelected?M.weapons.movement(pose):limb?M.projection.movement(pose,limb.side+'_'+limb.limb):'2d';
+ $('movement-mode').disabled=mode!=='pose'||(!limb&&!weaponSelected)||$('animation-preview').checked||$('blend-enabled').checked;
+ $('movement-mode').value=selectedMode;$('movement-status').textContent=weaponSelected?'Weapon':limb?friendly(limb.side+'_'+limb.limb):'';
  $('segment-panel').hidden=mode!=='pose'||inspectorCategory!=='body';$('reset-limb-lengths').disabled=mode!=='pose'||!limb;
  const scarfVisible=!!pose.scarf?.visible;$('inspector-category').querySelector('option[value="scarf"]').hidden=!scarfVisible;
  if(!scarfVisible&&inspectorCategory==='scarf'){inspectorCategory='body';$('inspector-category').value='body';$('scarf-inspector').hidden=true;}
@@ -41,8 +41,7 @@ const controlsBeforeWorkspace=controls;controls=function(){controlsBeforeWorkspa
 const paintBlendBeforeWorkspace=paintBlend;paintBlend=function(){paintBlendBeforeWorkspace();workspaceControls();};
 const paintAnimationBeforeWorkspace=paintAnimation;paintAnimation=function(){paintAnimationBeforeWorkspace();workspaceControls();};
 const renderBeforeWorkspace=render;render=function(){renderBeforeWorkspace();workspaceControls();for(const handle of $('points').querySelectorAll('[data-point]'))if(handle.dataset.point===selected)handle.parentNode.append(handle);};
-$('movement-mode').onchange=()=>{if(!limbSelection())return;const depth=$('movement-mode').value==='depth';finishPreview();const key=limbSelection().side+'_'+limbSelection().limb;projectionAction(()=>{ $('lock').checked=true;return depth?M.projection.capture(pose,key):M.projection.disable(pose,key);},'Movement mode updated. Existing proportions are preserved; Restore limb proportions resets them.');};
-$('lock').addEventListener('change',workspaceControls);
+$('movement-mode').onchange=()=>{const value=$('movement-mode').value,weaponSelected=inspectorCategory==='weapon',limb=limbSelection();if(!weaponSelected&&!limb)return;finishPreview();projectionAction(()=>weaponSelected?M.weapons.setMovement(pose,value,S.definitions(weaponDefinitions)):F.setMovement(pose,rig,limb.side+'_'+limb.limb,value),'Movement mode updated. 2D preserves length; 3d shortens only; stretch also extends.');};
 $('scarf-visible').addEventListener('change',()=>{if(pose.scarf?.visible)selectInspector('scarf');else selectInspector('body');});
 $('inspector-category').onchange=()=>selectInspector($('inspector-category').value);
 // Selection of a visible object exposes its inspector without changing the pose.

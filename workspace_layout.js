@@ -36,14 +36,14 @@ const ghost=get('ghost-select').closest('label');compare.append(ghost);
 get('segment-panel').querySelector('h2').textContent='Selected chain & length';get('reset-segment-length').textContent='Restore default length';get('projection-panel').querySelector('h2').textContent='Selected limb depth';
 // Everyday controls stay near the selection; specialist tools are collapsed.
 const movementLabel=make('label',null,view,'Movement'),movement=make('select','movement-mode',movementLabel);
-for(const [value,text] of [['normal','Normal'],['depth','Foreshortening']]){const option=make('option',null,movement,text);option.value=value;}
+for(const [value,text] of [['2d','2D movement'],['3d','3d movement'],['stretch','stretch']]){const option=make('option',null,movement,text);option.value=value;}
 const movementStatus=make('span','movement-status',view);movementStatus.setAttribute('role','status');
-advanced.append(get('lock').closest('label'));get('lock').closest('label').lastChild.textContent=' Preserve lengths (off: Free Edit)';
-advanced.append(get('depth-all-toggle'));advanced.append(projection);
+
+const allLabel=make('label',null,advanced,'All limbs'),allMovement=make('select','all-movement-mode',allLabel);for(const [value,text] of [['','Apply movement mode…'],['2d','2D movement'],['3d','3d movement'],['stretch','stretch']]){const o=make('option',null,allMovement,text);o.value=value;}advanced.append(projection);
 for(const id of ['segment-select','segment-length'])advanced.append(get(id).closest('label'));
 move(['baseline-length','reset-segment-length','reset-all-lengths','add-segment','remove-segment','remove-branch'],advanced);
-get('segment-panel').querySelector('h2').textContent='Selected limb';get('reset-limb-lengths').textContent='Restore limb proportions';get('projection-panel').querySelector('h2').textContent='Foreshortening';
-get('reset-projection-limb').remove();get('limb-solver').options[0].textContent='Normal';get('limb-solver').options[1].textContent='Foreshortening';get('capture-bend').textContent='Use current bend';
+get('segment-panel').querySelector('h2').textContent='Selected limb';get('reset-limb-lengths').textContent='Restore limb proportions';get('projection-panel').querySelector('h2').textContent='Limb movement details';
+get('reset-projection-limb').remove();get('limb-solver').replaceChildren();for(const [value,text] of [['2d','2D movement'],['3d','3d movement'],['stretch','stretch']]){const o=make('option',null,get('limb-solver'),text);o.value=value;}get('capture-bend').textContent='Use current bend';
 const weaponAdvanced=make('details','weapon-advanced',weapon);make('summary',null,weaponAdvanced,'Advanced weapon settings');
 weaponAdvanced.append(get('weapon-attachment'));weaponAdvanced.append(get('pose-weapon-definition').closest('label'));
 const animationAdvanced=make('details','animation-advanced',sequences);make('summary',null,animationAdvanced,'Advanced animation settings');
