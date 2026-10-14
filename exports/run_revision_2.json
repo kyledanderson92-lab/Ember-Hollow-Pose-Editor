@@ -1,0 +1,1602 @@
+{
+  "type": "geometric_sol_animation",
+  "version": 1,
+  "id": "run_revision_2",
+  "name": "run_revision_2",
+  "weapon_type": "base",
+  "weapon_id": null,
+  "loop": true,
+  "keys": [
+    {
+      "id": "key_1",
+      "time": 0,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_1",
+        "root": [
+          0,
+          -31.142414
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850733721392615,
+            -29.310229855208707
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -8.442355261764368,
+            -3.3416519319282063
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            3.6398338902932545,
+            -9.076940229036028
+          ],
+          "left_hand": [
+            15.401162528738784,
+            0.23279339202902793
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.358879,
+            13.963377
+          ],
+          "left_foot": [
+            21.6,
+            31.142414
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.5117364641717748,
+            -16.073706984267915
+          ],
+          "right_hand": [
+            -8.442355261764368,
+            -3.3416519319282063
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            11.696352,
+            13.681938
+          ],
+          "right_foot": [
+            -6.99796,
+            20.789873
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -132.94689383083767
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -101.02869342236636,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            4,
+            -0.857586
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 43.942877,
+          "left_lower_arm": -66.123541,
+          "left_upper_leg": -39.127544,
+          "left_lower_leg": 8.326659,
+          "right_upper_arm": 34.647045,
+          "right_lower_arm": -84.2606,
+          "right_upper_leg": -40.526318,
+          "right_lower_leg": 109.708556
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_2",
+      "time": 0.0555555555555556,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_2",
+        "root": [
+          0,
+          -31.200001
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850733721392615,
+            -29.310229855208707
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -7.356515403892335,
+            -3.3124094433600924
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            11.457462328575955,
+            -5.50601464998576
+          ],
+          "left_hand": [
+            24.426783394273325,
+            2.030343801972543
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            5.743388,
+            17.059116
+          ],
+          "left_foot": [
+            -8.4,
+            31.200001
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            7.260559816410474,
+            -6.680068572258178
+          ],
+          "right_hand": [
+            -7.356515403892335,
+            -3.3124094433600924
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            16.910875,
+            6.166224
+          ],
+          "right_foot": [
+            2.759135,
+            20.298748
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -175.76058425257594
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -98.73468564876929,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 1.4210854715202004e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            11.778174,
+            -0.799999
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 44.285627,
+          "left_lower_arm": -35.729475,
+          "left_upper_leg": -18.607123,
+          "left_lower_leg": 63.612194,
+          "right_upper_arm": 13.77685,
+          "right_lower_arm": -84.162833,
+          "right_upper_leg": -69.966592,
+          "right_lower_leg": 115.005519
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_3",
+      "time": 0.111111111111111,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_3",
+        "root": [
+          0,
+          -33
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850734689080195,
+            -29.310233736391606
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -6.793374155870638,
+            -3.755005669549501
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            15.402993202966815,
+            -5.604419182935079
+          ],
+          "left_hand": [
+            28.377889813726238,
+            1.9223344454107147
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -5.451527,
+            17.154616
+          ],
+          "left_foot": [
+            -20.709311,
+            30.085203
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            7.975760293122368,
+            -6.376589044091319
+          ],
+          "right_hand": [
+            -6.793374155870638,
+            -3.755005669549501
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            17.365923,
+            4.735477
+          ],
+          "right_foot": [
+            12.002054,
+            24.002777
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -177.11647929392336
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -97.18188186145787,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 2.842170943040401e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            15,
+            1
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 30.212605,
+          "left_lower_arm": -3.011193,
+          "left_upper_leg": 17.62962,
+          "left_lower_leg": 32.089946,
+          "right_upper_arm": -1.552359,
+          "right_lower_arm": -68.049255,
+          "right_upper_leg": -74.746981,
+          "right_lower_leg": 90.303777
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_4",
+      "time": 0.166666666666667,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_4",
+        "root": [
+          0,
+          -34.799999
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850735656767775,
+            -29.31023761757451
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -7.082812023258684,
+            -4.410173743849828
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            11.00020938059827,
+            -5.567174604905412
+          ],
+          "left_hand": [
+            24.93997723296142,
+            -0.027964261445709404
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            2.188874,
+            17.866417
+          ],
+          "left_foot": [
+            -15.432889,
+            27.325459
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            7.776984929778017,
+            -6.45626134305061
+          ],
+          "right_hand": [
+            -7.082812023258684,
+            -4.410173743849828
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            14.87229,
+            10.139771
+          ],
+          "right_foot": [
+            18.894457,
+            29.731152
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -179.4399735015752
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -97.2798934593348,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": -2.842170943040401e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            11.778174,
+            2.799999
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 22.445987,
+          "left_lower_arm": -3.011194,
+          "left_upper_leg": -6.984689,
+          "left_lower_leg": 68.758594,
+          "right_upper_arm": 2.633932,
+          "right_lower_arm": -60.265134,
+          "right_upper_leg": -55.714245,
+          "right_lower_leg": 44.112466
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_5",
+      "time": 0.222222222222222,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_5",
+        "root": [
+          0,
+          -31.142414
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850733721392615,
+            -29.310229855208707
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -8.055280228804897,
+            -4.8941250939698
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            2.9180236155455175,
+            -9.786175856176826
+          ],
+          "left_hand": [
+            16.126928215537788,
+            -2.6780937867989656
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.696352,
+            13.681938
+          ],
+          "left_foot": [
+            -6.99796,
+            20.789873
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.8490023029441405,
+            -18.049713215516856
+          ],
+          "right_hand": [
+            -8.055280228804897,
+            -4.8941250939698
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            11.358879,
+            13.963377
+          ],
+          "right_foot": [
+            21.6,
+            31.142414
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -127.68405106535505
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -98.97130657763364,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 1.4210854715202004e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            4,
+            -0.857586
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 43.942877,
+          "left_lower_arm": -66.123541,
+          "left_upper_leg": -40.526318,
+          "left_lower_leg": 109.708556,
+          "right_upper_arm": 34.647045,
+          "right_lower_arm": -84.2606,
+          "right_upper_leg": -39.127544,
+          "right_lower_leg": 8.326659
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_6",
+      "time": 0.277777777777778,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_6",
+        "root": [
+          0,
+          -31.200001
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850733721392615,
+            -29.310229855208707
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -9.14112008667694,
+            -4.923367582537913
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            -0.7487188809031418,
+            -17.257550889721678
+          ],
+          "left_hand": [
+            7.10130735000325,
+            -4.475644196742471
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            16.910875,
+            6.166224
+          ],
+          "left_foot": [
+            2.759135,
+            20.298748
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.7653302499019512,
+            -17.367085890704598
+          ],
+          "right_hand": [
+            -9.14112008667694,
+            -4.923367582537913
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            5.743388,
+            17.059116
+          ],
+          "right_foot": [
+            -8.4,
+            31.200001
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -135.20956747093715
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -101.26531435123071,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 1.4210854715202004e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            -3.778176,
+            -2.744541
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 34.885844,
+          "left_lower_arm": -83.675917,
+          "left_upper_leg": -69.966592,
+          "left_lower_leg": 115.005519,
+          "right_upper_arm": 51.983015,
+          "right_lower_arm": -77.836044,
+          "right_upper_leg": -18.607123,
+          "right_lower_leg": 63.612194
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_7",
+      "time": 0.333333333333333,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_7",
+        "root": [
+          0,
+          -33
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850734689080195,
+            -29.310233736391606
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -9.704261334698627,
+            -4.480771356348508
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            -0.9024309772013082,
+            -18.80980364164112
+          ],
+          "left_hand": [
+            3.150200930550327,
+            -4.367634840180646
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            17.365923,
+            4.735477
+          ],
+          "left_foot": [
+            12.002054,
+            24.002777
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.5856984969165207,
+            -16.39092557447936
+          ],
+          "right_hand": [
+            -9.704261334698627,
+            -4.480771356348508
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -5.451527,
+            17.154616
+          ],
+          "right_foot": [
+            -20.709311,
+            30.085203
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -140.2562378560973
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -102.81811813854213,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 2.842170943040401e-14,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            -7,
+            -1.75
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 21.500072,
+          "left_lower_arm": -74.958195,
+          "left_upper_leg": -74.746981,
+          "left_lower_leg": 90.303777,
+          "right_upper_arm": 47.350553,
+          "right_lower_arm": -59.357965,
+          "right_upper_leg": 17.62962,
+          "right_lower_leg": 32.089946
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_8",
+      "time": 0.388888888888889,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_8",
+        "root": [
+          0,
+          -34.799999
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850735656767775,
+            -29.31023761757451
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -9.414823467310578,
+            -3.825603282048182
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            -0.41029777583568583,
+            -15.68466999977303
+          ],
+          "left_hand": [
+            6.588113511315159,
+            -2.417336133324214
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            14.87229,
+            10.139771
+          ],
+          "left_foot": [
+            18.894457,
+            29.731152
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.4566689803992823,
+            -15.856874350749736
+          ],
+          "right_hand": [
+            -9.414823467310578,
+            -3.825603282048182
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            2.188875,
+            17.866417
+          ],
+          "right_foot": [
+            -15.432888,
+            27.325459
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -139.39046531077702
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -102.7201065406652,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            -3.778175,
+            0.855457
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 20.664783,
+          "left_lower_arm": -59.705971,
+          "left_upper_leg": -55.714245,
+          "left_lower_leg": 44.112466,
+          "right_upper_arm": 35.878723,
+          "right_lower_arm": -55.133918,
+          "right_upper_leg": -6.984692,
+          "right_lower_leg": 68.758598
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    },
+    {
+      "id": "key_9",
+      "time": 0.444444444444444,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "run_key_1",
+        "root": [
+          0,
+          -31.142414
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "head": [
+            18.850733721392615,
+            -29.310229855208707
+          ],
+          "scarf_root": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "weapon_socket": [
+            -8.442355261764368,
+            -3.3416519319282063
+          ],
+          "left_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "left_elbow": [
+            3.6398338902932545,
+            -9.076940229036028
+          ],
+          "left_hand": [
+            15.401162528738784,
+            0.23279339202902793
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.358879,
+            13.963377
+          ],
+          "left_foot": [
+            21.6,
+            31.142414
+          ],
+          "right_shoulder": [
+            13.084647513400661,
+            -19.41113081327458
+          ],
+          "right_elbow": [
+            -0.5117364641717748,
+            -16.073706984267915
+          ],
+          "right_hand": [
+            -8.442355261764368,
+            -3.3416519319282063
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            11.696352,
+            13.681938
+          ],
+          "right_foot": [
+            -6.99796,
+            20.789873
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 33.983107000000004,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -132.94689383083767
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "pins": {},
+        "weapon": {
+          "kind": "sword",
+          "visible": true,
+          "layer": "front",
+          "rotation": -101.02869342236636,
+          "projected_length": 26,
+          "attachment": {
+            "position_locked": true,
+            "rotation_locked": true,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "position": [
+            4,
+            -0.857586
+          ]
+        },
+        "notes": "Sampled run from current procedural Stick Sol; edit this key to give animation feedback.\nRun revision 1: low trailing weapon carry inspired by the supplied reference; original legs, root and cadence retained.\nRevision 2: 14 degrees more forward weight/lean; trailing weapon carry retained.",
+        "source_pose": {
+          "state": "run",
+          "roll_progress": 0,
+          "roll_tuck": 0
+        },
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "rotations": {
+          "left_upper_arm": 43.942877,
+          "left_lower_arm": -66.123541,
+          "left_upper_leg": -39.127544,
+          "left_lower_leg": 8.326659,
+          "right_upper_arm": 34.647045,
+          "right_lower_arm": -84.2606,
+          "right_upper_leg": -40.526318,
+          "right_lower_leg": 109.708556
+        },
+        "scarf_root": [
+          8,
+          -22
+        ]
+      }
+    }
+  ],
+  "review_status": "awaiting_user_review",
+  "revision": {
+    "baseline": "run_revision_1",
+    "number": 2,
+    "reference": "User-provided run sprite sheet; trailing weapon carry",
+    "changes": "Upper body leans 14 degrees farther forward around the pelvis. Previous trailing weapon direction and original legs/root/cadence retained."
+  }
+}

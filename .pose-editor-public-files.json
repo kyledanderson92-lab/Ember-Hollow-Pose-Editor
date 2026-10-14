@@ -34,6 +34,8 @@
     "references/RGS_Dev_CC0_License.txt",
     "references/index.html",
     "exports/run_revision_1.json",
-    "reviews/run.html"
+    "reviews/run.html",
+    "exports/run_revision_2.json",
+    "reviews/run-revision-1.html"
   ]
 }
