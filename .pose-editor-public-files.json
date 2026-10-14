@@ -36,6 +36,8 @@
     "exports/run_revision_1.json",
     "reviews/run.html",
     "exports/run_revision_2.json",
-    "reviews/run-revision-1.html"
+    "reviews/run-revision-1.html",
+    "exports/run_revision_3.json",
+    "reviews/run-revision-2.html"
   ]
 }
