@@ -27,6 +27,11 @@
     "workspace_layout.js",
     "workspace_ui.js",
     "motion_tools.js",
-    "ANIMATION_REFERENCES.md"
+    "ANIMATION_REFERENCES.md",
+    "exports/polished_stick_actions.json",
+    "references/action_provenance.json",
+    "references/source-poses.jpg",
+    "references/RGS_Dev_CC0_License.txt",
+    "references/index.html"
   ]
 }
