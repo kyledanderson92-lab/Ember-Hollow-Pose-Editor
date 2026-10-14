@@ -25,6 +25,8 @@
     "vfx.js",
     "weapons.js",
     "workspace_layout.js",
-    "workspace_ui.js"
+    "workspace_ui.js",
+    "motion_tools.js",
+    "ANIMATION_REFERENCES.md"
   ]
 }

@@ -33,7 +33,7 @@ function renderCharacter(p,parent,ghost=false,context=null){
  for(const side of ['left','right']){const color=side==='left'?rig.colors.rear:rig.colors.line;for(const kind of ['leg','arm'])for(const [a,b] of M.projection.bones(p,side+'_'+kind))stroke([a,b],color,side+'_'+kind);}
  stroke([[0,0],j.torso,j.head],rig.colors.line,'torso');
  elem('circle',{cx:j.head[0],cy:j.head[1],r:rig.head_radius,fill:rig.colors.body_fill,stroke:rig.colors.line,'stroke-width':rig.limb_thickness*.65,'data-part':'head'},g);
- if(M.weapons.enabled(p)){const geometry=M.weapons.geometry(p,context?.definitions||M.animation.definitions(weaponDefinitions)),length=geometry.length,w=elem('g',{'data-part':'weapon',transform:`translate(${j.weapon_socket.join(' ')}) rotate(${p.weapon.rotation})`},g);w.dataset.projectedLength=length;
+ if(M.weapons.enabled(p)){const geometry=M.weapons.geometry(p,context?.definitions||M.animation.definitions(weaponDefinitions)),length=geometry.length,w=elem('g',{'data-part':'weapon',transform:`translate(${j.weapon_socket.join(' ')}) rotate(${p.weapon.rotation}) scale(${p.weapon.size_multiplier??1})`},g);w.dataset.projectedLength=length;
  elem('line',{x1:0,y1:geometry.butt,x2:0,y2:-length,stroke:rig.colors.energy,'stroke-width':p.weapon.kind==='sword'?2:1.7,'stroke-linecap':'round'},w);
  if(p.weapon.kind==='hammer')elem('rect',{x:-8,y:-length-4,width:16,height:8,rx:1,fill:rig.colors.body_fill,stroke:rig.colors.energy,'stroke-width':1.1},w);
  if(p.weapon.kind==='sword')elem('line',{x1:-4,y1:geometry.guard,x2:4,y2:geometry.guard,stroke:rig.colors.energy,'stroke-width':1.5},w);

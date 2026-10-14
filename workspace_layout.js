@@ -52,6 +52,15 @@ const accessories=make('details','accessory-tools',setup);make('summary',null,ac
 category.querySelector('option[value="scarf"]').textContent='Scarf (optional)';
 get('pose-weapon-definition').options[0].textContent='Default weapon';
 
+const workshop=make('details','motion-workshop',sequences);make('summary',null,workshop,'Motion workshop');
+const speedLabel=make('label',null,workshop,'Preview speed'),speed=make('select','motion-speed',speedLabel);
+for(const value of [.25,.5,1,2]){const o=make('option',null,speed,value+'×');o.value=value;}speed.value=1;
+const ghostsLabel=make('label',null,workshop,' Previous / next key ghosts'),ghosts=make('input','motion-ghosts',ghostsLabel);ghosts.type='checkbox';
+const durationLabel=make('label',null,workshop,'Clip duration (seconds)'),duration=make('input','motion-duration',durationLabel);duration.type='number';duration.min=.01;duration.max=600;duration.step=.01;
+make('button','motion-retime',workshop,'Retime entire clip');make('button','motion-overclock',workshop,'Create 3× Overclock copy');
+const sizeLabel=make('label',null,weapon,'Weapon size multiplier'),size=make('input','weapon-size-multiplier',sizeLabel);size.type='number';size.min=.1;size.max=5;size.step=.1;
+make('p',null,workshop,'Slow playback helps polish arcs. Retime scales every key and effect cue. Overclock creates a separate editable copy; the source stays intact.');
+
 // Collapsible explanatory text lives near its controls but no longer dominates.
 for(const hint of document.querySelectorAll('.hint')){const d=make('details',null);d.className='help-note';make('summary',null,d,'Help');hint.replaceWith(d);d.append(hint);}
 for(const note of inspector.querySelectorAll(':scope > .help-note'))file.append(note);
