@@ -9,11 +9,20 @@ function workspaceControls(){
  if(limb&&limb.side+'_'+limb.limb!==inspectorLastLimb){inspectorLastLimb=limb.side+'_'+limb.limb;$('projection-limb').value=inspectorLastLimb;animationControls();}
  $('inspector-category').value=inspectorCategory;$('inspector-category').disabled=mode!=='pose';
  const show=(id,value)=>{$(id).hidden=!value;};
- show('joint-panel',mode==='rig'||(mode==='pose'&&['body','weapon'].includes(inspectorCategory)));show('all-pose-angles',mode==='pose');
- show('segment-panel',mode==='pose'&&inspectorCategory==='body');show('projection-panel',mode==='pose'&&inspectorCategory==='body');show('body-advanced',mode==='pose'&&inspectorCategory==='body');
+ show('joint-panel',mode==='rig'||(mode==='pose'&&['body','weapon'].includes(inspectorCategory)));
+ show('segment-panel',mode==='pose'&&inspectorCategory==='body');show('projection-panel',mode==='pose'&&inspectorCategory==='body'&&!!limb);show('body-advanced',mode==='pose'&&inspectorCategory==='body');
  show('weapon-inspector',mode==='pose'&&inspectorCategory==='weapon');show('scarf-inspector',mode==='pose'&&inspectorCategory==='scarf');show('pose-settings-panel',mode==='pose'&&inspectorCategory==='pose');show('vfx-panel',mode==='pose'&&inspectorCategory==='vfx');
  show('rig-tools',mode!=='pose');if(mode!==workspaceLastMode){$('rig-tools').open=mode==='rig';workspaceLastMode=mode;}
- for(const label of $('pose-controls').querySelectorAll('label')){const text=label.textContent.toLowerCase(),all=$('all-pose-angles').checked,relevant=inspectorCategory==='weapon'?text.startsWith('Weapon rotation'.toLowerCase()):point==='head'?text.startsWith('head rotation'):point==='torso'||point==='pelvis'?text.startsWith('torso rotation'):point.startsWith('weapon_')||inspectorCategory==='weapon'?text.startsWith('weapon rotation'):text.startsWith(point.replaceAll('_',' ')+(point.endsWith('_foot')?' rotation':' angle'));label.hidden=!all&&!relevant;}
+ for(const label of [...$('pose-controls').querySelectorAll('label'),...$('weapon-angles').querySelectorAll('label')]){const text=label.textContent.toLowerCase(),isWeapon=text.startsWith('weapon rotation'),isWrist=text.startsWith(M.weaponHand(pose)+' hand angle');
+ if(isWeapon||isWrist) $('weapon-angles').append(label);else $('pose-controls').append(label);
+ const relevant=isWeapon?inspectorCategory==='weapon':isWrist?inspectorCategory==='weapon'&&M.weapons.enabled(pose)&&M.attachments.attachment(pose).rotation_locked:text.startsWith('torso rotation')?['torso','pelvis'].includes(point):text.startsWith(point.replaceAll('_',' ')+' angle');label.hidden=mode!=='pose'||!relevant;
+ }
+ $('movement-mode').disabled=mode!=='pose'||!limb||$('animation-preview').checked||$('blend-enabled').checked;
+ $('movement-mode').value=limb&&pose.limb_modes?.[limb.side+'_'+limb.limb]?'depth':'normal';
+ $('movement-status').textContent=mode==='pose'&&limb&&!$('lock').checked&&$('movement-mode').value==='normal'?'Free Edit':'';
+ $('segment-panel').hidden=mode!=='pose'||inspectorCategory!=='body';$('reset-limb-lengths').disabled=mode!=='pose'||!limb;
+ const scarfVisible=!!pose.scarf?.visible;$('inspector-category').querySelector('option[value="scarf"]').hidden=!scarfVisible;
+ if(!scarfVisible&&inspectorCategory==='scarf'){inspectorCategory='body';$('inspector-category').value='body';$('scarf-inspector').hidden=true;}
  const title=mode==='rig'?friendly(point)+' · default rig':inspectorCategory==='scarf'?(scarfTail?'Editing Tail '+scarfTail.toUpperCase():'Scarf'):inspectorCategory==='weapon'?'Weapon':inspectorCategory==='vfx'?(effectNames[pose.vfx?.find(e=>e.id===vfxSelected)?.type]||'Effects'):inspectorCategory==='pose'?'Pose settings':friendly(point);
  $('inspector-title').textContent=title;$('inspector-scope').textContent=mode==='rig'?view+' · default geometry':key?'Key '+(sequence.keys.indexOf(key)+1)+' · '+key.time.toFixed(3)+' s':'Current pose draft';
  $('editing-context-text').textContent=mode==='rig'?'Default rig · '+view:key?'Animation: '+sequence.name+' · Key '+(sequence.keys.indexOf(key)+1)+' · '+key.time.toFixed(3)+' s · '+view:'Pose: '+pose.name+' · '+view;
@@ -32,7 +41,9 @@ const controlsBeforeWorkspace=controls;controls=function(){controlsBeforeWorkspa
 const paintBlendBeforeWorkspace=paintBlend;paintBlend=function(){paintBlendBeforeWorkspace();workspaceControls();};
 const paintAnimationBeforeWorkspace=paintAnimation;paintAnimation=function(){paintAnimationBeforeWorkspace();workspaceControls();};
 const renderBeforeWorkspace=render;render=function(){renderBeforeWorkspace();workspaceControls();for(const handle of $('points').querySelectorAll('[data-point]'))if(handle.dataset.point===selected)handle.parentNode.append(handle);};
-$('all-pose-angles').onchange=workspaceControls;
+$('movement-mode').onchange=()=>{if(!limbSelection())return;const depth=$('movement-mode').value==='depth';finishPreview();const key=limbSelection().side+'_'+limbSelection().limb;projectionAction(()=>{ $('lock').checked=true;return depth?M.projection.capture(pose,key):M.projection.disable(pose,key);},'Movement mode updated. Existing proportions are preserved; Restore limb proportions resets them.');};
+$('lock').addEventListener('change',workspaceControls);
+$('scarf-visible').addEventListener('change',()=>{if(pose.scarf?.visible)selectInspector('scarf');else selectInspector('body');});
 $('inspector-category').onchange=()=>selectInspector($('inspector-category').value);
 // Selection of a visible object exposes its inspector without changing the pose.
 $('stage').addEventListener('pointerdown',e=>{if(e.button!==0||spaceDown||$('animation-preview').checked)return;const target=e.target.closest('[data-vfx]')||e.target.closest('[data-scarf-tail],[data-part="weapon"]');if(target?.dataset.scarfTail){scarfTail=target.dataset.scarfTail;selectInspector('scarf');render();}else if(target?.dataset.vfx){vfxSelected=target.dataset.vfx;inspectorCategory='vfx';$('vfx-panel').open=true;controls();}else if(target?.dataset.part==='weapon')selectInspector('weapon');},true);

@@ -12,4 +12,4 @@ function vfxDraw(p,parent,context={}){const E=M.vfx,defs=context.definitions||S.
  }
  const back=buckets.get('behind_character');if(back)scene.insertBefore(back,scene.firstChild);const top=buckets.get('front_everything');if(top)scene.append(top);
 }
-renderCharacter=function(p,parent,ghost=false,context=null){renderWithoutVFX(p,parent,ghost);if(!p.vfx?.length)return;const editing=parent===$('character')&&$('mode').value==='pose',a=context?.animation||(editing&&currentKey()?currentAnimation():null),time=context?.time??(editing?(currentKey()?.time??p.vfx_frame_time??0):(p.vfx_frame_time??0));vfxDraw(p,parent,{...(context||{}),animation:a,time});};
+renderCharacter=function(p,parent,ghost=false,context=null){renderWithoutVFX(p,parent,ghost,context);if(!p.vfx?.length)return;const editing=parent===$('character')&&$('mode').value==='pose',a=context?.animation||(editing&&currentKey()?currentAnimation():null),time=context?.time??(editing?(currentKey()?.time??p.vfx_frame_time??0):(p.vfx_frame_time??0));vfxDraw(p,parent,{...(context||{}),animation:a,time});};

@@ -27,13 +27,31 @@ const settings=get('pose-settings-panel'),weapon=make('section','weapon-inspecto
 for(const id of ['weapon','weapon-layer','weapon-tip-arm'])weapon.append(get(id).closest('label'));move(['weapon-attachment'],weapon);
 const projection=get('projection-panel');for(const id of ['weapon-length','pose-weapon-definition'])weapon.append(get(id).closest('label'));move(['weapon-baseline','weapon-length-reset'],weapon);
 const scarf=make('section','scarf-inspector',inspector);scarf.append(get('scarf-panel'));
-const angles=make('label',null,get('joint-panel'));const allAngles=make('input','all-pose-angles',angles);allAngles.type='checkbox';angles.append(document.createTextNode(' Show all pose angles'));get('joint-panel').append(get('pose-controls'));
+get('joint-panel').append(get('pose-controls'));const weaponAngles=make('div','weapon-angles',weapon);
 const rigTools=make('details','rig-tools',inspector);make('summary',null,rigTools,'Rig settings');move(['rig-settings-panel','color-panel'],rigTools);
 const advanced=make('details','body-advanced',inspector);make('summary',null,advanced,'Advanced body tools');advanced.append(get('pins'));
 const vfx=get('vfx-panel');inspector.append(vfx);
 inspector.append(get('joint-panel'),get('segment-panel'),projection,advanced,weapon,scarf,settings,rigTools);
 const ghost=get('ghost-select').closest('label');compare.append(ghost);
 get('segment-panel').querySelector('h2').textContent='Selected chain & length';get('reset-segment-length').textContent='Restore default length';get('projection-panel').querySelector('h2').textContent='Selected limb depth';
+// Everyday controls stay near the selection; specialist tools are collapsed.
+const movementLabel=make('label',null,view,'Movement'),movement=make('select','movement-mode',movementLabel);
+for(const [value,text] of [['normal','Normal'],['depth','Foreshortening']]){const option=make('option',null,movement,text);option.value=value;}
+const movementStatus=make('span','movement-status',view);movementStatus.setAttribute('role','status');
+advanced.append(get('lock').closest('label'));get('lock').closest('label').lastChild.textContent=' Preserve lengths (off: Free Edit)';
+advanced.append(get('depth-all-toggle'));advanced.append(projection);
+for(const id of ['segment-select','segment-length'])advanced.append(get(id).closest('label'));
+move(['baseline-length','reset-segment-length','reset-all-lengths','add-segment','remove-segment','remove-branch'],advanced);
+get('segment-panel').querySelector('h2').textContent='Selected limb';get('reset-limb-lengths').textContent='Restore limb proportions';get('projection-panel').querySelector('h2').textContent='Foreshortening';
+get('reset-projection-limb').remove();get('limb-solver').options[0].textContent='Normal';get('limb-solver').options[1].textContent='Foreshortening';get('capture-bend').textContent='Use current bend';
+const weaponAdvanced=make('details','weapon-advanced',weapon);make('summary',null,weaponAdvanced,'Advanced weapon settings');
+weaponAdvanced.append(get('weapon-attachment'));weaponAdvanced.append(get('pose-weapon-definition').closest('label'));
+const animationAdvanced=make('details','animation-advanced',sequences);make('summary',null,animationAdvanced,'Advanced animation settings');
+for(const id of ['animation-family','animation-owner'])animationAdvanced.append(get(id).closest('label'));animationAdvanced.append(get('weapon-new'));
+const accessories=make('details','accessory-tools',setup);make('summary',null,accessories,'Optional accessories');accessories.append(get('scarf-visible').closest('label'));
+category.querySelector('option[value="scarf"]').textContent='Scarf (optional)';
+get('pose-weapon-definition').options[0].textContent='Default weapon';
+
 // Collapsible explanatory text lives near its controls but no longer dominates.
 for(const hint of document.querySelectorAll('.hint')){const d=make('details',null);d.className='help-note';make('summary',null,d,'Help');hint.replaceWith(d);d.append(hint);}
 for(const note of inspector.querySelectorAll(':scope > .help-note'))file.append(note);
