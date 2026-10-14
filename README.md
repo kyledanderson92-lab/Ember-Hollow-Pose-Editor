@@ -14,7 +14,7 @@ Work stays in this browser. Export Project backs up the rig, current pose, saved
 
 For offline use, download the repository ZIP, extract it and open index.html. No login, server or build is needed. Public distribution contains the standalone browser files, generated character preset and supplied reference image. Game code, development documents and development history are maintained separately.
 
-Version 2026.10.13.18. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
+Version 2026.10.13.19. Source distribution is copied from tools/sol_pose_editor in the development repository. Review .pose-editor-public-files.json before future updates; copy only its listed files.
 
 ## Multi-key animation workflow
 
@@ -324,3 +324,5 @@ The header identifies the current pose, animation/key/time, default rig, view ou
 Choose/create an animation in the left library, then use the **Animation timeline** dock below the canvas for keys, timing and playback. The dock has a bounded height and its own scrolling. Select **Effects** in the inspector for VFX parameters; timing tracks remain in the timeline. **Compare two poses** is a separate optional bottom panel. **Export → Bake sprite frames…** opens baking settings in a dialog; Escape closes dialogs and menus. On narrow screens the canvas comes first, followed by scrollable/reachable library and inspector sections.
 
 Manual check: select an elbow, shorten its chain, pose a scarf tail, duplicate a key and preview. Switch weapon/effect inspectors without losing the viewport, compare saved poses, edit a view outline, export project JSON and bake PNGs. Reopen the project and check that existing authored data remains intact.
+
+In Rig geometry mode, head and scarf-root handles edit the selected view scaffold and the displayed artwork follows those anchors directly. Neutral authored offsets are retained through default-rig adoption and project reload. Pose mode continues to edit the individual pose/key.
