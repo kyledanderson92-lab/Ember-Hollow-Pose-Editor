@@ -10,7 +10,7 @@ function validate(p){if(p.scarf===undefined)return;const s=p.scarf,vector=v=>Arr
 // Root follows the authored head's displacement from its view scaffold, while
 // retaining independently authored scarf-root displacement. Head rotation does
 // not rotate the neck attachment; torso rotation carries the local tail shapes.
-function root(p,r){let expected;if(p.body_view){const V=global.SolBodyViews||(typeof require==='function'?require('./body_views.js'):null);expected=V.scaffold(r,p).head;}else expected=add(p.joints.torso,rotate(r.scarf_head_reference||rotate(sub(r.joints.head,r.joints.torso),-(r.neutral_torso_rotation||0)),p.torso_rotation));return add(p.joints.scarf_root,sub(p.joints.head,expected));}
+function root(p,r){const expected=add(p.joints.torso,rotate(r.scarf_head_reference||rotate(sub(r.joints.head,r.joints.torso),-(r.neutral_torso_rotation||0)),p.torso_rotation));return add(p.joints.scarf_root,sub(p.joints.head,expected));}
 function world(p,r,point){return add(root(p,r),rotate(point,p.torso_rotation));}
 function local(p,r,point){return rotate(sub(point,root(p,r)),-p.torso_rotation);}
 // A short Catmull-Rom centerline, sampled deterministically into a tapered broad

@@ -1,3 +1,4 @@
+// Adapted from public 3b19d32 / workspace commit 08d864b; retain Stick Sol.
 // Move existing controls into the workspace before their authoring handlers bind.
 (function(){
 'use strict';
@@ -6,14 +7,13 @@ const main=document.querySelector('main'),work=document.querySelector('.workspac
 const menus=make('div','workspace-menus',nav);
 function menu(id,label){const d=make('details',id,menus);d.className='action-menu';make('summary',null,d,label);return make('div',id+'-content',d);}
 const file=menu('file-menu','File'),setup=menu('setup-menu','Setup'),exports=menu('export-menu','Export');
-move(['new','save'],nav);move(['duplicate','reset','import','backup-select','previous-project'],file);move(['runtime-rig','pose-to-rig','approved-view-rig','view-reference-pose'],setup);move(['export-project','export-pose','export-rig','export-character','animation-export'],exports);
+move(['new','save'],nav);move(['duplicate','reset','import','backup-select','previous-project'],file);move(['runtime-rig','pose-to-rig'],setup);move(['export-project','export-pose','export-rig','animation-export'],exports);
 get('save').textContent='Save to Pose Library';get('export-project').textContent='Export Project Backup';get('pose-to-rig').textContent='Use pose as default rig';get('runtime-rig').textContent='Restore current Sol rig';
 const spriteOpen=make('button','open-sprite-export',exports,'Bake sprite frames…');spriteOpen.type='button';
 const context=make('div','editing-context',header),contextText=make('span','editing-context-text',context,'Pose'),saveState=make('span','local-save-state',context,'Saved locally');context.setAttribute('aria-live','polite');
-const tools=work.querySelector('.bar'),view=work.querySelector('.body-view-bar'),actions=view.nextElementSibling,blend=work.querySelector('.blend-bar');tools.id='canvas-tools';view.id='view-tools';actions.id='pose-tools';
+const tools=work.querySelector('.bar'),actions=tools.nextElementSibling,blend=work.querySelector('.blend-bar'),view=make('div',null);view.className='bar';work.insertBefore(view,actions);make('span','character-presentation',view,'Stick Sol');view.append(get('facing').closest('label'));tools.id='canvas-tools';view.id='view-tools';actions.id='pose-tools';
 move(['undo','redo'],nav);move(['mirror'],view);
 const more=make('details','pose-tools-menu',view);more.className='action-menu';make('summary',null,more,'Pose tools');const moreBody=make('div',null,more);while(actions.firstChild)moreBody.append(actions.firstChild);moreBody.append(get('duplicate'));moreBody.append(get('reset'));actions.remove();context.append(get('dirty'));
-const viewOptions=make('details','view-options',view);viewOptions.className='action-menu';make('summary',null,viewOptions,'Root options');const viewBody=make('div',null,viewOptions);for(const id of ['view-shoulders-lock','view-hips-lock'])viewBody.append(get(id).closest('label'));move(['view-snap-roots','view-root-state'],viewBody);
 const compare=make('details','comparison-panel');make('summary',null,compare,'Compare two poses');compare.append(blend);
 const dock=make('div','bottom-dock',work);dock.append(get('animation-panel'));dock.append(compare);work.append(work.querySelector('footer'));get('animation-panel').querySelector('summary').textContent='Animation timeline';
 const drawer=make('div','library-drawer');main.prepend(drawer);make('h2',null,drawer,'Library');drawer.append(get('pose-library-panel'));const sequences=make('section','sequence-library',drawer);make('h2',null,sequences,'Animations');
@@ -28,11 +28,11 @@ for(const id of ['weapon','weapon-layer','weapon-tip-arm'])weapon.append(get(id)
 const projection=get('projection-panel');for(const id of ['weapon-length','pose-weapon-definition'])weapon.append(get(id).closest('label'));move(['weapon-baseline','weapon-length-reset'],weapon);
 const scarf=make('section','scarf-inspector',inspector);scarf.append(get('scarf-panel'));
 const angles=make('label',null,get('joint-panel'));const allAngles=make('input','all-pose-angles',angles);allAngles.type='checkbox';angles.append(document.createTextNode(' Show all pose angles'));get('joint-panel').append(get('pose-controls'));
-const rigTools=make('details','rig-tools',inspector);make('summary',null,rigTools,'Rig settings');move(['view-scaffold-panel','rig-settings-panel','color-panel'],rigTools);
+const rigTools=make('details','rig-tools',inspector);make('summary',null,rigTools,'Rig settings');move(['rig-settings-panel','color-panel'],rigTools);
 const advanced=make('details','body-advanced',inspector);make('summary',null,advanced,'Advanced body tools');advanced.append(get('pins'));
 const vfx=get('vfx-panel');inspector.append(vfx);
-inspector.append(get('joint-panel'),get('segment-panel'),projection,advanced,weapon,scarf,settings,get('outline-panel'),rigTools,get('reference-panel'));
-const ghost=get('ghost-select').closest('label');get('reference-panel').append(ghost);
+inspector.append(get('joint-panel'),get('segment-panel'),projection,advanced,weapon,scarf,settings,rigTools);
+const ghost=get('ghost-select').closest('label');compare.append(ghost);
 get('segment-panel').querySelector('h2').textContent='Selected chain & length';get('reset-segment-length').textContent='Restore default length';get('projection-panel').querySelector('h2').textContent='Selected limb depth';
 // Collapsible explanatory text lives near its controls but no longer dominates.
 for(const hint of document.querySelectorAll('.hint')){const d=make('details',null);d.className='help-note';make('summary',null,d,'Help');hint.replaceWith(d);d.append(hint);}
