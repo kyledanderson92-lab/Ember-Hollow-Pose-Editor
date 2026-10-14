@@ -4,6 +4,7 @@ const K=global.SolScarf||(typeof require==='function'?require('./scarf.js'):null
 const E=global.SolVFX||(typeof require==='function'?require('./vfx.js'):null);
 const W=global.SolWeapons||(typeof require==='function'?require('./weapons.js'):null);
 const F=global.SolProjection||(typeof require==='function'?require('./projection.js'):null);
+const B=global.SolBodyProjection||(typeof require==='function'?require('./body_projection.js'):null);
 const S=global.SolAnimation||(typeof require==='function'?require('./animation.js'):null);
 const A=global.SolAttachments||(typeof require==='function'?require('./attachments.js'):null);
 const C=global.SolChains||(typeof require==='function'?require('./chains.js'):null);
@@ -15,7 +16,7 @@ const endpoint=(a,length,deg)=>add(a,[-Math.sin(deg*Math.PI/180)*length,Math.cos
 const wrap=a=>((a+180)%360+360)%360-180;
 function rotate(v,deg){const a=deg*Math.PI/180;return [v[0]*Math.cos(a)-v[1]*Math.sin(a),v[0]*Math.sin(a)+v[1]*Math.cos(a)];}
 function weaponHand(p){return p.weapon_hand||'right';}
-// Both arm roots are the trunk/neck junction, not independent translation handles.
+// Fixed limb roots: shoulders at the neck junction; hips at the pelvis.
 function attachArms(p){
  const j=p.joints;if(!j?.torso)return p;
  for(const side of ['left','right']){
@@ -26,6 +27,12 @@ function attachArms(p){
   j[id]=clone(j.torso);
   if(p.pins&&typeof p.pins[id]==='boolean'){if(p.pins[id])p.pins.torso=true;delete p.pins[id];}
  }
+ for(const side of ['left','right']){
+  const id=side+'_hip';if(!j[id])continue;const delta=j[id].map(v=>-v),affected=new Set([id,side+'_knee',side+'_foot']);
+  for(const edge of p.extra_segments||[])if(edge&&affected.has(edge.start))affected.add(edge.end);
+  if(delta[0]||delta[1])for(const name of affected)if(j[name])j[name]=add(j[name],delta);
+  j[id]=[0,0];if(p.pins&&typeof p.pins[id]==='boolean'){if(p.pins[id])p.pins.pelvis=true;delete p.pins[id];}
+ }
  return p;
 }
 
@@ -34,8 +41,8 @@ function packBackups(list){return {type:'geometric_sol_backups',version:1,projec
 function unpackBackups(v){return clone(Array.isArray(v)?v:v.projects||[]);}
 
 function defaultRig(){return attachArms(clone(global.SolRuntimeRig||(typeof require==='function'?require('./runtime_rig.js'):null)));}
-function defaultPose(r,name='idle'){return attachArms({type:'geometric_sol_pose',version:1,name,scarf:clone(r.neutral_scarf||K.defaults(r)),pins:{},root:clone(r.neutral_root||[0,0]),facing:r.neutral_facing??1,body_facing:r.neutral_body_facing??1,joints:clone(r.joints),weapon_hand:r.weapon_hand||'right',torso_rotation:r.neutral_torso_rotation||0,head_rotation:r.neutral_head_rotation??0,hand_rotations:clone(r.neutral_hand_rotations||{left:0,right:0}),foot_rotations:clone(r.neutral_foot_rotations||{left:0,right:0}),weapon:{...(r.neutral_weapon_visible===false?{visible:false}:{}),kind:r.neutral_weapon_kind||'sword',layer:r.neutral_weapon_layer||'front',rotation:r.weapon_rotation??132,...(r.neutral_weapon_projection?clone(r.neutral_weapon_projection):{}),...(r.neutral_weapon_attachment?{attachment:clone(r.neutral_weapon_attachment)}:{})},notes:''});}
-function rigFromPose(r,p){p=attachArms(clone(p));if(p.extra_segments?.length)throw Error('Extra segments are pose-only; remove them before adopting a default rig.');const out=clone(r);out.joints=clone(p.joints);out.neutral_root=clone(p.root);out.neutral_facing=p.facing;out.neutral_torso_rotation=p.torso_rotation;out.weapon_hand=weaponHand(p);out.weapon_rotation=p.weapon.rotation;out.neutral_hand_rotations=clone(p.hand_rotations);out.neutral_scarf=clone(p.scarf||K.defaults(r));out.scarf_head_reference=clone(r.scarf_head_reference||rotate(sub(r.joints.head,r.joints.torso),-(r.neutral_torso_rotation||0)));out.neutral_weapon_kind=p.weapon.kind;out.neutral_weapon_layer=p.weapon.layer;out.neutral_weapon_visible=p.weapon.visible!==false;out.neutral_weapon_projection=Object.fromEntries(['movement_mode','normal_length','projected_length','definition_id','size_multiplier'].filter(k=>p.weapon[k]!==undefined).map(k=>[k,clone(p.weapon[k])]));if(p.weapon.attachment)out.neutral_weapon_attachment=clone(p.weapon.attachment);else delete out.neutral_weapon_attachment;return out;}
+function defaultPose(r,name='idle'){return attachArms({type:'geometric_sol_pose',version:1,name,scarf:clone(r.neutral_scarf||K.defaults(r)),pins:{},...(r.neutral_body_modes?{body_modes:clone(r.neutral_body_modes)}:{}),root:clone(r.neutral_root||[0,0]),facing:r.neutral_facing??1,body_facing:r.neutral_body_facing??1,joints:clone(r.joints),weapon_hand:r.weapon_hand||'right',torso_rotation:r.neutral_torso_rotation||0,head_rotation:r.neutral_head_rotation??0,hand_rotations:clone(r.neutral_hand_rotations||{left:0,right:0}),foot_rotations:clone(r.neutral_foot_rotations||{left:0,right:0}),weapon:{...(r.neutral_weapon_visible===false?{visible:false}:{}),kind:r.neutral_weapon_kind||'sword',layer:r.neutral_weapon_layer||'front',rotation:r.weapon_rotation??132,...(r.neutral_weapon_projection?clone(r.neutral_weapon_projection):{}),...(r.neutral_weapon_attachment?{attachment:clone(r.neutral_weapon_attachment)}:{})},notes:''});}
+function rigFromPose(r,p){p=attachArms(clone(p));if(p.extra_segments?.length)throw Error('Extra segments are pose-only; remove them before adopting a default rig.');const out=clone(r);out.joints=clone(p.joints);out.neutral_root=clone(p.root);if(p.body_modes)out.neutral_body_modes=clone(p.body_modes);else delete out.neutral_body_modes;out.neutral_facing=p.facing;out.neutral_torso_rotation=p.torso_rotation;out.weapon_hand=weaponHand(p);out.weapon_rotation=p.weapon.rotation;out.neutral_hand_rotations=clone(p.hand_rotations);out.neutral_scarf=clone(p.scarf||K.defaults(r));out.scarf_head_reference=clone(r.scarf_head_reference||rotate(sub(r.joints.head,r.joints.torso),-(r.neutral_torso_rotation||0)));out.neutral_weapon_kind=p.weapon.kind;out.neutral_weapon_layer=p.weapon.layer;out.neutral_weapon_visible=p.weapon.visible!==false;out.neutral_weapon_projection=Object.fromEntries(['movement_mode','normal_length','projected_length','definition_id','size_multiplier'].filter(k=>p.weapon[k]!==undefined).map(k=>[k,clone(p.weapon[k])]));if(p.weapon.attachment)out.neutral_weapon_attachment=clone(p.weapon.attachment);else delete out.neutral_weapon_attachment;return out;}
 function exportPose(p){const o=attachArms(JSON.parse(JSON.stringify(p,(_,v)=>typeof v==='number'?Math.round(v*1e6)/1e6:v)));A.apply(o);o.rotations={};for(const side of ['left','right'])for(const limb of ['arm','leg']){
  const ids=limb==='arm'?[side+'_shoulder',side+'_elbow',side+'_hand']:[side+'_hip',side+'_knee',side+'_foot'];
  const bones=F.bones(o,side+'_'+limb),upper=angle(...bones[0]),lower=angle(...bones[1]);
@@ -43,7 +50,7 @@ function exportPose(p){const o=attachArms(JSON.parse(JSON.stringify(p,(_,v)=>typ
  }o.weapon.position=clone(o.joints.weapon_socket);o.scarf_root=clone(o.joints.scarf_root);
  return JSON.parse(JSON.stringify(o,(_,v)=>typeof v==='number'?Math.round(v*1e6)/1e6:v));}
 function ik(a,target,l1,l2,old){const delta=sub(target,a),raw=Math.hypot(...delta),d=Math.max(Math.abs(l1-l2)+1e-6,Math.min(l1+l2-1e-6,raw));const u=raw>1e-9?delta.map(v=>v/raw):[0,1],v=[-u[1],u[0]],x=(l1*l1-l2*l2+d*d)/(2*d),h=Math.sqrt(Math.max(0,l1*l1-x*x));const candidates=[1,-1].map(sign=>add(a,add(u.map(t=>t*x),v.map(t=>t*h*sign))));const joint=dist(candidates[0],old)<=dist(candidates[1],old)?candidates[0]:candidates[1];return {joint,end:add(a,u.map(t=>t*d))};}
-function move(p,r,id,target,lock=true){if(/^(left|right)_shoulder$/.test(id))return false;attachArms(p);const j=p.joints,previous=clone(j),old=j[id];if(!old)return;
+function move(p,r,id,target,lock=true){if(/^(left|right)_(shoulder|hip)$/.test(id))return false;attachArms(p);if(B.keyFor(id))return B.move(p,r,id,target);const j=p.joints,previous=clone(j),old=j[id];if(!old)return;
  if(lock&&/_(hand|foot)$/.test(id)){
  const side=id.split('_')[0],arm=id.endsWith('hand'),base=side+(arm?'_shoulder':'_hip'),mid=side+(arm?'_elbow':'_knee');const result=ik(j[base],target,dist(previous[base],previous[mid]),dist(previous[mid],previous[id]),j[mid]);j[mid]=result.joint;j[id]=result.end;
  }else if(lock&&/_(elbow|knee)$/.test(id)){
@@ -67,6 +74,7 @@ function validate(input){const o=clone(input);
  const number=(v,label,min=-36000)=>{if(!Number.isFinite(v)||v<min||v>10000)throw Error('Invalid '+label+'.');};
  for(const id of names)vector(o.joints?.[id],id);attachArms(o);
  if(o.type==='geometric_sol_rig'){
+  if(o.neutral_body_modes!==undefined)B.validate({joints:o.joints,body_modes:o.neutral_body_modes});
   if(o.presentation_style!=='neon_stick')throw Error('This editor uses the neon stick rig. Import the new stick action project.');
   for(const key of ['head_radius','upper_arm_length','lower_arm_length','upper_leg_length','lower_leg_length','limb_thickness','overall_scale'])number(o[key],key,.1);
   for(const key of ['body_fill','line','rear','energy','scarf'])if(!/^#[0-9a-f]{6}$/i.test(o.colors?.[key]))throw Error('Invalid '+key+' color.');
@@ -80,7 +88,7 @@ function validate(input){const o=clone(input);
   o.weapon.layer??='front';if(!['front','behind'].includes(o.weapon.layer))throw Error('Invalid weapon layer.');
   o.head_rotation??=0;o.hand_rotations??={left:0,right:0};o.foot_rotations??={left:0,right:0};for(const side of ['left','right']){number(o.hand_rotations[side],'hand angle');number(o.foot_rotations[side],'foot angle');}
   o.notes=typeof o.notes==='string'?o.notes:'';o.pins??={};if(!o.pins||typeof o.pins!=='object'||Array.isArray(o.pins))throw Error('Invalid pins.');for(const [id,v] of Object.entries(o.pins))if(!(id==='pelvis'||Object.hasOwn(o.joints||{},id))||typeof v!=='boolean')throw Error('Invalid pin.');
-  C.validate(o);A.validate(o);W.validate(o);E.validatePose(o);K.validate(o);F.validate(o);
+  B.validate(o);C.validate(o);A.validate(o);W.validate(o);E.validatePose(o);K.validate(o);F.validate(o);
  }
  for(const id of names)vector(o.joints?.[id],id);
  for(const key of ['parts','curves','body_views','body_view','reference','head_hair','waist_anchor_ids','outline_thickness','template','definition_version','part_dimensions','torso_vertices','hip_vertices','body_layout'])delete o[key];
@@ -111,7 +119,7 @@ function blendPose(a,b,t,options={}){
  const foreA=angle(a.joints[weaponHand(a)+'_elbow'],a.joints[weaponHand(a)+'_hand']),foreB=angle(b.joints[weaponHand(b)+'_elbow'],b.joints[weaponHand(b)+'_hand']),foreOut=angle(out.joints[weaponHand(out)+'_elbow'],out.joints[weaponHand(out)+'_hand']);
  out.joints.weapon_socket=add(out.joints[weaponHand(out)+'_hand'],rotate(mix(rotate(sub(a.joints.weapon_socket,a.joints[weaponHand(a)+'_hand']),-foreA),rotate(sub(b.joints.weapon_socket,b.joints[weaponHand(b)+'_hand']),-foreB)),foreOut));
  out.hand_rotations={};for(const side of ['left','right'])out.hand_rotations[side]=blendAngle(a.hand_rotations?.[side]||0,b.hand_rotations?.[side]||0,t);out.weapon.layer=(t<.5?a.weapon.layer:b.weapon.layer)||'front';if((t<.5?a:b).weapon.visible===false)out.weapon.visible=false;else delete out.weapon.visible;out.weapon.rotation=blendAngle(a.weapon.rotation,b.weapon.rotation,t);for(const side of ['left','right'])out.foot_rotations[side]=blendAngle(a.foot_rotations[side],b.foot_rotations[side],t);
- if(a.weapon.size_multiplier!==undefined||b.weapon.size_multiplier!==undefined)out.weapon.size_multiplier=lerp(a.weapon.size_multiplier??1,b.weapon.size_multiplier??1);F.blend(out,a,b,t,options.weaponDefinitions||{});C.blend(out,a,b,t);A.blend(out,a,b,t);E.blend(out,a,b,t);K.blend(out,a,b,t);delete out.rotations;delete out.weapon.position;delete out.scarf_root;return out;
+ if(a.weapon.size_multiplier!==undefined||b.weapon.size_multiplier!==undefined)out.weapon.size_multiplier=lerp(a.weapon.size_multiplier??1,b.weapon.size_multiplier??1);B.blend(out,a,b,t);F.blend(out,a,b,t,options.weaponDefinitions||{});C.blend(out,a,b,t);A.blend(out,a,b,t);E.blend(out,a,b,t);K.blend(out,a,b,t);delete out.rotations;delete out.weapon.position;delete out.scarf_root;return out;
 }
-const API={attachArms,scarf:K,vfx:E,weapons:W,animation:S,projection:F,attachments:A,chains:C,packBackups,unpackBackups,rigFromPose,rotate,weaponHand,blendAngle,blendPose,mirrorPose,swapLimbs,copyLimb,flipBend,enforcePins,exportProject,exportRig,clone,names,add,sub,dist,angle,endpoint,wrap,defaultRig,defaultPose,exportPose,ik,move,resizeRig,validate};global.SolModel=API;if(typeof module!=='undefined')module.exports=API;
+const API={bodyProjection:B,attachArms,scarf:K,vfx:E,weapons:W,animation:S,projection:F,attachments:A,chains:C,packBackups,unpackBackups,rigFromPose,rotate,weaponHand,blendAngle,blendPose,mirrorPose,swapLimbs,copyLimb,flipBend,enforcePins,exportProject,exportRig,clone,names,add,sub,dist,angle,endpoint,wrap,defaultRig,defaultPose,exportPose,ik,move,resizeRig,validate};global.SolModel=API;if(typeof module!=='undefined')module.exports=API;
 })(typeof window!=='undefined'?window:globalThis);

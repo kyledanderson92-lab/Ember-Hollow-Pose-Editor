@@ -6,7 +6,7 @@ function chainControls(){
  M.attachments.apply(pose);const attachment=M.attachments.attachment(pose);$('weapon-position-lock').checked=attachment.position_locked;$('weapon-rotation-lock').checked=attachment.rotation_locked;$('grip-offset').textContent='Grip offset: '+Number(attachment.grip_rotation_offset.toFixed(4))+'°';
  for(const input of $('pose-controls').querySelectorAll('input'))if(input.parentElement.textContent.startsWith('Weapon rotation'))input.disabled=$('mode').value!=='pose';
  const p=working(),prior=selected,select=$('selected');
- select.replaceChildren();for(const id of ['pelvis',...Object.keys(p.joints).filter(id=>id!=='scarf_root'||p.scarf?.visible),...(M.weapons.enabled(p)&&$('mode').value==='pose'?['weapon_tip']:[])])select.add(new Option(/^(left|right)_shoulder$/.test(id)?id.split('_')[0]+' arm pivot (fixed)':id.replaceAll('_',' '),id));
+ select.replaceChildren();for(const id of ['pelvis',...Object.keys(p.joints).filter(id=>id!=='scarf_root'||p.scarf?.visible),...(M.weapons.enabled(p)&&$('mode').value==='pose'?['weapon_tip']:[])])select.add(new Option(/^(left|right)_(shoulder|hip)$/.test(id)?id.split('_')[0]+(id.endsWith('_hip')?' leg':' arm')+' pivot (fixed)':id.replaceAll('_',' '),id));
  if(prior==='scarf_root'&&!p.scarf?.visible)selected='left_hand';
  if((prior==='weapon_tip'&&(!M.weapons.enabled(p)||$('mode').value!=='pose'))||(prior!=='pelvis'&&prior!=='weapon_tip'&&!Object.hasOwn(p.joints,prior)))selected='left_hand';select.value=selected;
  const edges=M.chains.segments(p,rig);
@@ -14,7 +14,7 @@ function chainControls(){
  $('segment-select').replaceChildren();for(const e of edges)$('segment-select').add(new Option(e.id.replaceAll('_',' '),e.id));$('segment-select').value=selectedSegment;
  const edge=edges.find(e=>e.id===selectedSegment),editable=$('mode').value==='pose';
  $('segment-length').value=Number(edge.current_length.toFixed(5));$('baseline-length').textContent='Rig baseline: '+Number(edge.baseline_length.toFixed(5));
- $('pin-anchor').checked=!!pose.pins?.[selected];$('pin-anchor').disabled=!editable||selected==='weapon_tip'||/^(left|right)_shoulder$/.test(selected);
+ $('pin-anchor').checked=!!pose.pins?.[selected];$('pin-anchor').disabled=!editable||selected==='weapon_tip'||/^(left|right)_(shoulder|hip)$/.test(selected);
  for(const id of ['segment-select','segment-length','reset-segment-length','reset-limb-lengths','reset-all-lengths'])$(id).disabled=!editable;
  $('add-segment').disabled=!editable||selected==='pelvis'||selected==='weapon_tip'||edges.some(e=>e.start===selected);
  $('remove-segment').disabled=!editable||edge.character||edges.some(e=>e.start===edge.end);

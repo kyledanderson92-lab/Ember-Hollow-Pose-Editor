@@ -4,7 +4,7 @@ Open **index.html** locally in Edge or Chrome. This copy renders rounded blue ne
 
 [Open the public editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/) · [Current action project JSON](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/exports/neon_stick_actions.json). To work on another computer, download the JSON, then import it through File. Export Project Backup carries your changes between computers; browser autosave does not sync.
 
-The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.anchors**.
+The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.body**.
 
 ## Edit the current actions
 
@@ -22,7 +22,7 @@ Wheel zooms; middle-drag or Space-drag pans. Mirror, limb swaps, bend flip, pins
 
 Old Sol sprites, 3D/segmented body artwork, reference/head images and pose presets are removed. Outline/contour editing, image tracing, art-view scaffolds and PNG head tools are removed completely. The editor starts with an empty pose library. A fresh `ember-stick-sol-editor-v1` browser workspace is used; launching this updated editor clears the retired Sol project/backup keys while retaining unrelated browser storage. Project backups are portable JSON; browser autosave stays on this computer/origin.
 
-This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.anchors`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
+This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.body`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
 
 ## Simple workspace and advanced tools
 
@@ -61,3 +61,9 @@ Open **Motion workshop** under Animations for previous/next key ghosts, slow pre
 ## Fixed arm pivots
 
 Both arms are permanently attached to the trunk/neck junction. Arm pivot selection provides segment rotation, with no independent position or pin controls. Move the trunk to carry both arm roots; elbow/hand editing, pins and all three movement modes remain available. Older detached poses/rigs reconnect on import/load while preserving arm lengths, bends, attached grip offsets and added arm branches. Legacy shoulder pins become trunk pins.
+
+## Trunk / neck depth and fixed legs
+
+Select **Torso** to edit trunk depth, or **Head** to edit neck depth. Use **2D movement** for captured normal length, **3d movement** for shortening only, or **stretch** for shortening/extension. Drag the selected endpoint or use **Body depth → Projected length**. Returning to 2D restores full length; head size stays constant. Pins can reject conflicting edits. Body references survive keys, JSON, sampling and adopting a pose as the default rig.
+
+Both leg pivots are permanently fixed at the **pelvis / base of the trunk**, just as both arm pivots are fixed at the neck junction. Hip selection offers rotation without position/pin controls. Legacy detached leg branches reconnect on load while preserving their lengths and bends; old hip pins become pelvis pins. Current run revisions and other action files are unchanged.

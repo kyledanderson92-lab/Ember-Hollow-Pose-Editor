@@ -67,6 +67,7 @@ make('button','motion-retime',workshop,'Retime entire clip');make('button','moti
 const sizeLabel=make('label',null,weapon,'Weapon size multiplier'),size=make('input','weapon-size-multiplier',sizeLabel);size.type='number';size.min=.1;size.max=5;size.step=.1;
 make('p',null,workshop,'Slow playback helps polish arcs. Retime scales every key and effect cue. Overclock creates a separate editable copy; the source stays intact.');
 
+const bodyDepth=make('section','body-depth-panel',inspector);make('h2',null,bodyDepth,'Body depth');const bodyLengthLabel=make('label',null,bodyDepth,'Projected length'),bodyLength=make('input','body-projected-length',bodyLengthLabel);bodyLength.type='number';bodyLength.min=.1;bodyLength.max=1000;bodyLength.step=.1;make('output','body-normal-length',bodyDepth);make('p',null,bodyDepth,'Select the trunk junction or head. 2D keeps normal length; 3d shortens only; stretch also extends. Head size stays constant.');
 // Collapsible explanatory text lives near its controls but no longer dominates.
 for(const hint of document.querySelectorAll('.hint')){const d=make('details',null);d.className='help-note';make('summary',null,d,'Help');hint.replaceWith(d);d.append(hint);}
 for(const note of inspector.querySelectorAll(':scope > .help-note'))file.append(note);

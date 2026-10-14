@@ -17,9 +17,10 @@ function workspaceControls(){
  if(isWeapon||isWrist) $('weapon-angles').append(label);else $('pose-controls').append(label);
  const relevant=isWeapon?inspectorCategory==='weapon':isWrist?inspectorCategory==='weapon'&&M.weapons.enabled(pose)&&M.attachments.attachment(pose).rotation_locked:text.startsWith('torso rotation')?['torso','pelvis'].includes(point):text.startsWith(point.replaceAll('_',' ')+' angle');label.hidden=mode!=='pose'||!relevant;
  }
- const weaponSelected=inspectorCategory==='weapon'&&M.weapons.enabled(pose),selectedMode=weaponSelected?M.weapons.movement(pose):limb?M.projection.movement(pose,limb.side+'_'+limb.limb):'2d';
- $('movement-mode').disabled=mode!=='pose'||(!limb&&!weaponSelected)||$('animation-preview').checked||$('blend-enabled').checked;
- $('movement-mode').value=selectedMode;$('movement-status').textContent=weaponSelected?'Weapon':limb?friendly(limb.side+'_'+limb.limb):'';
+ const bodyKey=M.bodyProjection.keyFor(point);$('body-depth-panel').hidden=mode!=='pose'||inspectorCategory!=='body'||!bodyKey;if(bodyKey){$('body-projected-length').value=Number(M.bodyProjection.length(pose,bodyKey).toFixed(4));$('body-projected-length').disabled=M.bodyProjection.movement(pose,bodyKey)==='2d'||$('animation-preview').checked||$('blend-enabled').checked;$('body-projected-length').max=M.bodyProjection.movement(pose,bodyKey)==='3d'?(pose.body_modes?.[bodyKey]?.normal_length??M.bodyProjection.length(pose,bodyKey)):1000;$('body-normal-length').textContent='Normal '+bodyKey+' length: '+Number((pose.body_modes?.[bodyKey]?.normal_length??M.bodyProjection.length(pose,bodyKey)).toFixed(4));}
+ const weaponSelected=inspectorCategory==='weapon'&&M.weapons.enabled(pose),selectedMode=weaponSelected?M.weapons.movement(pose):limb?M.projection.movement(pose,limb.side+'_'+limb.limb):bodyKey?M.bodyProjection.movement(pose,bodyKey):'2d';
+ $('movement-mode').disabled=mode!=='pose'||(!limb&&!weaponSelected&&!bodyKey)||$('animation-preview').checked||$('blend-enabled').checked;
+ $('movement-mode').value=selectedMode;$('movement-status').textContent=weaponSelected?'Weapon':limb?friendly(limb.side+'_'+limb.limb):bodyKey?friendly(bodyKey):'';
  $('segment-panel').hidden=mode!=='pose'||inspectorCategory!=='body';$('reset-limb-lengths').disabled=mode!=='pose'||!limb;
  const scarfVisible=!!pose.scarf?.visible;$('inspector-category').querySelector('option[value="scarf"]').hidden=!scarfVisible;
  if(!scarfVisible&&inspectorCategory==='scarf'){inspectorCategory='body';$('inspector-category').value='body';$('scarf-inspector').hidden=true;}
@@ -41,7 +42,7 @@ const controlsBeforeWorkspace=controls;controls=function(){controlsBeforeWorkspa
 const paintBlendBeforeWorkspace=paintBlend;paintBlend=function(){paintBlendBeforeWorkspace();workspaceControls();};
 const paintAnimationBeforeWorkspace=paintAnimation;paintAnimation=function(){paintAnimationBeforeWorkspace();workspaceControls();};
 const renderBeforeWorkspace=render;render=function(){renderBeforeWorkspace();workspaceControls();for(const handle of $('points').querySelectorAll('[data-point]'))if(handle.dataset.point===selected)handle.parentNode.append(handle);};
-$('movement-mode').onchange=()=>{const value=$('movement-mode').value,weaponSelected=inspectorCategory==='weapon',limb=limbSelection();if(!weaponSelected&&!limb)return;finishPreview();projectionAction(()=>weaponSelected?M.weapons.setMovement(pose,value,S.definitions(weaponDefinitions)):F.setMovement(pose,rig,limb.side+'_'+limb.limb,value),'Movement mode updated. 2D preserves length; 3d shortens only; stretch also extends.');};
+$('movement-mode').onchange=()=>{const value=$('movement-mode').value,weaponSelected=inspectorCategory==='weapon',limb=limbSelection(),bodyKey=M.bodyProjection.keyFor(selected);if(!weaponSelected&&!limb&&!bodyKey)return;finishPreview();projectionAction(()=>weaponSelected?M.weapons.setMovement(pose,value,S.definitions(weaponDefinitions)):bodyKey?M.bodyProjection.setMovement(pose,rig,bodyKey,value):F.setMovement(pose,rig,limb.side+'_'+limb.limb,value),'Movement mode updated. 2D preserves length; 3d shortens only; stretch also extends.');};
 $('scarf-visible').addEventListener('change',()=>{if(pose.scarf?.visible)selectInspector('scarf');else selectInspector('body');});
 $('inspector-category').onchange=()=>selectInspector($('inspector-category').value);
 // Selection of a visible object exposes its inspector without changing the pose.
@@ -56,3 +57,5 @@ const {dialog,spriteOpen,close}=SolWorkspaceLayout;spriteOpen.onclick=()=>{dialo
 for(const menu of document.querySelectorAll('.action-menu')){menu.addEventListener('toggle',()=>{if(menu.open)for(const other of document.querySelectorAll('.action-menu'))if(other!==menu)other.open=false;});menu.addEventListener('click',e=>{if(e.target.closest('button'))menu.open=false;});}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')for(const menu of document.querySelectorAll('.action-menu'))menu.open=false;});document.addEventListener('pointerdown',e=>{for(const menu of document.querySelectorAll('.action-menu'))if(!menu.contains(e.target))menu.open=false;});
 controls();render();
+
+$('body-projected-length').onchange=()=>projectionAction(()=>M.bodyProjection.setLength(pose,rig,M.bodyProjection.keyFor(selected),Number($('body-projected-length').value)),'Body projected length updated.');
