@@ -32,6 +32,8 @@
     "references/action_provenance.json",
     "references/source-poses.jpg",
     "references/RGS_Dev_CC0_License.txt",
-    "references/index.html"
+    "references/index.html",
+    "exports/run_revision_1.json",
+    "reviews/run.html"
   ]
 }
