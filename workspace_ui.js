@@ -19,6 +19,7 @@ function workspaceControls(){
  }
  $('movement-mode').disabled=mode!=='pose'||!limb||$('animation-preview').checked||$('blend-enabled').checked;
  $('movement-mode').value=limb&&pose.limb_modes?.[limb.side+'_'+limb.limb]?'depth':'normal';
+ $('snap-limb-normal').hidden=mode!=='pose'||!limb||!pose.limb_modes?.[limb.side+'_'+limb.limb];$('snap-limb-normal').disabled=$('animation-preview').checked||$('blend-enabled').checked;
  $('movement-status').textContent=mode==='pose'&&limb&&!$('lock').checked&&$('movement-mode').value==='normal'?'Free Edit':'';
  $('segment-panel').hidden=mode!=='pose'||inspectorCategory!=='body';$('reset-limb-lengths').disabled=mode!=='pose'||!limb;
  const scarfVisible=!!pose.scarf?.visible;$('inspector-category').querySelector('option[value="scarf"]').hidden=!scarfVisible;
@@ -42,6 +43,7 @@ const paintBlendBeforeWorkspace=paintBlend;paintBlend=function(){paintBlendBefor
 const paintAnimationBeforeWorkspace=paintAnimation;paintAnimation=function(){paintAnimationBeforeWorkspace();workspaceControls();};
 const renderBeforeWorkspace=render;render=function(){renderBeforeWorkspace();workspaceControls();for(const handle of $('points').querySelectorAll('[data-point]'))if(handle.dataset.point===selected)handle.parentNode.append(handle);};
 $('movement-mode').onchange=()=>{if(!limbSelection())return;const depth=$('movement-mode').value==='depth';finishPreview();const key=limbSelection().side+'_'+limbSelection().limb;projectionAction(()=>{ $('lock').checked=true;return depth?M.projection.capture(pose,key):M.projection.disable(pose,key);},'Movement mode updated. Existing proportions are preserved; Restore limb proportions resets them.');};
+$('snap-limb-normal').onclick=()=>{const limb=limbSelection();if(!limb||$('mode').value!=='pose')return;projectionAction(()=>M.projection.snap(pose,limb.side+'_'+limb.limb),'Selected limb snapped to normal length with no gaps; bend and direction preserved.');};
 $('lock').addEventListener('change',workspaceControls);
 $('scarf-visible').addEventListener('change',()=>{if(pose.scarf?.visible)selectInspector('scarf');else selectInspector('body');});
 $('inspector-category').onchange=()=>selectInspector($('inspector-category').value);
