@@ -52,6 +52,7 @@ const accessories=make('details','accessory-tools',setup);make('summary',null,ac
 category.querySelector('option[value="scarf"]').textContent='Scarf (optional)';
 get('pose-weapon-definition').options[0].textContent='Default weapon';
 
+make('button','motion-load-pack',sequences,'Load current action pack');
 const workshop=make('details','motion-workshop',sequences);make('summary',null,workshop,'Motion workshop');
 const speedLabel=make('label',null,workshop,'Preview speed'),speed=make('select','motion-speed',speedLabel);
 for(const value of [.25,.5,1,2]){const o=make('option',null,speed,value+'×');o.value=value;}speed.value=1;

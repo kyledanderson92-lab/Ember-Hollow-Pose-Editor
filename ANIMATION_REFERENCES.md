@@ -12,4 +12,4 @@ Target style: fast, exaggerated action with clear silhouettes. Retarget the moti
 
 Source adaptation should record the downloaded asset hash, inspected source frames, and clip-by-clip provenance. Game-specific wall/corner contacts, Slam, hammer and baton variants, and Overclock may need original motion; label those as original rather than claiming a source contains them.
 
-The Motion workshop currently provides 0.25×/0.5×/1×/2× preview, whole-clip retiming, and independent editable 3× Overclock copies. Weapon size scales the whole weapon; foreshortening still preserves hammer-head proportions. Editor exports do not automatically change Godot runtime animations.
+The Motion workshop currently provides adjacent-key ghosts, safe loading of the existing action pack, 0.25×/0.5×/1×/2× preview, whole-clip retiming, and independent editable 3× Overclock copies. Weapon size scales the whole weapon; foreshortening still preserves hammer-head proportions. Editor exports do not automatically change Godot runtime animations.
