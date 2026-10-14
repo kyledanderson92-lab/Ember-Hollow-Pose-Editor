@@ -54,6 +54,7 @@ get('pose-weapon-definition').options[0].textContent='Default weapon';
 
 const packLabel=make('label',null,sequences,'Action pack'),packSelect=make('select','motion-pack-select',packLabel);
 for(const [value,text] of [['polished','Polished · 41 clips'],['original','Original · 28 clips']]){const option=make('option',null,packSelect,text);option.value=value;}
+packSelect.value='original';
 make('button','motion-load-pack',sequences,'Load action pack');
 const references=make('a','motion-references',sequences,'View reference poses and credits');references.href='references/index.html';references.target='_blank';references.rel='noopener';
 const workshop=make('details','motion-workshop',sequences);make('summary',null,workshop,'Motion workshop');

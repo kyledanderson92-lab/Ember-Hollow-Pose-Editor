@@ -4,11 +4,11 @@ Open **index.html** locally in Edge or Chrome. This copy renders rounded blue ne
 
 [Open the public editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/) · [Current action project JSON](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/exports/neon_stick_actions.json). To work on another computer, download the JSON, then import it through File. Export Project Backup carries your changes between computers; browser autosave does not sync.
 
-The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.actions**.
+The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.anchors**.
 
 ## Edit the current actions
 
-1. Choose **Polished · 41 clips** under Animations and click **Load action pack**. **Original · 28 clips** remains available, or use **File → Import JSON** with either project in `exports/`. Loading the built-in pack asks before replacing the workspace and keeps a local backup plus Undo.
+1. Choose **Original · 28 clips** under Animations (selected by default) and click **Load action pack**. The optional **Polished · 41 clips** pack remains available. You can also use **File → Import JSON** with either project in `exports/`. Loading the built-in pack asks before replacing the workspace and keeps a local backup plus Undo.
 2. Choose an action under **Animations** in the left Library. The **Animation timeline** below the canvas opens; choose a key by its time or the key selector.
 3. Drag the joint handles or use **Selected point** coordinates in the right inspector. Choose 2D movement for fixed connected limb lengths, 3d movement for shortening only, or stretch for shortening and extension. Restore limb proportions resets the selected limb to the rig baseline. Editing a selected timeline key updates that key automatically. **Save to Pose Library** saves a separate named library pose.
 4. Duplicate/add keys and adjust **Time (s)** or transition interpolation as needed. Enable **Timeline preview** to scrub/play; turn it off to resume editing.
@@ -22,7 +22,7 @@ Wheel zooms; middle-drag or Space-drag pans. Mirror, limb swaps, bend flip, pins
 
 Old Sol sprites, 3D/segmented body artwork, reference/head images and pose presets are removed. Outline/contour editing, image tracing, art-view scaffolds and PNG head tools are removed completely. The editor starts with an empty pose library. A fresh `ember-stick-sol-editor-v1` browser workspace is used; launching this updated editor clears the retired Sol project/backup keys while retaining unrelated browser storage. Project backups are portable JSON; browser autosave stays on this computer/origin.
 
-This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.actions`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
+This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.anchors`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
 
 ## Simple workspace and advanced tools
 
@@ -57,3 +57,7 @@ The browser suite uses Playwright and `/usr/bin/chromium`; set `SOL_BROWSER` and
 ## Motion workshop
 
 Open **Motion workshop** under Animations for previous/next key ghosts, slow preview, **Jump to contact pose**, whole-clip retiming (keys and effect cues), and **Create 3× Overclock copy**. The copy is independent, editable and undoable. Weapon inspector has a size multiplier; this grows the whole weapon independently from depth projection. Slow preview changes playback only. The original action export remains intact. The new polished pack contains **41 clips / 300 editable keys**, with CC0 motion adaptations, original game-specific actions and 12 powered variants. See [animation references and editing guide](ANIMATION_REFERENCES.md).
+
+## Fixed arm pivots
+
+Both arms are permanently attached to the trunk/neck junction. Arm pivot selection provides segment rotation, with no independent position or pin controls. Move the trunk to carry both arm roots; elbow/hand editing, pins and all three movement modes remain available. Older detached poses/rigs reconnect on import/load while preserving arm lengths, bends, attached grip offsets and added arm branches. Legacy shoulder pins become trunk pins.
