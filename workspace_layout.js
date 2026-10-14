@@ -43,7 +43,6 @@ advanced.append(get('depth-all-toggle'));advanced.append(projection);
 for(const id of ['segment-select','segment-length'])advanced.append(get(id).closest('label'));
 move(['baseline-length','reset-segment-length','reset-all-lengths','add-segment','remove-segment','remove-branch'],advanced);
 get('segment-panel').querySelector('h2').textContent='Selected limb';get('reset-limb-lengths').textContent='Restore limb proportions';get('projection-panel').querySelector('h2').textContent='Foreshortening';
-const snap=make('button','snap-limb-normal',get('segment-panel'),'Snap to normal length');snap.type='button';snap.title='Close joint gaps and restore this limb to its captured length, keeping its bend and direction.';get('segment-panel').insertBefore(snap,get('reset-limb-lengths').closest('.row'));
 get('reset-projection-limb').remove();get('limb-solver').options[0].textContent='Normal';get('limb-solver').options[1].textContent='Foreshortening';get('capture-bend').textContent='Use current bend';
 const weaponAdvanced=make('details','weapon-advanced',weapon);make('summary',null,weaponAdvanced,'Advanced weapon settings');
 weaponAdvanced.append(get('weapon-attachment'));weaponAdvanced.append(get('pose-weapon-definition').closest('label'));

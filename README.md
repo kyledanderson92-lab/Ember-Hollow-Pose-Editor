@@ -4,7 +4,7 @@ Open **index.html** locally in Edge or Chrome. This copy renders rounded blue ne
 
 [Open the public editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/) · [Current action project JSON](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/exports/neon_stick_actions.json). To work on another computer, download the JSON, then import it through File. Export Project Backup carries your changes between computers; browser autosave does not sync.
 
-The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.snap**.
+The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.restore**.
 
 ## Edit the current actions
 
@@ -22,11 +22,11 @@ Wheel zooms; middle-drag or Space-drag pans. Mirror, limb swaps, bend flip, pins
 
 Old Sol sprites, 3D/segmented body artwork, reference/head images and pose presets are removed. Outline/contour editing, image tracing, art-view scaffolds and PNG head tools are removed completely. The editor starts with an empty pose library. A fresh `ember-stick-sol-editor-v1` browser workspace is used; launching this updated editor clears the retired Sol project/backup keys while retaining unrelated browser storage. Project backups are portable JSON; browser autosave stays on this computer/origin.
 
-This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.snap`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
+This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.restore`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
 
 ## Simple workspace and advanced tools
 
-The selected limb has Normal / Foreshortening and a single Restore limb proportions action. Disabling foreshortening retains compression and gaps; restore is explicit. In Foreshortening mode, **Snap to normal length** closes gaps and restores the selected limb’s captured length without changing its bend or direction. It remains in Foreshortening mode; incompatible pins reject the snap. **Restore limb proportions** instead resets lengths to the default rig. Advanced body tools contain Free Edit (disable Preserve lengths), Apply to All Limbs, captured-bend/reach controls, individual segment lengths, pins, and extra segments. Foreshortening is a 2D projection illusion, not a 3D rig. Beyond connected reach it opens joint gaps.
+The selected limb has Normal / Foreshortening and a single Restore limb proportions action. Disabling foreshortening retains compression and gaps; restore is explicit. **Restore limb proportions** resets lengths to the default rig. Advanced body tools contain Free Edit (disable Preserve lengths), Apply to All Limbs, captured-bend/reach controls, individual segment lengths, pins, and extra segments. Foreshortening is a 2D projection illusion, not a 3D rig. Beyond connected reach it opens joint gaps.
 
 Small square hands are drawn in editing, thumbnails, comparison, timeline previews, and baked sprites. An attached weapon hand follows the weapon angle with its fixed grip offset. The other hand follows forearm plus wrist rotation. Weapon rotation is available in the Weapon inspector; wrist rotation is shown when rotation lock is enabled. Head position, torso rotation and foot positions remain editable; circular-head and foot rotation controls are gone.
 

@@ -30,4 +30,4 @@ main{flex:1;min-height:0;height:auto;grid-template-columns:220px minmax(340px,1f
 
 #movement-status{font-size:11px;color:#ffb968}#body-advanced>button,#weapon-advanced>button{display:block;margin:7px 0}#weapon-advanced,#animation-advanced{margin:10px 0}#weapon-advanced>summary,#animation-advanced>summary{cursor:pointer;color:#9fe3ff}#accessory-tools>summary{cursor:pointer;padding:6px}button,select,summary{touch-action:manipulation}@media(pointer:coarse){button,select,.action-menu>summary{min-height:40px}svg [data-point]{stroke-width:.8}}
 
-#pose-library-panel>#poses{margin-bottom:10px}#pose-library-panel>.row{gap:8px}#snap-limb-normal{display:block;width:100%;margin:8px 0}
+#pose-library-panel>#poses{margin-bottom:10px}#pose-library-panel>.row{gap:8px}
