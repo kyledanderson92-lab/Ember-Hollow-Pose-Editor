@@ -13,8 +13,16 @@ var playing: bool = false
 var loop: bool = false
 
 func load_clip(data: Dictionary, root_path: String = "res://tools/sol_pose_editor/") -> void:
-	assert(data.get("type") == "sol_effect_sticker_clip" and data.get("version") == 1)
+	assert(data.get("type") == "sol_effect_sticker_clip" and int(data.get("version",0)) in [1,2])
 	clip = data.duplicate(true)
+	# v20 flipbook migration: retain an explicitly held image, otherwise its start image.
+	for key: Dictionary in clip.keys:
+		for e: Dictionary in key.stickers:
+			if not e.has("image_frame"):
+				var old: Dictionary = e.get("playback", {})
+				e.image_frame = old.get("frame") if old.get("frame") != null else old.get("start_frame",0)
+			e.erase("playback")
+			e.transform.skew = e.transform.get("skew",0.0)
 	asset_root = root_path
 	scale = Vector2.ONE * float(data.get("actor_scale",1.0))
 	_assets.clear()
@@ -79,18 +87,23 @@ func states_at(time: float) -> Array[Dictionary]:
 			e.opacity = lerpf(e.opacity,target.opacity,t)
 			e.hue = lerpf(e.hue,target.hue,t)
 			e.transform.position = _vector(e.transform.position).lerp(_vector(target.transform.position),t)
+			e.transform.skew = lerpf(e.transform.get("skew",0.0),target.transform.get("skew",0.0),t)
 			e.transform.rotation = rad_to_deg(lerp_angle(deg_to_rad(e.transform.rotation),deg_to_rad(target.transform.rotation),t))
 			for name: String in ["scale","scale_x","scale_y"]:
 				e.transform[name] = lerpf(e.transform[name],target.transform[name],t)
 		else:
 			e.transform.position = _vector(e.transform.position)
 		var asset: Dictionary = _assets[e.asset]
-		var frame: int = int(e.playback.frame) if e.playback.frame != null else int(floor(maxf(0.0,time-float(e.range.start))*float(e.playback.fps)*float(e.playback.speed)+0.00000001))+int(e.playback.start_frame)
-		if e.playback.loop:
-			frame %= asset.frames.size()
+		var frame: int = int(e.image_frame)
 		var visible_now: bool = e.enabled and e.opacity > 0.0 and time >= float(e.range.start)-0.00000001 and time < float(e.range.end)-0.00000001 and frame < asset.frames.size()
 		var point: Vector2 = e.transform.position
-		out.append({"id":e.id,"asset":e.asset,"frame":frame,"visible":visible_now,"position":root_position+Vector2(point.x*facing,point.y),"rotation":float(e.transform.rotation)*facing,"scale":Vector2(float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)*facing,float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)),"hue":e.hue,"opacity":e.opacity,"z":e.z})
+		var r: float = deg_to_rad(e.transform.rotation)
+		var k: float = tan(deg_to_rad(e.transform.get("skew",0.0)))
+		var sx: float = float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)
+		var sy: float = float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)
+		var basis_x := Vector2(cos(r)*sx*facing,sin(r)*sx)
+		var basis_y := Vector2((cos(r)*k-sin(r))*sy*facing,(sin(r)*k+cos(r))*sy)
+		out.append({"id":e.id,"asset":e.asset,"frame":frame,"visible":visible_now,"position":root_position+Vector2(point.x*facing,point.y),"rotation":float(e.transform.rotation)*facing,"scale":Vector2(float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)*facing,float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)),"basis_x":basis_x,"basis_y":basis_y,"hue":e.hue,"opacity":e.opacity,"z":e.z})
 	return out
 
 func seek(time: float) -> void:
@@ -113,9 +126,7 @@ func seek(time: float) -> void:
 		if not _textures.has(path):
 			_textures[path] = load(path)
 		sprite.texture = _textures[path]
-		sprite.position = state.position
-		sprite.rotation_degrees = state.rotation
-		sprite.scale = state.scale * Vector2(float(asset.width)/sprite.texture.get_width(),float(asset.height)/sprite.texture.get_height())
+		sprite.transform = Transform2D(state.basis_x*float(asset.width)/sprite.texture.get_width(),state.basis_y*float(asset.height)/sprite.texture.get_height(),state.position)
 		sprite.modulate.a = state.opacity
 		sprite.z_index = state.z
 		sprite.material.set_shader_parameter("hue_degrees",state.hue)
