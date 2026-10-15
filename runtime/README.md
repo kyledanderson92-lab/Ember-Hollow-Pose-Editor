@@ -18,10 +18,12 @@ Alternatively call `play()` and let the component advance independently; `loop` 
 
 Native interpolation reproduces character-key easing/hold, shortest rotation, linear hue, independent scales, skew and opacity. Visibility, image and mirrors are discrete. Each sticker holds its selected `image_frame` for its full start/end interval; end is exclusive. Exact affine bases preserve group distortion even when members are rotated or mirrored. Negative Z goes behind the actor, zero/positive in front; same-Z insertion follows the sticker list.
 
-Animation/project JSON remains the editable format. Version-2 runtime export is a compact companion clip with only used asset definitions and authored sticker keys; it does not need the editor's generated JavaScript image library. Baked sprite export is also available and includes stickers in the character frames.
+Animation/project JSON remains the editable format. Version-3 runtime export is a compact companion clip with only used asset definitions and authored sticker keys; it does not need the editor's generated JavaScript image library. Baked sprite export is also available and includes stickers in the character frames.
 
 No approved game attack is automatically changed by a browser save or by exporting. This component is ready to attach when integrating a chosen authored effect. Existing game dash, hit and procedural weapon presentation are outside this editor refactor.
 
 Validation: `tests/sticker_runtime_fixture.cjs` generates clip/expected JSON for `tests/sticker_runtime.gd`. Copy runtime scripts, the test script and asset directory into a disposable Godot project root, generate the fixture there, import assets, then run the script headlessly. It compares native playback with editor sampling, including boundary cases. Model affine-corner and native basis checks cover group geometry, including skew and mirrors. Subjective visual review remains necessary.
 
 Version-1 (v20) clips remain accepted but migrate to still images: their explicit held image, otherwise their start image. Flipbook playback is retired. No FPS/speed/loop configuration is needed for individual stickers. The player’s `loop` property repeats the entire companion clip only.
+
+Version 3 includes shared set `pivot` and `content_size` metadata and a sticker `pivot_version`. Sprite2D.offset implements the same artwork pivot as the SVG renderer. Older clip versions remain accepted; missing pivot metadata uses the original canvas center. Recentered legacy objects adjust their local position once to preserve their placed artwork at authored keys.

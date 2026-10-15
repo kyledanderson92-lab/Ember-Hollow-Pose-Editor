@@ -13,7 +13,7 @@ var playing: bool = false
 var loop: bool = false
 
 func load_clip(data: Dictionary, root_path: String = "res://tools/sol_pose_editor/") -> void:
-	assert(data.get("type") == "sol_effect_sticker_clip" and int(data.get("version",0)) in [1,2])
+	assert(data.get("type") == "sol_effect_sticker_clip" and int(data.get("version",0)) in [1,2,3])
 	clip = data.duplicate(true)
 	# v20 flipbook migration: retain an explicitly held image, otherwise its start image.
 	for key: Dictionary in clip.keys:
@@ -23,6 +23,19 @@ func load_clip(data: Dictionary, root_path: String = "res://tools/sol_pose_edito
 				e.image_frame = old.get("frame") if old.get("frame") != null else old.get("start_frame",0)
 			e.erase("playback")
 			e.transform.skew = e.transform.get("skew",0.0)
+			if not e.has("pivot_version"):
+				var asset: Dictionary = {}
+				for entry: Dictionary in clip.assets:
+					if entry.id == e.asset: asset = entry
+				var pivot: Array = asset.get("pivot",[0.5,0.5])
+				var delta := Vector2((float(pivot[0])-0.5)*float(asset.width),(float(pivot[1])-0.5)*float(asset.height))
+				var r: float = deg_to_rad(e.transform.rotation)
+				var sx: float = float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)
+				var sy: float = float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)
+				var k: float = tan(deg_to_rad(e.transform.skew))
+				var offset := Vector2(cos(r)*sx*delta.x+(cos(r)*k-sin(r))*sy*delta.y,sin(r)*sx*delta.x+(sin(r)*k+cos(r))*sy*delta.y)
+				e.transform.position = [e.transform.position[0]+offset.x,e.transform.position[1]+offset.y]
+				e.pivot_version = 1
 	asset_root = root_path
 	scale = Vector2.ONE * float(data.get("actor_scale",1.0))
 	_assets.clear()
@@ -126,6 +139,8 @@ func seek(time: float) -> void:
 		if not _textures.has(path):
 			_textures[path] = load(path)
 		sprite.texture = _textures[path]
+		var pivot: Array = asset.get("pivot",[0.5,0.5])
+		sprite.offset = Vector2((0.5-float(pivot[0]))*sprite.texture.get_width(),(0.5-float(pivot[1]))*sprite.texture.get_height())
 		sprite.transform = Transform2D(state.basis_x*float(asset.width)/sprite.texture.get_width(),state.basis_y*float(asset.height)/sprite.texture.get_height(),state.position)
 		sprite.modulate.a = state.opacity
 		sprite.z_index = state.z

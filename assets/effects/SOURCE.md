@@ -7,3 +7,7 @@ Source: https://craftpix.net/freebies/free-slash-sprite-cartoon-effects/
 No license grant beyond the supplied publisher terms is implied.
 
 Archive SHA-256: 68a2e8eed031718e55bf229a42fe91920ad82b28060d6d5c46e7a210e27d0573
+
+## Shared artwork pivots
+
+All 87 alpha channels were reviewed as ten set contact sheets. Each set uses the center of its alpha-union bounds as a common normalized pivot; `content_size` records that union width/height. Original pixels, canvas dimensions and frame-to-frame alignment remain unchanged. This centers rotation/handles on the set artwork instead of its uneven transparent padding.
