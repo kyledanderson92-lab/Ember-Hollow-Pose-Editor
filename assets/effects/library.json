@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "craftpix_01",
+      "name": "Water Crescent",
+      "category": "Other",
+      "frames": [
+        "assets/effects/craftpix_01/00.png",
+        "assets/effects/craftpix_01/01.png",
+        "assets/effects/craftpix_01/02.png",
+        "assets/effects/craftpix_01/03.png",
+        "assets/effects/craftpix_01/04.png",
+        "assets/effects/craftpix_01/05.png",
+        "assets/effects/craftpix_01/06.png",
+        "assets/effects/craftpix_01/07.png",
+        "assets/effects/craftpix_01/08.png",
+        "assets/effects/craftpix_01/09.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_01/05.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 1
+    },
+    {
+      "id": "craftpix_02",
+      "name": "Piercing Strike",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_02/00.png",
+        "assets/effects/craftpix_02/01.png",
+        "assets/effects/craftpix_02/02.png",
+        "assets/effects/craftpix_02/03.png",
+        "assets/effects/craftpix_02/04.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_02/02.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 2
+    },
+    {
+      "id": "craftpix_03",
+      "name": "Golden Sweep",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_03/00.png",
+        "assets/effects/craftpix_03/01.png",
+        "assets/effects/craftpix_03/02.png",
+        "assets/effects/craftpix_03/03.png",
+        "assets/effects/craftpix_03/04.png",
+        "assets/effects/craftpix_03/05.png",
+        "assets/effects/craftpix_03/06.png",
+        "assets/effects/craftpix_03/07.png",
+        "assets/effects/craftpix_03/08.png",
+        "assets/effects/craftpix_03/09.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_03/05.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 3
+    },
+    {
+      "id": "craftpix_04",
+      "name": "Light Slash",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_04/00.png",
+        "assets/effects/craftpix_04/01.png",
+        "assets/effects/craftpix_04/02.png",
+        "assets/effects/craftpix_04/03.png",
+        "assets/effects/craftpix_04/04.png",
+        "assets/effects/craftpix_04/05.png",
+        "assets/effects/craftpix_04/06.png",
+        "assets/effects/craftpix_04/07.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_04/04.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 4
+    },
+    {
+      "id": "craftpix_05",
+      "name": "Curved Slash",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_05/00.png",
+        "assets/effects/craftpix_05/01.png",
+        "assets/effects/craftpix_05/02.png",
+        "assets/effects/craftpix_05/03.png",
+        "assets/effects/craftpix_05/04.png",
+        "assets/effects/craftpix_05/05.png",
+        "assets/effects/craftpix_05/06.png",
+        "assets/effects/craftpix_05/07.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_05/04.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 5
+    },
+    {
+      "id": "craftpix_06",
+      "name": "Smoke Crescent",
+      "category": "Other",
+      "frames": [
+        "assets/effects/craftpix_06/00.png",
+        "assets/effects/craftpix_06/01.png",
+        "assets/effects/craftpix_06/02.png",
+        "assets/effects/craftpix_06/03.png",
+        "assets/effects/craftpix_06/04.png",
+        "assets/effects/craftpix_06/05.png",
+        "assets/effects/craftpix_06/06.png",
+        "assets/effects/craftpix_06/07.png",
+        "assets/effects/craftpix_06/08.png",
+        "assets/effects/craftpix_06/09.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_06/05.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 6
+    },
+    {
+      "id": "craftpix_07",
+      "name": "Dust Sweep",
+      "category": "Other",
+      "frames": [
+        "assets/effects/craftpix_07/00.png",
+        "assets/effects/craftpix_07/01.png",
+        "assets/effects/craftpix_07/02.png",
+        "assets/effects/craftpix_07/03.png",
+        "assets/effects/craftpix_07/04.png",
+        "assets/effects/craftpix_07/05.png",
+        "assets/effects/craftpix_07/06.png",
+        "assets/effects/craftpix_07/07.png",
+        "assets/effects/craftpix_07/08.png",
+        "assets/effects/craftpix_07/09.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_07/05.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 7
+    },
+    {
+      "id": "craftpix_08",
+      "name": "Acid Sweep",
+      "category": "Other",
+      "frames": [
+        "assets/effects/craftpix_08/00.png",
+        "assets/effects/craftpix_08/01.png",
+        "assets/effects/craftpix_08/02.png",
+        "assets/effects/craftpix_08/03.png",
+        "assets/effects/craftpix_08/04.png",
+        "assets/effects/craftpix_08/05.png",
+        "assets/effects/craftpix_08/06.png",
+        "assets/effects/craftpix_08/07.png",
+        "assets/effects/craftpix_08/08.png",
+        "assets/effects/craftpix_08/09.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_08/05.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 8
+    },
+    {
+      "id": "craftpix_09",
+      "name": "Heavy Slash",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_09/00.png",
+        "assets/effects/craftpix_09/01.png",
+        "assets/effects/craftpix_09/02.png",
+        "assets/effects/craftpix_09/03.png",
+        "assets/effects/craftpix_09/04.png",
+        "assets/effects/craftpix_09/05.png",
+        "assets/effects/craftpix_09/06.png",
+        "assets/effects/craftpix_09/07.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_09/04.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 9
+    },
+    {
+      "id": "craftpix_10",
+      "name": "Thin Crescent",
+      "category": "Slashes",
+      "frames": [
+        "assets/effects/craftpix_10/00.png",
+        "assets/effects/craftpix_10/01.png",
+        "assets/effects/craftpix_10/02.png",
+        "assets/effects/craftpix_10/03.png",
+        "assets/effects/craftpix_10/04.png",
+        "assets/effects/craftpix_10/05.png",
+        "assets/effects/craftpix_10/06.png",
+        "assets/effects/craftpix_10/07.png"
+      ],
+      "thumbnail": "assets/effects/craftpix_10/04.png",
+      "fps": 12,
+      "width": 50,
+      "height": 50,
+      "source_set": 10
+    }
+  ]
+}
