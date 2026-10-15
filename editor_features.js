@@ -12,5 +12,4 @@ document.addEventListener('keyup',e=>{if(e.code==='Space')spaceDown=false;});win
 $('stage').addEventListener('pointerdown',e=>{if(e.button!==1&&!spaceDown)return;e.preventDefault();e.stopImmediatePropagation();drag=null;panGesture={id:e.pointerId,x:e.clientX,y:e.clientY,box:viewBox(),scale:$('stage').getScreenCTM().a};$('stage').setPointerCapture(e.pointerId);},true);
 $('stage').addEventListener('pointermove',e=>{if(!panGesture||panGesture.id!==e.pointerId)return;e.stopImmediatePropagation();const p=panGesture;setView([p.box[0]-(e.clientX-p.x)/p.scale,p.box[1]-(e.clientY-p.y)/p.scale,p.box[2],p.box[3]]);},true);
 for(const type of ['pointerup','pointercancel'])$('stage').addEventListener(type,()=>panGesture=null);
-$('pose-to-rig').onclick=()=>{snapshot();rig=M.rigFromPose(rig,pose);controls();render();status('Current pose is the new starting rig.');};
-function authorPoint(e){const p=working(),pt=stagePoint(e);return [(pt.x/visualScale()-p.root[0])*p.facing,pt.y/visualScale()-p.root[1]];}
+function authorPoint(e){const p=working(),pt=stagePoint(e);return [((pt.x-alignment.character_offset[0])/visualScale()-p.root[0])*p.facing,(pt.y-alignment.character_offset[1])/visualScale()-p.root[1]];}

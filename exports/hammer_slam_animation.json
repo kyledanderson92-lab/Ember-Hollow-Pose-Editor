@@ -1,0 +1,2038 @@
+{
+  "type": "geometric_sol_animation",
+  "version": 1,
+  "id": "anim_1",
+  "name": "hammer slam",
+  "weapon_type": "hammer",
+  "weapon_id": null,
+  "keys": [
+    {
+      "id": "key_1",
+      "time": 0,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle hammer",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          -6.63845,
+          -37.781519
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            0,
+            -22
+          ],
+          "head": [
+            4.104591,
+            -32.620738
+          ],
+          "scarf_root": [
+            0,
+            -22
+          ],
+          "weapon_socket": [
+            13.117329,
+            -19.400393
+          ],
+          "left_shoulder": [
+            0,
+            -22
+          ],
+          "left_elbow": [
+            -6.52884,
+            -9.615564
+          ],
+          "left_hand": [
+            -7.960545,
+            4.311037
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.019521,
+            15.478055
+          ],
+          "left_foot": [
+            6.128224,
+            34.870712
+          ],
+          "right_shoulder": [
+            0,
+            -22
+          ],
+          "right_elbow": [
+            4.167506,
+            -8.634676
+          ],
+          "right_hand": [
+            13.117329,
+            -19.400393
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -0.908734,
+            18.978255
+          ],
+          "right_foot": [
+            -14.568158,
+            33.587162
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -56.869168
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -70.43836,
+          "position": [
+            13.117329,
+            -19.400393
+          ]
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": 27.797349,
+          "left_lower_arm": -21.927755,
+          "left_upper_leg": -35.448768,
+          "left_lower_leg": 49.604888,
+          "right_upper_arm": -17.318252,
+          "right_lower_arm": -122.944112,
+          "right_upper_leg": 2.741395,
+          "right_lower_leg": 40.334865
+        },
+        "scarf_root": [
+          0,
+          -22
+        ],
+        "vfx_frame_time": 0
+      }
+    },
+    {
+      "id": "key_9",
+      "time": 0.015,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "blend_preview",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "right_foot": true
+        },
+        "root": [
+          -13.686962,
+          -38.307527
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            -9.051337,
+            -19.611236
+          ],
+          "head": [
+            -9.888708,
+            -29.709678
+          ],
+          "scarf_root": [
+            -9.051337,
+            -19.611236
+          ],
+          "weapon_socket": [
+            -2.9434,
+            -41.302107
+          ],
+          "left_shoulder": [
+            -9.051337,
+            -19.611236
+          ],
+          "left_elbow": [
+            4.844011,
+            -17.902643
+          ],
+          "left_hand": [
+            14.950527,
+            -27.590694
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            18.877861,
+            2.150902
+          ],
+          "left_foot": [
+            20.437831,
+            22.08997
+          ],
+          "right_shoulder": [
+            -9.051337,
+            -19.611236
+          ],
+          "right_elbow": [
+            2.001186,
+            -28.204357
+          ],
+          "right_hand": [
+            -2.9434,
+            -41.302107
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            4.43795,
+            18.47443
+          ],
+          "right_foot": [
+            -7.789161,
+            34.301552
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -72.720285
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -85.737041,
+          "position": [
+            -2.9434,
+            -41.302107
+          ]
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -82.990012,
+          "left_lower_arm": -50.798913,
+          "left_upper_leg": -83.499876,
+          "left_lower_leg": 79.026347,
+          "right_upper_arm": -127.864369,
+          "right_lower_arm": -72.817862,
+          "right_upper_leg": -13.507717,
+          "right_lower_leg": 51.195298
+        },
+        "scarf_root": [
+          -9.051337,
+          -19.611236
+        ],
+        "vfx_frame_time": 0.059
+      }
+    },
+    {
+      "id": "key_2",
+      "time": 0.032,
+      "interpolation": "ease_in",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          -14.004664,
+          -38.092645
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            -8.531054,
+            -20.278588
+          ],
+          "head": [
+            -13.948781,
+            -29.892951
+          ],
+          "scarf_root": [
+            -8.531054,
+            -20.278588
+          ],
+          "weapon_socket": [
+            -22.32533,
+            -41.419524
+          ],
+          "left_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "left_elbow": [
+            -19.3219,
+            -29.198096
+          ],
+          "left_hand": [
+            -30.112747,
+            -38.117605
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            10.137978,
+            -16.069269
+          ],
+          "left_foot": [
+            20.277505,
+            1.169931
+          ],
+          "right_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "right_elbow": [
+            -10.355006,
+            -34.159265
+          ],
+          "right_hand": [
+            -22.32533,
+            -41.419524
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            4.783286,
+            18.388044
+          ],
+          "right_foot": [
+            -6.939313,
+            34.592386
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 117.446233,
+          "right": 125.785008
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -112.977279,
+          "position": [
+            -22.32533,
+            -41.419524
+          ],
+          "movement": "normal",
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          }
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": 129.576488,
+          "left_lower_arm": 0.000001,
+          "left_upper_leg": -147.752488,
+          "left_lower_leg": 117.289854,
+          "right_upper_arm": 172.514095,
+          "right_lower_arm": -51.276382,
+          "right_upper_leg": -14.581205,
+          "right_lower_leg": 50.464059
+        },
+        "scarf_root": [
+          -8.531054,
+          -20.278588
+        ],
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 8.458518
+          },
+          "right": {
+            "mode": "grip",
+            "position": 0
+          }
+        },
+        "vfx_frame_time": 0.086
+      }
+    },
+    {
+      "id": "key_11",
+      "time": 0.172,
+      "interpolation": "ease_in",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "right_foot": true
+        },
+        "root": [
+          -7.83006,
+          -38.07048
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            -8.531054,
+            -20.278588
+          ],
+          "head": [
+            -13.948781,
+            -29.892951
+          ],
+          "scarf_root": [
+            -8.531054,
+            -20.278588
+          ],
+          "weapon_socket": [
+            -22.32533,
+            -41.419524
+          ],
+          "left_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "left_elbow": [
+            -19.3219,
+            -29.198096
+          ],
+          "left_hand": [
+            -30.112747,
+            -38.117605
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            15.353365,
+            -11.192595
+          ],
+          "left_foot": [
+            29.292118,
+            3.15004
+          ],
+          "right_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "right_elbow": [
+            -10.355006,
+            -34.159265
+          ],
+          "right_hand": [
+            -22.32533,
+            -41.419524
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -0.571989,
+            18.991388
+          ],
+          "right_foot": [
+            -13.113917,
+            34.570221
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 117.446233,
+          "right": 125.785008
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -112.977279,
+          "position": [
+            -22.32533,
+            -41.419524
+          ],
+          "movement": "normal",
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          }
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": 129.576488,
+          "left_lower_arm": 0.000001,
+          "left_upper_leg": -126.092029,
+          "left_lower_leg": 81.910206,
+          "right_upper_arm": 172.514095,
+          "right_lower_arm": -51.276382,
+          "right_upper_leg": 1.725132,
+          "right_lower_leg": 37.111092
+        },
+        "scarf_root": [
+          -8.531054,
+          -20.278588
+        ],
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 8.458518
+          },
+          "right": {
+            "mode": "grip",
+            "position": 0
+          }
+        },
+        "vfx_frame_time": 0.217
+      }
+    },
+    {
+      "id": "key_10",
+      "time": 0.185,
+      "interpolation": "ease_in",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "right_foot": true
+        },
+        "root": [
+          -2.754079,
+          -36.561411
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            -8.531054,
+            -20.278588
+          ],
+          "head": [
+            -13.948781,
+            -29.892951
+          ],
+          "scarf_root": [
+            -8.531054,
+            -20.278588
+          ],
+          "weapon_socket": [
+            -22.32533,
+            -41.419524
+          ],
+          "left_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "left_elbow": [
+            -19.321901,
+            -29.198096
+          ],
+          "left_hand": [
+            -30.112747,
+            -38.117605
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            18.363964,
+            -4.874917
+          ],
+          "left_foot": [
+            27.570541,
+            12.880052
+          ],
+          "right_shoulder": [
+            -8.531054,
+            -20.278588
+          ],
+          "right_elbow": [
+            -10.355006,
+            -34.159265
+          ],
+          "right_hand": [
+            -22.325329,
+            -41.419524
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -4.530889,
+            18.451858
+          ],
+          "right_foot": [
+            -18.189898,
+            33.061152
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 117.446233,
+          "right": 125.785008
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -112.977279,
+          "position": [
+            -22.32533,
+            -41.419524
+          ],
+          "movement": "normal",
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": 129.576485,
+          "left_lower_arm": 0.000006,
+          "left_upper_leg": -104.866907,
+          "left_lower_leg": 77.458576,
+          "right_upper_arm": 172.514095,
+          "right_lower_arm": -51.27638,
+          "right_upper_leg": 13.796128,
+          "right_lower_leg": 29.278506
+        },
+        "scarf_root": [
+          -8.531054,
+          -20.278588
+        ],
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 8.458518
+          },
+          "right": {
+            "mode": "grip",
+            "position": 0
+          }
+        },
+        "vfx_frame_time": 0.352
+      }
+    },
+    {
+      "id": "key_6",
+      "time": 0.198,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": false,
+          "right_foot": true
+        },
+        "root": [
+          4.747817,
+          -27.898026
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            0.171875,
+            -21.999329
+          ],
+          "head": [
+            -8.744543,
+            -28.502039
+          ],
+          "scarf_root": [
+            0.171875,
+            -21.999329
+          ],
+          "weapon_socket": [
+            4.314569,
+            -45.898813
+          ],
+          "left_shoulder": [
+            0.171875,
+            -21.999329
+          ],
+          "left_elbow": [
+            9.100003,
+            -32.783045
+          ],
+          "left_hand": [
+            4.253661,
+            -45.917464
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            18.918429,
+            -1.758707
+          ],
+          "left_foot": [
+            21.988933,
+            18.004187
+          ],
+          "right_shoulder": [
+            0.171875,
+            -21.999329
+          ],
+          "right_elbow": [
+            9.100003,
+            -32.783045
+          ],
+          "right_hand": [
+            4.253661,
+            -45.917464
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -7.259235,
+            17.558574
+          ],
+          "right_foot": [
+            -26.043612,
+            24.424956
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 127.278447,
+          "right": 127.278447
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -72.974622,
+          "position": [
+            4.314569,
+            -45.898813
+          ],
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "grip_rotation_offset": 0,
+            "position_offset": [
+              0,
+              0
+            ]
+          },
+          "movement": "normal",
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -140.37773,
+          "left_lower_arm": -59.875338,
+          "left_upper_leg": -95.311102,
+          "left_lower_leg": 86.479829,
+          "right_upper_arm": -140.37773,
+          "right_lower_arm": -59.875338,
+          "right_upper_leg": 22.461652,
+          "right_lower_leg": 47.459128
+        },
+        "scarf_root": [
+          0.171875,
+          -21.999329
+        ],
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 0.0637,
+            "order": -1
+          },
+          "right": {
+            "mode": "grip",
+            "position": 0.0637,
+            "order": 1
+          }
+        },
+        "hand_scales": {
+          "left": 1,
+          "right": 1
+        },
+        "vfx_frame_time": 0.371
+      }
+    },
+    {
+      "id": "key_3",
+      "time": 0.211,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          10.49202,
+          -24.407407
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            12.582809,
+            -18.04641
+          ],
+          "head": [
+            15.987134,
+            -28.543949
+          ],
+          "scarf_root": [
+            12.582809,
+            -18.04641
+          ],
+          "weapon_socket": [
+            24.712466,
+            -40.353638
+          ],
+          "left_shoulder": [
+            12.582809,
+            -18.04641
+          ],
+          "left_elbow": [
+            23.770549,
+            -26.462731
+          ],
+          "left_hand": [
+            24.616149,
+            -40.437171
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            17.883439,
+            6.417369
+          ],
+          "left_foot": [
+            7.841325,
+            23.713494
+          ],
+          "right_shoulder": [
+            12.582809,
+            -18.04641
+          ],
+          "right_elbow": [
+            23.831274,
+            -26.381398
+          ],
+          "right_hand": [
+            24.712466,
+            -40.353638
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -12.657255,
+            14.170176
+          ],
+          "right_foot": [
+            -31.787289,
+            20.004712
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 127.471145,
+          "right": 127.325204
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -49.066084,
+          "position": [
+            24.712466,
+            -40.353638
+          ],
+          "movement": "normal",
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -126.953438,
+          "left_lower_arm": -49.583789,
+          "left_upper_leg": -70.259768,
+          "left_lower_leg": 100.399178,
+          "right_upper_arm": -126.538036,
+          "right_lower_arm": -49.853251,
+          "right_upper_leg": 41.772249,
+          "right_lower_leg": 31.266386
+        },
+        "scarf_root": [
+          12.582809,
+          -18.04641
+        ],
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 0.127494,
+            "order": 1
+          }
+        },
+        "vfx_frame_time": 0.399,
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_scales": {
+          "left": 1,
+          "right": 1
+        }
+      }
+    },
+    {
+      "id": "key_4",
+      "time": 0.221,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          13.35938,
+          -18.874622
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            21.605025,
+            -4.150046
+          ],
+          "head": [
+            30.64971,
+            2.173041
+          ],
+          "scarf_root": [
+            21.605025,
+            -4.150046
+          ],
+          "weapon_socket": [
+            48.223568,
+            4.536332
+          ],
+          "left_shoulder": [
+            21.605025,
+            -4.150046
+          ],
+          "left_elbow": [
+            34.914297,
+            0.193143
+          ],
+          "left_hand": [
+            48.223568,
+            4.536332
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            18.657003,
+            3.593918
+          ],
+          "left_foot": [
+            4.973965,
+            18.180709
+          ],
+          "right_shoulder": [
+            21.605025,
+            -4.150046
+          ],
+          "right_elbow": [
+            34.914297,
+            0.193143
+          ],
+          "right_hand": [
+            48.223568,
+            4.536332
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -14.822427,
+            11.886785
+          ],
+          "right_foot": [
+            -34.654649,
+            14.471927
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 172.867435,
+          "right": 172.867435
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": 100.940394,
+          "position": [
+            48.223568,
+            4.536332
+          ],
+          "movement": "normal",
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -71.927042,
+          "left_lower_arm": 0.000001,
+          "left_upper_leg": -79.096608,
+          "left_lower_leg": 122.265553,
+          "right_upper_arm": -71.927042,
+          "right_lower_arm": 0.000001,
+          "right_upper_leg": 51.272272,
+          "right_lower_leg": 31.301062
+        },
+        "scarf_root": [
+          21.605025,
+          -4.150046
+        ],
+        "vfx_frame_time": 0.419,
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_scales": {
+          "right": 1,
+          "left": 1
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 0,
+            "order": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "key_8",
+      "time": 0.357,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          13.35938,
+          -18.874622
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            21.605025,
+            -4.150046
+          ],
+          "head": [
+            30.64971,
+            2.173041
+          ],
+          "scarf_root": [
+            21.605025,
+            -4.150046
+          ],
+          "weapon_socket": [
+            48.223568,
+            4.536332
+          ],
+          "left_shoulder": [
+            21.605025,
+            -4.150046
+          ],
+          "left_elbow": [
+            34.914297,
+            0.193143
+          ],
+          "left_hand": [
+            48.223568,
+            4.536332
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            18.657003,
+            3.593918
+          ],
+          "left_foot": [
+            4.973965,
+            18.180709
+          ],
+          "right_shoulder": [
+            21.605025,
+            -4.150046
+          ],
+          "right_elbow": [
+            34.914297,
+            0.193143
+          ],
+          "right_hand": [
+            48.223568,
+            4.536332
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -14.822427,
+            11.886785
+          ],
+          "right_foot": [
+            -34.654649,
+            14.471927
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 172.867435,
+          "right": 172.867435
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": 100.940394,
+          "position": [
+            48.223568,
+            4.536332
+          ],
+          "movement": "normal",
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -71.927042,
+          "left_lower_arm": 0.000001,
+          "left_upper_leg": -79.096608,
+          "left_lower_leg": 122.265553,
+          "right_upper_arm": -71.927042,
+          "right_lower_arm": 0.000001,
+          "right_upper_leg": 51.272272,
+          "right_lower_leg": 31.301062
+        },
+        "scarf_root": [
+          21.605025,
+          -4.150046
+        ],
+        "vfx_frame_time": 0.419,
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "hand_scales": {
+          "right": 1,
+          "left": 1
+        },
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 0,
+            "order": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "key_5",
+      "time": 0.369,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          11.269557,
+          -23.986669
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            9.07456,
+            -20.041266
+          ],
+          "head": [
+            18.132387,
+            -27.971553
+          ],
+          "scarf_root": [
+            9.07456,
+            -20.041266
+          ],
+          "weapon_socket": [
+            32.985044,
+            -5.471134
+          ],
+          "left_shoulder": [
+            9.07456,
+            -20.041266
+          ],
+          "left_elbow": [
+            21.029802,
+            -12.7562
+          ],
+          "left_hand": [
+            32.985044,
+            -5.471134
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            17.867434,
+            6.461795
+          ],
+          "left_foot": [
+            7.063788,
+            23.292756
+          ],
+          "right_shoulder": [
+            9.07456,
+            -20.041266
+          ],
+          "right_elbow": [
+            21.029802,
+            -12.7562
+          ],
+          "right_hand": [
+            32.985044,
+            -5.471134
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -13.582269,
+            13.286157
+          ],
+          "right_foot": [
+            -32.564827,
+            19.583974
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 175.018197,
+          "right": 175.018197
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": 116.374724,
+          "position": [
+            32.985044,
+            -5.471134
+          ],
+          "movement": "normal",
+          "projected_length": 26
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": -58.643473,
+          "left_lower_arm": 0,
+          "left_upper_leg": -70.11737,
+          "left_lower_leg": 102.813419,
+          "right_upper_arm": -58.643473,
+          "right_lower_arm": 0,
+          "right_upper_leg": 45.631421,
+          "right_lower_leg": 26.014355
+        },
+        "scarf_root": [
+          9.07456,
+          -20.041266
+        ],
+        "hand_grips": {
+          "left": {
+            "mode": "grip",
+            "position": 0,
+            "order": 1
+          }
+        },
+        "body_modes": {
+          "torso": {
+            "movement": "normal",
+            "length": 22
+          },
+          "neck": {
+            "movement": "normal",
+            "length": 11.18034
+          }
+        },
+        "vfx_frame_time": 0.71
+      }
+    },
+    {
+      "id": "key_7",
+      "time": 0.4,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "idle hammer",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {
+          "left_hand": false,
+          "right_elbow": false,
+          "left_foot": true,
+          "right_foot": true
+        },
+        "root": [
+          -6.63845,
+          -37.781519
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            0,
+            -22
+          ],
+          "head": [
+            4.104591,
+            -32.620738
+          ],
+          "scarf_root": [
+            0,
+            -22
+          ],
+          "weapon_socket": [
+            13.117329,
+            -19.400393
+          ],
+          "left_shoulder": [
+            0,
+            -22
+          ],
+          "left_elbow": [
+            -6.52884,
+            -9.615564
+          ],
+          "left_hand": [
+            -7.960545,
+            4.311037
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.019521,
+            15.478055
+          ],
+          "left_foot": [
+            6.128224,
+            34.870712
+          ],
+          "right_shoulder": [
+            0,
+            -22
+          ],
+          "right_elbow": [
+            4.167506,
+            -8.634676
+          ],
+          "right_hand": [
+            13.117329,
+            -19.400393
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -0.908734,
+            18.978255
+          ],
+          "right_foot": [
+            -14.568158,
+            33.587162
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 0,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": -56.869168
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "hammer",
+          "layer": "front",
+          "rotation": -70.43836,
+          "position": [
+            13.117329,
+            -19.400393
+          ]
+        },
+        "notes": "",
+        "rotations": {
+          "left_upper_arm": 27.797349,
+          "left_lower_arm": -21.927755,
+          "left_upper_leg": -35.448768,
+          "left_lower_leg": 49.604888,
+          "right_upper_arm": -17.318252,
+          "right_lower_arm": -122.944112,
+          "right_upper_leg": 2.741395,
+          "right_lower_leg": 40.334865
+        },
+        "scarf_root": [
+          0,
+          -22
+        ],
+        "vfx_frame_time": 0.807
+      }
+    }
+  ]
+}

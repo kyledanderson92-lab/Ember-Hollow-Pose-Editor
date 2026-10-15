@@ -1,69 +1,17 @@
-# Neon Stick Sol pose editor
+# Neon Stick Sol animator
 
-Open **index.html** locally in Edge or Chrome. This copy renders rounded blue neon strokes with a circular head and small rotating square hands. It needs no login, subscription, server or build.
+[Open the editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/)
 
-[Open the public editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/) · [Current action project JSON](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/exports/neon_stick_actions.json). To work on another computer, download the JSON, then import it through File. Export Project Backup carries your changes between computers; browser autosave does not sync.
+Current release: **2026.10.15.body-restore.v19**. Refresh an open tab after updates.
 
-The public editor's workspace UI is restored around Stick Sol: left pose/animation library, right contextual inspector, bottom timeline/comparison dock, compact File/Setup/Export menus, and sprite-export dialog. UI source was checked against public `main` at `3b19d32` (workspace introduced in `08d864b`); retired armor, contour and reference tools remain removed. Refresh an already-open tab to load version **2026.10.14.stick.body**.
+Pose by dragging the character. Chain IK stays above the canvas; 2D, 3D, Free and Stretch movement control connected reach, foreshortening and extension. Common anchor pins are always visible. Select overlapping anchors through the anchor dropdown. Grip, Slide and Free hand modes control weapon contact; directly dragged Slide hands may cross the other hand, while weapon-driven sliding stops at overlap.
 
-## Edit the current actions
+Head/torso selection offers Restore neck/torso length. Restore all lengths covers arms, legs, neck and torso. Shared proportions live in Character setup and save across poses and animation keys; body defaults correct overextension while preserving foreshortening. Reference images and character alignment can be dragged directly.
 
-1. Choose **Original · 28 clips** under Animations (selected by default) and click **Load action pack**. The optional **Polished · 41 clips** pack remains available. You can also use **File → Import JSON** with either project in `exports/`. Loading the built-in pack asks before replacing the workspace and keeps a local backup plus Undo.
-2. Choose an action under **Animations** in the left Library. The **Animation timeline** below the canvas opens; choose a key by its time or the key selector.
-3. Drag the joint handles or use **Selected point** coordinates in the right inspector. Choose 2D movement for fixed connected limb lengths, 3d movement for shortening only, or stretch for shortening and extension. Restore limb proportions resets the selected limb to the rig baseline. Editing a selected timeline key updates that key automatically. **Save to Pose Library** saves a separate named library pose.
-4. Duplicate/add keys and adjust **Time (s)** or transition interpolation as needed. Enable **Timeline preview** to scrub/play; turn it off to resume editing.
-5. Choose **Export → Export Project Backup** and send that JSON back for integration. **Export animation JSON** saves just the selected action. **Export → Bake sprite frames…** opens the sprite export dialog.
+The animator supports timeline scrubbing, capture of interpolated poses as keys, onion skins, multiple ghosts, playback and transparent sprite exports. Effects include smooth sampled weapon arcs, custom crescent/split ribbons and animated ground impacts. Settings update immediately. Add effects examples loads separate review clips.
 
-The project includes **28 action timelines / 183 editable keys**: idle, run, takeoff/rise/apex/fall, landing, crouch, wall, corner hang, Slam, hurt/death pose references, three Dash directions, and normal/upward/sweep/air swings for sword, hammer and baton. These are sparse samples of the actual current procedural component. Running feet are local snapshots; world foot planting and dynamic ledge contacts remain procedural. Hurt/death colors are runtime effects rather than animated skeleton changes. Returned JSON does not automatically override gameplay; it supplies your authored animation feedback.
+Use **File → Import JSON** to load projects or animations. Save with **Export Project Backup**; browser autosave stays on the current computer/browser and does not sync across devices. Make a backup before importing or moving computers.
 
-Wheel zooms; middle-drag or Space-drag pans. Mirror, limb swaps, bend flip, pins, connected-segment editing, weapon grip/depth/length, VFX, optional scarf posing, blend preview and sprite-frame export remain available. Rig mode changes the neutral skeleton; existing timeline keys stay independent. **Use pose as rig** changes the starting pose for New/Reset.
+Downloads: [original 28-action project](exports/neon_stick_actions.json), [sword benchmark](exports/sword_forward_benchmark.json), [user-authored hammer attack](exports/hammer_slam_animation.json), [effects examples](exports/effects_showcase.json), [effects preview](exports/previews/effects_review.gif). Existing [action references](references/) and run-review downloads remain available as earlier review material.
 
-## Removed features and storage
-
-Old Sol sprites, 3D/segmented body artwork, reference/head images and pose presets are removed. Outline/contour editing, image tracing, art-view scaffolds and PNG head tools are removed completely. The editor starts with an empty pose library. A fresh `ember-stick-sol-editor-v1` browser workspace is used; launching this updated editor clears the retired Sol project/backup keys while retaining unrelated browser storage. Project backups are portable JSON; browser autosave stays on this computer/origin.
-
-This editor extends the stick workspace from commit `8e4293d` with the simplified UI and rotating square hands (version `2026.10.14.stick.body`). `.pose-editor-public-files.json` lists the files to publish together. JSON retains the existing `geometric_sol_*` version 1 schema for compatibility. Head/foot rotation fields remain importable, but their inactive controls are removed.
-
-## Simple workspace and advanced tools
-
-The Movement selector applies to the selected limb or weapon:
-
-- **2D movement:** limbs bend at full connected lengths; weapons retain their normal length. Switching from a depth mode restores the captured connected length. Pins can reject a switch that would move a locked point.
-- **3d movement:** preserves the limb’s captured bend and allows shortening only. Reach stops at 100%; limbs never open gaps, and weapons never grow beyond their normal length.
-- **stretch:** allows shortening and extension. Limbs extend by opening joint gaps without stretching their physical bones. Weapons extend their longitudinal geometry.
-
-Select a weapon or choose Weapon in the inspector to set its mode. In 3d movement or stretch, drag the weapon tip or edit Weapon projected length. The sword and baton shorten along their full length, including the hilt; the hammer shaft shortens while its head keeps its width and height. Tip drag can optionally move the attached arm when aiming beyond weapon reach. Each limb and weapon has an independent mode, stored per key/pose. The advanced All limbs selector applies one mode to all four limbs atomically.
-
-**Restore limb proportions** remains the only primary limb reset and restores default-rig lengths, preserving the selected depth mode. Advanced body tools retain captured-bend/reach controls, manual segment proportions, pins and extra segments. The old Free Edit checkbox and two-state all-limb toggle are removed. These controls simulate depth in 2D; they do not introduce a 3D rig. Older fixed-bend JSON without mode metadata remains stretch; legacy weapon poses retain their authored length and start in 2D movement until a mode is selected.
-
-Small square hands are drawn in editing, thumbnails, comparison, timeline previews, and baked sprites. An attached weapon hand follows the weapon angle with its fixed grip offset. The other hand follows forearm plus wrist rotation. Weapon rotation is available in the Weapon inspector; wrist rotation is shown when rotation lock is enabled. Head position, torso rotation and foot positions remain editable; circular-head and foot rotation controls are gone.
-
-Enable the optional scarf through Setup → Optional accessories. Its inspector and canvas anchor remain hidden when it is off. Custom weapon/action ownership settings live in Advanced panels. Weapon definitions provide lengths and action overrides; retired width/color/perspective artwork metadata is discarded on import.
-
-## Rebuild and validate
-
-Run from the repository root:
-
-```sh
-node tools/sol_pose_editor/tests/stick_model.cjs
-python -m http.server 8785 --bind 127.0.0.1 --directory tools/sol_pose_editor
-# In another terminal:
-node tools/sol_pose_editor/tests/stick_workspace.browser.cjs
-node tools/sol_pose_editor/tests/movement_modes.browser.cjs
-```
-
-The browser suite uses Playwright and `/usr/bin/chromium`; set `SOL_BROWSER` and `SOL_EDITOR_URL` for another executable or local URL. Managed browsers may require HTTP rather than file URLs. These checks cover stick grips, movement modes, pins, key edits, previews, exports and narrow-screen layout. The retained solver/animation regressions use the current stick rig; retired artwork-specific suites have been replaced. Game runtime integration remains a separate task.
-
-## Motion workshop
-
-Open **Motion workshop** under Animations for previous/next key ghosts, slow preview, **Jump to contact pose**, whole-clip retiming (keys and effect cues), and **Create 3× Overclock copy**. The copy is independent, editable and undoable. Weapon inspector has a size multiplier; this grows the whole weapon independently from depth projection. Slow preview changes playback only. The original action export remains intact. The new polished pack contains **41 clips / 300 editable keys**, with CC0 motion adaptations, original game-specific actions and 12 powered variants. See [animation references and editing guide](ANIMATION_REFERENCES.md).
-
-## Fixed arm pivots
-
-Both arms are permanently attached to the trunk/neck junction. Arm pivot selection provides segment rotation, with no independent position or pin controls. Move the trunk to carry both arm roots; elbow/hand editing, pins and all three movement modes remain available. Older detached poses/rigs reconnect on import/load while preserving arm lengths, bends, attached grip offsets and added arm branches. Legacy shoulder pins become trunk pins.
-
-## Trunk / neck depth and fixed legs
-
-Select **Torso** to edit trunk depth, or **Head** to edit neck depth. Use **2D movement** for captured normal length, **3d movement** for shortening only, or **stretch** for shortening/extension. Drag the selected endpoint or use **Body depth → Projected length**. Returning to 2D restores full length; head size stays constant. Pins can reject conflicting edits. Body references survive keys, JSON, sampling and adopting a pose as the default rig.
-
-Both leg pivots are permanently fixed at the **pelvis / base of the trunk**, just as both arm pivots are fixed at the neck junction. Hip selection offers rotation without position/pin controls. Legacy detached leg branches reconnect on load while preserving their lengths and bends; old hip pins become pelvis pins. Current run revisions and other action files are unchanged.
+Open index.html in Edge or Chrome, or use the hosted link. No account, installation or paid service required. This repository distributes the standalone editor and example animations; game runtime and private development documents are maintained separately.

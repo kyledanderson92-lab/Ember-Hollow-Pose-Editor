@@ -1,0 +1,1503 @@
+{
+  "type": "geometric_sol_project",
+  "version": 1,
+  "rig": {
+    "type": "geometric_sol_rig",
+    "version": 1,
+    "presentation_style": "neon_stick",
+    "coordinates": "pelvis-relative; x right, y down; root in actor foot-origin coordinates",
+    "overall_scale": 1,
+    "head_radius": 6,
+    "upper_arm_length": 14,
+    "lower_arm_length": 15,
+    "upper_leg_length": 18,
+    "lower_leg_length": 20,
+    "limb_thickness": 3.2,
+    "scarf_length": 20,
+    "scarf_width": 3,
+    "colors": {
+      "body_fill": "#173563",
+      "energy": "#edf1f4",
+      "line": "#659cf3",
+      "rear": "#38639d",
+      "scarf": "#659cf3"
+    },
+    "neutral_root": [
+      0,
+      -36
+    ],
+    "neutral_torso_rotation": 0,
+    "weapon_hand": "right",
+    "weapon_rotation": 22.9183121467424,
+    "joints": {
+      "torso": [
+        0,
+        -22
+      ],
+      "head": [
+        2,
+        -33
+      ],
+      "scarf_root": [
+        0,
+        -22
+      ],
+      "weapon_socket": [
+        12.9647216796875,
+        3.929443359375
+      ],
+      "left_shoulder": [
+        0,
+        -22
+      ],
+      "left_elbow": [
+        -4.64482021331787,
+        -8.79296875
+      ],
+      "left_hand": [
+        -8.87120628356934,
+        5.599306106567401
+      ],
+      "left_hip": [
+        0,
+        0
+      ],
+      "left_knee": [
+        0.690397500991821,
+        17.9867534637451
+      ],
+      "left_foot": [
+        -8,
+        36
+      ],
+      "right_shoulder": [
+        0,
+        -22
+      ],
+      "right_elbow": [
+        5.91832113265991,
+        -9.312469482421903
+      ],
+      "right_hand": [
+        12.9647216796875,
+        3.929443359375
+      ],
+      "right_hip": [
+        0,
+        0
+      ],
+      "right_knee": [
+        8.2433385848999,
+        16.0014781951904
+      ],
+      "right_foot": [
+        8,
+        36
+      ]
+    },
+    "neutral_scarf": {
+      "version": 1,
+      "visible": false,
+      "tails": {
+        "a": {
+          "points": [
+            [
+              -6,
+              3
+            ],
+            [
+              -12,
+              6
+            ],
+            [
+              -18,
+              9
+            ]
+          ],
+          "width": 3,
+          "layer": "in_front_body"
+        },
+        "b": {
+          "points": [
+            [
+              -4,
+              4
+            ],
+            [
+              -8,
+              8
+            ],
+            [
+              -12,
+              12
+            ]
+          ],
+          "width": 3,
+          "layer": "in_front_body"
+        }
+      }
+    }
+  },
+  "current_pose": {
+    "type": "geometric_sol_pose",
+    "version": 1,
+    "name": "sword_forward_1",
+    "scarf": {
+      "version": 1,
+      "visible": false,
+      "tails": {
+        "a": {
+          "points": [
+            [
+              -6,
+              3
+            ],
+            [
+              -12,
+              6
+            ],
+            [
+              -18,
+              9
+            ]
+          ],
+          "width": 3,
+          "layer": "in_front_body"
+        },
+        "b": {
+          "points": [
+            [
+              -4,
+              4
+            ],
+            [
+              -8,
+              8
+            ],
+            [
+              -12,
+              12
+            ]
+          ],
+          "width": 3,
+          "layer": "in_front_body"
+        }
+      }
+    },
+    "pins": {},
+    "root": [
+      -3,
+      -33
+    ],
+    "facing": 1,
+    "body_facing": 1,
+    "joints": {
+      "torso": [
+        11,
+        -19
+      ],
+      "head": [
+        16,
+        -30
+      ],
+      "scarf_root": [
+        11,
+        -19
+      ],
+      "weapon_socket": [
+        38,
+        -18
+      ],
+      "left_shoulder": [
+        11,
+        -19
+      ],
+      "left_elbow": [
+        -2.522197,
+        -22.626317
+      ],
+      "left_hand": [
+        -12,
+        -11
+      ],
+      "left_hip": [
+        0,
+        0
+      ],
+      "left_knee": [
+        6.634874,
+        16.732557
+      ],
+      "left_foot": [
+        -5,
+        33
+      ],
+      "right_shoulder": [
+        11,
+        -19
+      ],
+      "right_elbow": [
+        23.768861,
+        -13.259252
+      ],
+      "right_hand": [
+        38,
+        -18
+      ],
+      "right_hip": [
+        0,
+        0
+      ],
+      "right_knee": [
+        12.398574,
+        13.04896
+      ],
+      "right_foot": [
+        11,
+        33
+      ]
+    },
+    "weapon_hand": "right",
+    "torso_rotation": 30.068583,
+    "head_rotation": 0,
+    "hand_rotations": {
+      "left": 0,
+      "right": 0
+    },
+    "foot_rotations": {
+      "left": 0,
+      "right": 0
+    },
+    "weapon": {
+      "kind": "sword",
+      "layer": "front",
+      "rotation": 65,
+      "projected_length": 26,
+      "attachment": {
+        "position_locked": true,
+        "rotation_locked": false,
+        "grip_rotation_offset": 0,
+        "position_offset": [
+          0,
+          0
+        ]
+      },
+      "position": [
+        38,
+        -18
+      ]
+    },
+    "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+    "rotations": {
+      "left_upper_arm": 74.943495,
+      "left_lower_arm": -65.825072,
+      "left_upper_leg": -21.629554,
+      "left_lower_leg": 57.202834,
+      "right_upper_arm": -95.860392,
+      "right_lower_arm": -42.632396,
+      "right_upper_leg": -43.535958,
+      "right_lower_leg": 47.54585
+    },
+    "scarf_root": [
+      11,
+      -19
+    ]
+  },
+  "poses": [],
+  "animations": [
+    {
+      "type": "geometric_sol_animation",
+      "version": 1,
+      "id": "sword_forward_benchmark",
+      "name": "forward_benchmark",
+      "weapon_type": "sword",
+      "weapon_id": null,
+      "loop": false,
+      "keys": [
+        {
+          "id": "key_1",
+          "time": 0,
+          "interpolation": "linear",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_1",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              -3,
+              -33
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                11,
+                -19
+              ],
+              "head": [
+                16,
+                -30
+              ],
+              "scarf_root": [
+                11,
+                -19
+              ],
+              "weapon_socket": [
+                38,
+                -18
+              ],
+              "left_shoulder": [
+                11,
+                -19
+              ],
+              "left_elbow": [
+                -2.522197,
+                -22.626317
+              ],
+              "left_hand": [
+                -12,
+                -11
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                6.634874,
+                16.732557
+              ],
+              "left_foot": [
+                -5,
+                33
+              ],
+              "right_shoulder": [
+                11,
+                -19
+              ],
+              "right_elbow": [
+                23.768861,
+                -13.259252
+              ],
+              "right_hand": [
+                38,
+                -18
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                12.398574,
+                13.04896
+              ],
+              "right_foot": [
+                11,
+                33
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 30.068583,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 65,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                38,
+                -18
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 74.943495,
+              "left_lower_arm": -65.825072,
+              "left_upper_leg": -21.629554,
+              "left_lower_leg": 57.202834,
+              "right_upper_arm": -95.860392,
+              "right_lower_arm": -42.632396,
+              "right_upper_leg": -43.535958,
+              "right_lower_leg": 47.54585
+            },
+            "scarf_root": [
+              11,
+              -19
+            ]
+          }
+        },
+        {
+          "id": "key_2",
+          "time": 0.025,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_2",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              1,
+              -31
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                14,
+                -17
+              ],
+              "head": [
+                21,
+                -27
+              ],
+              "scarf_root": [
+                14,
+                -17
+              ],
+              "weapon_socket": [
+                39,
+                -4
+              ],
+              "left_shoulder": [
+                14,
+                -17
+              ],
+              "left_elbow": [
+                3.61274,
+                -26.386418
+              ],
+              "left_hand": [
+                -11,
+                -23
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                5.437159,
+                17.159175
+              ],
+              "left_foot": [
+                -9,
+                31
+              ],
+              "right_shoulder": [
+                14,
+                -17
+              ],
+              "right_elbow": [
+                24.46301,
+                -7.698095
+              ],
+              "right_hand": [
+                39,
+                -4
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                13.377012,
+                12.0439
+              ],
+              "right_foot": [
+                7,
+                31
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 39.47246,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 115,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                39,
+                -4
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 92.629995,
+              "left_lower_arm": -55.150098,
+              "left_upper_leg": -17.581638,
+              "left_lower_leg": 63.789728,
+              "right_upper_arm": -87.83448,
+              "right_lower_arm": -27.365138,
+              "right_upper_leg": -48.00193,
+              "right_lower_leg": 66.595358
+            },
+            "scarf_root": [
+              14,
+              -17
+            ]
+          }
+        },
+        {
+          "id": "key_3",
+          "time": 0.055,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_3",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              4,
+              -30
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                16,
+                -15
+              ],
+              "head": [
+                23,
+                -24
+              ],
+              "scarf_root": [
+                16,
+                -15
+              ],
+              "weapon_socket": [
+                28,
+                9
+              ],
+              "left_shoulder": [
+                16,
+                -15
+              ],
+              "left_elbow": [
+                7.488241,
+                -26.115303
+              ],
+              "left_hand": [
+                -7,
+                -30
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                3.703745,
+                17.614831
+              ],
+              "left_foot": [
+                -12,
+                30
+              ],
+              "right_shoulder": [
+                16,
+                -15
+              ],
+              "right_elbow": [
+                16.842401,
+                -1.025367
+              ],
+              "right_hand": [
+                28,
+                9
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                13.19751,
+                12.240332
+              ],
+              "right_foot": [
+                4,
+                30
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 46.84761,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 170,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                28,
+                9
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 95.708603,
+              "left_lower_arm": -37.546677,
+              "left_upper_leg": -11.874204,
+              "left_lower_leg": 63.612202,
+              "right_upper_arm": -50.297267,
+              "right_lower_arm": -44.609898,
+              "right_upper_leg": -47.154915,
+              "right_lower_leg": 74.53399
+            },
+            "scarf_root": [
+              16,
+              -15
+            ]
+          }
+        },
+        {
+          "id": "key_4",
+          "time": 0.105,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_4",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              4,
+              -31
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                14,
+                -17
+              ],
+              "head": [
+                20,
+                -27
+              ],
+              "scarf_root": [
+                14,
+                -17
+              ],
+              "weapon_socket": [
+                16,
+                9
+              ],
+              "left_shoulder": [
+                14,
+                -17
+              ],
+              "left_elbow": [
+                8.491923,
+                -29.87094
+              ],
+              "left_hand": [
+                -6,
+                -26
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                2.982317,
+                17.751219
+              ],
+              "left_foot": [
+                -12,
+                31
+              ],
+              "right_shoulder": [
+                14,
+                -17
+              ],
+              "right_elbow": [
+                8.636404,
+                -4.068185
+              ],
+              "right_hand": [
+                16,
+                9
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                12.538713,
+                12.91436
+              ],
+              "right_foot": [
+                4,
+                31
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 39.47246,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 210,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                16,
+                9
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 117.359194,
+              "left_lower_arm": -81.786792,
+              "left_upper_leg": -9.536988,
+              "left_lower_leg": 58.050834,
+              "right_upper_arm": -16.945755,
+              "right_lower_arm": -51.926878,
+              "right_upper_leg": -44.154467,
+              "right_lower_leg": 69.427712
+            },
+            "scarf_root": [
+              14,
+              -17
+            ]
+          }
+        },
+        {
+          "id": "key_5",
+          "time": 0.14,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_5",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              3,
+              -32
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                11,
+                -19
+              ],
+              "head": [
+                16,
+                -30
+              ],
+              "scarf_root": [
+                11,
+                -19
+              ],
+              "weapon_socket": [
+                12,
+                8
+              ],
+              "left_shoulder": [
+                11,
+                -19
+              ],
+              "left_elbow": [
+                1.686692,
+                -29.45286
+              ],
+              "left_hand": [
+                -8,
+                -18
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                3.026996,
+                17.743655
+              ],
+              "left_foot": [
+                -11,
+                32
+              ],
+              "right_shoulder": [
+                11,
+                -19
+              ],
+              "right_elbow": [
+                6.219526,
+                -5.841464
+              ],
+              "right_hand": [
+                12,
+                8
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                12.118314,
+                13.309639
+              ],
+              "right_foot": [
+                5,
+                32
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 30.068583,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 228,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                12,
+                8
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 108.23096,
+              "left_lower_arm": -98.075401,
+              "left_upper_leg": -9.681229,
+              "left_lower_leg": 54.216629,
+              "right_upper_arm": -10.102585,
+              "right_lower_arm": -42.632395,
+              "right_upper_leg": -42.317597,
+              "right_lower_leg": 63.167173
+            },
+            "scarf_root": [
+              11,
+              -19
+            ]
+          }
+        },
+        {
+          "id": "key_6",
+          "time": 0.205,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_6",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              1,
+              -34
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                5,
+                -21
+              ],
+              "head": [
+                8,
+                -32
+              ],
+              "scarf_root": [
+                5,
+                -21
+              ],
+              "weapon_socket": [
+                13,
+                5
+              ],
+              "left_shoulder": [
+                5,
+                -21
+              ],
+              "left_elbow": [
+                -8.390277,
+                -16.913376
+              ],
+              "left_hand": [
+                -10,
+                -2
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                2.719456,
+                17.793385
+              ],
+              "left_foot": [
+                -9,
+                34
+              ],
+              "right_shoulder": [
+                5,
+                -21
+              ],
+              "right_elbow": [
+                4.043759,
+                -7.032695
+              ],
+              "right_hand": [
+                13,
+                5
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                10.837696,
+                14.371651
+              ],
+              "right_foot": [
+                7,
+                34
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 13.392498,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 315,
+              "projected_length": 26,
+              "attachment": {
+                "position_locked": true,
+                "rotation_locked": false,
+                "grip_rotation_offset": 0,
+                "position_offset": [
+                  0,
+                  0
+                ]
+              },
+              "position": [
+                13,
+                5
+              ]
+            },
+            "notes": "Authored forward sword benchmark: immediate strike, fast descending arc, off-hand counterbalance, follow-through; no gameplay windup.",
+            "rotations": {
+              "left_upper_arm": 59.635659,
+              "left_lower_arm": -66.867605,
+              "left_upper_leg": -8.689571,
+              "left_lower_leg": 44.561314,
+              "right_upper_arm": -9.475979,
+              "right_lower_arm": -40.577767,
+              "right_upper_leg": -37.020032,
+              "right_lower_leg": 48.082832
+            },
+            "scarf_root": [
+              5,
+              -21
+            ]
+          }
+        },
+        {
+          "id": "key_7",
+          "time": 0.28,
+          "interpolation": "ease_out",
+          "pose": {
+            "type": "geometric_sol_pose",
+            "version": 1,
+            "name": "sword_forward_settle",
+            "scarf": {
+              "version": 1,
+              "visible": false,
+              "tails": {
+                "a": {
+                  "points": [
+                    [
+                      -6,
+                      3
+                    ],
+                    [
+                      -12,
+                      6
+                    ],
+                    [
+                      -18,
+                      9
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                },
+                "b": {
+                  "points": [
+                    [
+                      -4,
+                      4
+                    ],
+                    [
+                      -8,
+                      8
+                    ],
+                    [
+                      -12,
+                      12
+                    ]
+                  ],
+                  "width": 3,
+                  "layer": "in_front_body"
+                }
+              }
+            },
+            "pins": {},
+            "root": [
+              0,
+              -36
+            ],
+            "facing": 1,
+            "body_facing": 1,
+            "joints": {
+              "torso": [
+                0,
+                -22
+              ],
+              "head": [
+                2,
+                -33
+              ],
+              "scarf_root": [
+                0,
+                -22
+              ],
+              "weapon_socket": [
+                12.964722,
+                3.929443
+              ],
+              "left_shoulder": [
+                0,
+                -22
+              ],
+              "left_elbow": [
+                -4.64482,
+                -8.792969
+              ],
+              "left_hand": [
+                -8.871206,
+                5.599306
+              ],
+              "left_hip": [
+                0,
+                0
+              ],
+              "left_knee": [
+                0.690398,
+                17.986753
+              ],
+              "left_foot": [
+                -8,
+                36
+              ],
+              "right_shoulder": [
+                0,
+                -22
+              ],
+              "right_elbow": [
+                5.918321,
+                -9.312469
+              ],
+              "right_hand": [
+                12.964722,
+                3.929443
+              ],
+              "right_hip": [
+                0,
+                0
+              ],
+              "right_knee": [
+                8.243339,
+                16.001478
+              ],
+              "right_foot": [
+                8,
+                36
+              ]
+            },
+            "weapon_hand": "right",
+            "torso_rotation": 0,
+            "head_rotation": 0,
+            "hand_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "foot_rotations": {
+              "left": 0,
+              "right": 0
+            },
+            "weapon": {
+              "kind": "sword",
+              "layer": "front",
+              "rotation": 382.918312,
+              "projected_length": 26,
+              "position": [
+                12.964722,
+                3.929443
+              ]
+            },
+            "notes": "",
+            "rotations": {
+              "left_upper_arm": 19.376415,
+              "left_lower_arm": -3.011193,
+              "left_upper_leg": -2.198145,
+              "left_lower_leg": 27.95289,
+              "right_upper_arm": -25.007523,
+              "right_lower_arm": -3.0112,
+              "right_upper_leg": -27.255762,
+              "right_lower_leg": 27.952894
+            },
+            "scarf_root": [
+              0,
+              -22
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "weapon_definitions": [],
+  "notes": "Approved integration candidate for forward Balanced sword attacks only. Agent-authored first pass; human visual acceptance pending. Runtime uses compiled samples, preserving movement and combat clocks."
+}
