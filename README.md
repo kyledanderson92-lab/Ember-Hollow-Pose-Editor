@@ -2,7 +2,7 @@
 
 [Open the editor](https://kyledanderson92-lab.github.io/Ember-Hollow-Pose-Editor/)
 
-Source revision: **2026.10.15.centered-stickers.v22**. Refresh an open tab after updates.
+Source revision: **2026.10.15.grid-selection.v23**. Refresh an open tab after updates.
 
 Pose by dragging the character. Chain IK stays above the canvas; 2D, 3D, Free and Stretch movement control connected reach, foreshortening and extension. Common anchor pins are always visible. Select overlapping anchors through the anchor dropdown. Grip, Slide and Free hand modes control weapon contact; directly dragged Slide hands may cross the other hand, while weapon-driven sliding stops at overlap.
 
@@ -17,5 +17,7 @@ Downloads: [original 28-action project](exports/neon_stick_actions.json), [sword
 Open index.html in Edge or Chrome, or use the hosted link. No account, installation or paid service required. This repository distributes the standalone editor and example animations; game runtime and private development documents are maintained separately.
 
 The ten CraftPix sequences have [asset provenance](assets/effects/SOURCE.md). [Godot effect playback](runtime/README.md) consumes Export Godot effects JSON.
+
+New stickers are fixed to the editor grid; **Attach to: Pelvis** optionally follows character movement and facing. Older projects keep their pelvis attachment. Switching attachment preserves saved key placements, and explicit sticker key animation remains supported. The Image selector is one row directly below Duplicate/Delete. While Effects is active, drag anywhere on the canvas to move the selected effect/group. Overlapping images and character controls cannot steal the drag. Choose Body, Weapon or Scarf to resume character editing; Shift/Ctrl/Cmd-click changes effect group selection.
 
 Z order sits beside the sticker layers. The image browser closes after placement; exact timing, precision transforms and export use compact foldouts. Each image set shares an artwork-centered rotation pivot and tighter handles. Existing stickers retain their placed artwork at authored keys when migrated.

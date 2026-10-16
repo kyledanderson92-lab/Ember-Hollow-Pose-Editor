@@ -2,11 +2,15 @@
 'use strict';
 const library=global.SolEffectLibrary||(typeof require==='function'?require('./effect_library.js'):null),clone=o=>JSON.parse(JSON.stringify(o));
 const asset=id=>library.assets.find(a=>a.id===id),types=['sticker'];
-function create(id,assetId,time=0,imageFrame=0){if(!asset(assetId))throw Error('Unknown sticker image.');return {id,type:'sticker',asset:assetId,image_frame:imageFrame,pivot_version:1,enabled:true,opacity:1,hue:0,mirror_x:false,mirror_y:false,z:1,transform:{position:[0,-25],rotation:0,scale:1,scale_x:1,scale_y:1,skew:0},range:{start:time,end:Math.min(600,time+.1)}};}
+function create(id,assetId,time=0,imageFrame=0){if(!asset(assetId))throw Error('Unknown sticker image.');return {id,type:'sticker',asset:assetId,image_frame:imageFrame,pivot_version:1,anchor:'grid',enabled:true,opacity:1,hue:0,mirror_x:false,mirror_y:false,z:1,transform:{position:[0,-25],rotation:0,scale:1,scale_x:1,scale_y:1,skew:0},range:{start:time,end:Math.min(600,time+.1)}};}
 function range(e){return [e.range.start,e.range.end];}
 function active(e,a,time){return e.enabled&&e.opacity>0&&time>=e.range.start-1e-8&&time<e.range.end-1e-8;}
 function frame(e,time){return active(e,null,time)?e.image_frame:-1;}
-function origin(p,e){return e.transform.position;}
+// Grid is the common editing basis; pelvis attachments retain the legacy facing basis.
+function toGrid(p,source){const e=clone(source);if((e.anchor||'pelvis')==='grid')return e;const position=[p.root[0]+e.transform.position[0]*p.facing,p.root[1]+e.transform.position[1]];if(p.facing<0)applyMatrix(e,[-1,0,0,1],e.mirror_x?1:-1);e.transform.position=position;return e;}
+function fromGrid(p,source){const e=clone(source);if((e.anchor||'pelvis')==='grid')return e;const position=[(e.transform.position[0]-p.root[0])*p.facing,e.transform.position[1]-p.root[1]];if(p.facing<0)applyMatrix(e,[-1,0,0,1],e.mirror_x?1:-1);e.transform.position=position;return e;}
+function reanchor(p,e,anchor){const grid=toGrid(p,e);grid.anchor=anchor;Object.assign(e,fromGrid(p,grid));}
+function origin(p,e){return toGrid(p,e).transform.position;}
 function size(e){const a=asset(e.asset);return [a.width*(a.content_size?.[0]??1)*e.transform.scale*e.transform.scale_x,a.height*(a.content_size?.[1]??1)*e.transform.scale*e.transform.scale_y];}
 // R * shearX * scale. The shear term makes group stretching exact for rotated images.
 function matrix(e){const t=e.transform,r=t.rotation*Math.PI/180,c=Math.cos(r),s=Math.sin(r),x=t.scale*t.scale_x*(e.mirror_x?-1:1),y=t.scale*t.scale_y*(e.mirror_y?-1:1),k=Math.tan((t.skew||0)*Math.PI/180);return [c*x,s*x,(c*k-s)*y,(s*k+c)*y];}
@@ -23,15 +27,16 @@ function validatePose(p){if(p.vfx_frame_time!==undefined&&(!Number.isFinite(p.vf
  for(const e of p.vfx){
   // v20 projects keep their placement/timing and explicit image, or the old start image.
   if(e.type==='sticker'&&e.image_frame===undefined&&e.playback)e.image_frame=e.playback.frame??e.playback.start_frame??0;
+  if(e.anchor===undefined)e.anchor='pelvis';
   delete e.playback;if(e.transform&&e.transform.skew===undefined)e.transform.skew=0;
   if(e.type==='sticker'&&e.pivot_version===undefined&&asset(e.asset)&&e.transform?.position){const a=asset(e.asset),pivot=a.pivot||[.5,.5],delta=[(pivot[0]-.5)*a.width,(pivot[1]-.5)*a.height],m=matrix(e);e.transform.position=[e.transform.position[0]+m[0]*delta[0]+m[2]*delta[1],e.transform.position[1]+m[1]*delta[0]+m[3]*delta[1]];e.pivot_version=1;}
 
-  if(!e||e.type!=='sticker'||e.pivot_version!==1||!/^vfx_[1-9][0-9]*$/.test(e.id)||ids.has(e.id)||!asset(e.asset)||!Number.isInteger(e.image_frame)||!num(e.image_frame,0,asset(e.asset).frames.length-1)||typeof e.enabled!=='boolean'||!num(e.opacity,0,1)||!num(e.hue,-180,180)||typeof e.mirror_x!=='boolean'||typeof e.mirror_y!=='boolean'||!Number.isInteger(e.z)||!num(e.z,-100,100)||!Array.isArray(e.transform?.position)||e.transform.position.length!==2||!e.transform.position.every(n=>num(n,-5000,5000))||!num(e.transform.rotation,-36000,36000)||!num(e.transform.skew,-89.99,89.99)||!['scale','scale_x','scale_y'].every(k=>num(e.transform[k],.001,1000))||!num(e.range?.start,0,600)||!num(e.range.end,e.range.start,600))throw Error('Invalid effect sticker.');ids.add(e.id);
+  if(!e||e.type!=='sticker'||e.pivot_version!==1||!['grid','pelvis'].includes(e.anchor)||!/^vfx_[1-9][0-9]*$/.test(e.id)||ids.has(e.id)||!asset(e.asset)||!Number.isInteger(e.image_frame)||!num(e.image_frame,0,asset(e.asset).frames.length-1)||typeof e.enabled!=='boolean'||!num(e.opacity,0,1)||!num(e.hue,-180,180)||typeof e.mirror_x!=='boolean'||typeof e.mirror_y!=='boolean'||!Number.isInteger(e.z)||!num(e.z,-100,100)||!Array.isArray(e.transform?.position)||e.transform.position.length!==2||!e.transform.position.every(n=>num(n,-5000,5000))||!num(e.transform.rotation,-36000,36000)||!num(e.transform.skew,-89.99,89.99)||!['scale','scale_x','scale_y'].every(k=>num(e.transform[k],.001,1000))||!num(e.range?.start,0,600)||!num(e.range.end,e.range.start,600))throw Error('Invalid effect sticker.');ids.add(e.id);
  }if(!p.vfx.length)delete p.vfx;
 }
-function validateSequence(a){const shared=new Map();for(const k of a.keys)for(const e of k.pose.vfx||[]){const spec=JSON.stringify([e.asset,e.range]);if(shared.has(e.id)&&shared.get(e.id)!==spec)throw Error('Sticker asset and lifetime must be shared across keys.');shared.set(e.id,spec);}}
+function validateSequence(a){const shared=new Map();for(const k of a.keys)for(const e of k.pose.vfx||[]){const spec=JSON.stringify([e.asset,e.range,e.anchor||'pelvis']);if(shared.has(e.id)&&shared.get(e.id)!==spec)throw Error('Sticker asset, lifetime and attachment must be shared across keys.');shared.set(e.id,spec);}}
 function removeKey(){}
 function mirror(out,p){if(!p.vfx)return;out.vfx=clone(p.vfx);for(const e of out.vfx){e.transform.position[0]*=-1;e.transform.rotation*=-1;e.transform.skew=-(e.transform.skew||0);e.mirror_x=!e.mirror_x;}}
-function runtime(a,actorScale=1){return {type:'sol_effect_sticker_clip',version:3,actor_scale:actorScale,duration:a.keys.at(-1).time,assets:library.assets.filter(v=>a.keys.some(k=>k.pose.vfx?.some(e=>e.asset===v.id))).map(({images,preview,...v})=>v),keys:a.keys.map(k=>({time:k.time,interpolation:k.interpolation,root:k.pose.root,facing:k.pose.facing,stickers:clone(k.pose.vfx||[])}))};}
-const API={library,asset,types,create,range,active,frame,origin,size,matrix,corners,bounds,transformGroup,shiftRange,blend,validatePose,validateSequence,removeKey,mirror,runtime};global.SolVFX=API;if(typeof module!=='undefined')module.exports=API;
+function runtime(a,actorScale=1){return {type:'sol_effect_sticker_clip',version:4,actor_scale:actorScale,duration:a.keys.at(-1).time,assets:library.assets.filter(v=>a.keys.some(k=>k.pose.vfx?.some(e=>e.asset===v.id))).map(({images,preview,...v})=>v),keys:a.keys.map(k=>({time:k.time,interpolation:k.interpolation,root:k.pose.root,facing:k.pose.facing,stickers:clone(k.pose.vfx||[])}))};}
+const API={library,asset,types,create,range,active,frame,toGrid,fromGrid,reanchor,origin,size,matrix,corners,bounds,transformGroup,shiftRange,blend,validatePose,validateSequence,removeKey,mirror,runtime};global.SolVFX=API;if(typeof module!=='undefined')module.exports=API;
 })(typeof window!=='undefined'?window:globalThis);

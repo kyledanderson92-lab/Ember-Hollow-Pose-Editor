@@ -1,6 +1,6 @@
 extends Node2D
 ## Reusable playback of Export Godot effects JSON. Call seek with the character's
-## animation clock; positions are actor-local and include exported root/facing.
+## animation clock; grid stickers ignore authored root/facing; pelvis stickers inherit them.
 ## asset_root points to the editor distribution containing assets/effects/.
 const HUE = preload("sticker_hue.gdshader")
 var clip: Dictionary = {}
@@ -13,7 +13,7 @@ var playing: bool = false
 var loop: bool = false
 
 func load_clip(data: Dictionary, root_path: String = "res://tools/sol_pose_editor/") -> void:
-	assert(data.get("type") == "sol_effect_sticker_clip" and int(data.get("version",0)) in [1,2,3])
+	assert(data.get("type") == "sol_effect_sticker_clip" and int(data.get("version",0)) in [1,2,3,4])
 	clip = data.duplicate(true)
 	# v20 flipbook migration: retain an explicitly held image, otherwise its start image.
 	for key: Dictionary in clip.keys:
@@ -22,6 +22,7 @@ func load_clip(data: Dictionary, root_path: String = "res://tools/sol_pose_edito
 				var old: Dictionary = e.get("playback", {})
 				e.image_frame = old.get("frame") if old.get("frame") != null else old.get("start_frame",0)
 			e.erase("playback")
+			e.anchor = e.get("anchor","pelvis")
 			e.transform.skew = e.transform.get("skew",0.0)
 			if not e.has("pivot_version"):
 				var asset: Dictionary = {}
@@ -109,14 +110,17 @@ func states_at(time: float) -> Array[Dictionary]:
 		var asset: Dictionary = _assets[e.asset]
 		var frame: int = int(e.image_frame)
 		var visible_now: bool = e.enabled and e.opacity > 0.0 and time >= float(e.range.start)-0.00000001 and time < float(e.range.end)-0.00000001 and frame < asset.frames.size()
+		var attached: bool = e.get("anchor","pelvis") == "pelvis"
+		var sticker_facing: float = facing if attached else 1.0
+		var sticker_root: Vector2 = root_position if attached else Vector2.ZERO
 		var point: Vector2 = e.transform.position
 		var r: float = deg_to_rad(e.transform.rotation)
 		var k: float = tan(deg_to_rad(e.transform.get("skew",0.0)))
 		var sx: float = float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)
 		var sy: float = float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)
-		var basis_x := Vector2(cos(r)*sx*facing,sin(r)*sx)
-		var basis_y := Vector2((cos(r)*k-sin(r))*sy*facing,(sin(r)*k+cos(r))*sy)
-		out.append({"id":e.id,"asset":e.asset,"frame":frame,"visible":visible_now,"position":root_position+Vector2(point.x*facing,point.y),"rotation":float(e.transform.rotation)*facing,"scale":Vector2(float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)*facing,float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)),"basis_x":basis_x,"basis_y":basis_y,"hue":e.hue,"opacity":e.opacity,"z":e.z})
+		var basis_x := Vector2(cos(r)*sx*sticker_facing,sin(r)*sx)
+		var basis_y := Vector2((cos(r)*k-sin(r))*sy*sticker_facing,(sin(r)*k+cos(r))*sy)
+		out.append({"id":e.id,"asset":e.asset,"frame":frame,"visible":visible_now,"position":sticker_root+Vector2(point.x*sticker_facing,point.y),"rotation":float(e.transform.rotation)*sticker_facing,"scale":Vector2(float(e.transform.scale)*float(e.transform.scale_x)*(-1.0 if e.mirror_x else 1.0)*sticker_facing,float(e.transform.scale)*float(e.transform.scale_y)*(-1.0 if e.mirror_y else 1.0)),"basis_x":basis_x,"basis_y":basis_y,"hue":e.hue,"opacity":e.opacity,"z":e.z})
 	return out
 
 func seek(time: float) -> void:
