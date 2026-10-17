@@ -1,0 +1,3935 @@
+{
+  "type": "geometric_sol_animation",
+  "version": 1,
+  "id": "sprite_reference_run",
+  "name": "sprite_reference_run",
+  "weapon_type": "base",
+  "weapon_id": null,
+  "keys": [
+    {
+      "id": "key_1",
+      "time": 0,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -32.311137254340736
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "head": [
+            8.386471242071408,
+            -32.08569018030053
+          ],
+          "scarf_root": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "weapon_socket": [
+            6.4733700027933105,
+            -4.864348202843628
+          ],
+          "left_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "left_elbow": [
+            8.623904496977211,
+            -7.393315204178672
+          ],
+          "left_hand": [
+            20.464185514856432,
+            -16.60242266252918
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -3.317193369187612,
+            17.6916979690006
+          ],
+          "left_foot": [
+            -23.162752379502635,
+            20.172392845289977
+          ],
+          "right_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "right_elbow": [
+            -5.732632509576249,
+            -13.582921425964742
+          ],
+          "right_hand": [
+            6.4733700027933105,
+            -4.864348202843628
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            8.8570297378244,
+            15.67012953615086
+          ],
+          "right_foot": [
+            19.951034883284315,
+            32.311137254340736
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 15.945395900922904,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 1, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_2",
+      "time": 0.03,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -35.928528617435234
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "head": [
+            7.118219717306056,
+            -32.224105562715735
+          ],
+          "scarf_root": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "weapon_socket": [
+            12.41517905406926,
+            -6.007239642535676
+          ],
+          "left_shoulder": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "left_elbow": [
+            4.020067488431563,
+            -7.262662310697111
+          ],
+          "left_hand": [
+            18.945622514408427,
+            -5.770106808099425
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -1.0569963117329089,
+            17.96893729945945
+          ],
+          "left_foot": [
+            -21.056997799261456,
+            17.96893729945945
+          ],
+          "right_shoulder": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "right_elbow": [
+            -2.0783455674781575,
+            -9.872179541614988
+          ],
+          "right_hand": [
+            12.41517905406926,
+            -6.007239642535676
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            8.38343495596142,
+            15.928526416326699
+          ],
+          "right_foot": [
+            8.38343495596142,
+            35.928528617435234
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 16.699244233993625,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 2, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_3",
+      "time": 0.06,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -36.60106439454985
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "head": [
+            7.249717142411502,
+            -32.325140481816746
+          ],
+          "scarf_root": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "weapon_socket": [
+            19.754726660717587,
+            -5.62485607606788
+          ],
+          "left_shoulder": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "left_elbow": [
+            1.2413892577180237,
+            -7.9756015073995545
+          ],
+          "left_hand": [
+            15.857254424625268,
+            -4.602709545805575
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            1.0569963117329089,
+            17.96893729945945
+          ],
+          "left_foot": [
+            -18.920367928600715,
+            18.920240358522957
+          ],
+          "right_shoulder": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "right_elbow": [
+            4.846470097989354,
+            -7.281329027482128
+          ],
+          "right_hand": [
+            19.754726660717587,
+            -5.62485607606788
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            5.946307052828434,
+            16.989448722366955
+          ],
+          "right_foot": [
+            2.0239839183918553,
+            36.60106439454985
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 14.931417178137508,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 3, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_4",
+      "time": 0.09,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -36.534218664892165
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            16.387905046072763,
+            -13.944277044238481
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -1.6466039804224462,
+            -8.905312089092439
+          ],
+          "left_hand": [
+            11.215787468893645,
+            -1.187877219502786
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            9.539980167383959,
+            15.263968267814334
+          ],
+          "left_foot": [
+            -10.208833939796275,
+            18.423778524963172
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            2.76851378285357,
+            -7.65840415352193
+          ],
+          "right_hand": [
+            16.387905046072763,
+            -13.944277044238481
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            4.365640815817598,
+            17.462563263270393
+          ],
+          "right_foot": [
+            -1.6569872057471722,
+            36.534218664892165
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 4, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_5",
+      "time": 0.12,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -35.888543995853254
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "head": [
+            6.799929717120042,
+            -32.47589256135869
+          ],
+          "scarf_root": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "weapon_socket": [
+            16.55339866689399,
+            -16.4141860898689
+          ],
+          "left_shoulder": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "left_elbow": [
+            -5.002822216403661,
+            -11.223570496216686
+          ],
+          "left_hand": [
+            3.4951085172388883,
+            1.1370560254452027
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            11.853082006463863,
+            13.5463794359587
+          ],
+          "left_foot": [
+            -7.670660649321311,
+            17.88498891502207
+          ],
+          "right_shoulder": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "right_elbow": [
+            4.457323288790951,
+            -7.543730812593337
+          ],
+          "right_hand": [
+            16.55339866689399,
+            -16.4141860898689
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            0,
+            17.999998207123614
+          ],
+          "right_foot": [
+            -8.94427289436482,
+            35.888543995853254
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.689369175439197,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 5, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_6",
+      "time": 0.15,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -32.00313718196416
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            13.484574272249752,
+            -21.492470688076956
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -7.334150016960096,
+            -13.806971538533478
+          ],
+          "left_hand": [
+            2.8017174908815017,
+            -2.7496615299790097
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            14.12788866495739,
+            11.153596314440046
+          ],
+          "left_foot": [
+            -3.2369754690682555,
+            21.07637581959756
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            7.198701381533202,
+            -7.873079424857762
+          ],
+          "right_hand": [
+            13.484574272249752,
+            -21.492470688076956
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -2.2326250002268058,
+            17.861000001814446
+          ],
+          "right_foot": [
+            -16.374762180376525,
+            32.00313718196416
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 6, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_7",
+      "time": 0.18,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.23750604015905
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.65716140136914,
+            -32.504938197402666
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            10.893998005774733,
+            -22.560804517276047
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -7.752524939659774,
+            -14.47449256361211
+          ],
+          "left_hand": [
+            1.7460401149973022,
+            -2.865135274586793
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            14.592224959918962,
+            10.538829137719251
+          ],
+          "left_foot": [
+            0.884929960319587,
+            25.102830074793587
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            7.521105282528339,
+            -7.944936049875009
+          ],
+          "right_hand": [
+            10.893998005774733,
+            -22.560804517276047
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -5.240908562071744,
+            17.22012813252144
+          ],
+          "right_foot": [
+            -17.73481088818183,
+            32.83750604015905
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 7, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_8",
+      "time": 0.21,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -31.904235709839433
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "head": [
+            7.341657971670296,
+            -32.356669946521876
+          ],
+          "scarf_root": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "weapon_socket": [
+            7.798932107285767,
+            -22.94920893829535
+          ],
+          "left_shoulder": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "left_elbow": [
+            -7.373980208839992,
+            -14.874078039635286
+          ],
+          "left_hand": [
+            0.48747968702081046,
+            -2.099205708861483
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            14.399998863887115,
+            10.799999147915335
+          ],
+          "left_foot": [
+            10.97317511398727,
+            30.504235709839435
+          ],
+          "right_shoulder": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "right_elbow": [
+            8.949379632430288,
+            -7.993391111416564
+          ],
+          "right_hand": [
+            7.798932107285767,
+            -22.94920893829535
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -9.984602537545241,
+            14.97690380631786
+          ],
+          "right_foot": [
+            -25.28282818353882,
+            27.859620139786138
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 13.134022306396332,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 8, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_9",
+      "time": 0.24,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.25933448347993
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "head": [
+            8.06868352316663,
+            -32.1817209695985
+          ],
+          "scarf_root": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "weapon_socket": [
+            10.07781935454134,
+            -23.277202131227224
+          ],
+          "left_shoulder": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "left_elbow": [
+            -5.158067004653846,
+            -11.925663083417698
+          ],
+          "left_hand": [
+            -1.520033318218938,
+            2.6264716623219346
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            13.894743144857033,
+            11.442729648705791
+          ],
+          "left_foot": [
+            11.192478849206015,
+            31.259334483479932
+          ],
+          "right_shoulder": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "right_elbow": [
+            10.07781935454134,
+            -8.277201585264018
+          ],
+          "right_hand": [
+            10.07781935454134,
+            -23.277202131227224
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -10.462286444855504,
+            14.647201022797704
+          ],
+          "right_foot": [
+            -26.968433486442994,
+            25.940880577568095
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 13.57043438516149,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 9, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_10",
+      "time": 0.27,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.18938905997754
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            7.221146767920947,
+            -32.36868724618644
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            8.97403609433226,
+            -23.37091223416885
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -6.782181702504729,
+            -13.036823576319643
+          ],
+          "left_hand": [
+            -2.0387661107417863,
+            1.1934231989691835
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            13.5463794359587,
+            11.853082006463863
+          ],
+          "left_foot": [
+            11.951474871677606,
+            31.789389059977545
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            8.97403609433226,
+            -8.370911688205645
+          ],
+          "right_hand": [
+            8.97403609433226,
+            -23.37091223416885
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -10.462286444855504,
+            14.647201022797704
+          ],
+          "right_foot": [
+            -27.231160616373643,
+            25.546969234284497
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 10, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_11",
+      "time": 0.3,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -31.008712717389205
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            7.602534719147194,
+            -32.258709040048466
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            9.829424529401974,
+            -23.704746446318953
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -7.4619445610385435,
+            -14.002168021864001
+          ],
+          "left_hand": [
+            -6.393239013652266,
+            0.9597096415438777
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            14.243128901322649,
+            11.006054151022045
+          ],
+          "left_foot": [
+            18.67555130276973,
+            30.508712717389205
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            9.829424529401974,
+            -8.704745900355748
+          ],
+          "right_hand": [
+            9.829424529401974,
+            -23.704746446318953
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -9.832819070453997,
+            15.076989241362794
+          ],
+          "right_foot": [
+            -27.35713917263325,
+            24.715365297561384
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 11, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_12",
+      "time": 0.33,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -30.163413102017927
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            17.59503603311444,
+            -21.347257973775996
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            -7.196136568944101,
+            -13.603834566903522
+          ],
+          "left_hand": [
+            -8.264842116330378,
+            1.3580430965043568
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            13.827981941770144,
+            11.523318284808454
+          ],
+          "left_foot": [
+            21.07690770401827,
+            30.163413102017927
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            9.645051643706818,
+            -8.627282950723801
+          ],
+          "right_hand": [
+            17.59503603311444,
+            -21.347257973775996
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -9.80978933362071,
+            15.091983590185706
+          ],
+          "right_foot": [
+            -27.86700169739331,
+            23.690656144363132
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 12, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_13",
+      "time": 0.36,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -32.31113698509578
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "head": [
+            8.386471242071408,
+            -32.08569018030053
+          ],
+          "scarf_root": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "weapon_socket": [
+            20.464187704237773,
+            -16.60242732524665
+          ],
+          "left_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "left_elbow": [
+            -5.732634720336276,
+            -13.582920004761867
+          ],
+          "left_hand": [
+            6.4733650357252595,
+            -4.864348750432198
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            8.857029921231497,
+            15.670129860640342
+          ],
+          "left_foot": [
+            19.951034670868452,
+            32.31113698509578
+          ],
+          "right_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "right_elbow": [
+            8.623904012635613,
+            -7.39331778733386
+          ],
+          "right_hand": [
+            20.464187704237773,
+            -16.60242732524665
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -3.3171933004967737,
+            17.69169760264946
+          ],
+          "right_foot": [
+            -23.162753018881432,
+            20.17239256744754
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 15.945395900922904,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 1, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_14",
+      "time": 0.39,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -35.92852823369549
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "head": [
+            7.118219717306056,
+            -32.224105562715735
+          ],
+          "scarf_root": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "weapon_socket": [
+            18.94562631690358,
+            -5.77010906346767
+          ],
+          "left_shoulder": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "left_elbow": [
+            -2.078347144380153,
+            -9.872177439078994
+          ],
+          "left_hand": [
+            12.415174204300644,
+            -6.007238412764115
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            8.383435129561548,
+            15.928526746166938
+          ],
+          "left_foot": [
+            8.383435129561548,
+            35.92852823369549
+          ],
+          "right_shoulder": [
+            6.321653482459599,
+            -21.07217827486533
+          ],
+          "right_elbow": [
+            4.020067920500048,
+            -7.262664903108023
+          ],
+          "right_hand": [
+            18.94562631690358,
+            -5.77010906346767
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            -1.0569962898451397,
+            17.968936927367373
+          ],
+          "right_foot": [
+            -21.056998490953674,
+            17.968936927367373
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 16.699244233993625,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 2, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_15",
+      "time": 0.42,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -36.60106404663641
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "head": [
+            7.249717142411502,
+            -32.325140481816746
+          ],
+          "scarf_root": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "weapon_socket": [
+            15.857258556219387,
+            -4.602711277454136
+          ],
+          "left_shoulder": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "left_elbow": [
+            4.8464699436578975,
+            -7.281326403847377
+          ],
+          "left_hand": [
+            19.754723139866492,
+            -5.624853826490867
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            5.9463071759616914,
+            16.989449074176264
+          ],
+          "left_foot": [
+            2.023984181469662,
+            36.60106404663641
+          ],
+          "right_shoulder": [
+            5.668578312327312,
+            -21.25716867122742
+          ],
+          "right_elbow": [
+            1.2413900888183491,
+            -7.97560400070053
+          ],
+          "right_hand": [
+            15.857258556219387,
+            -4.602711277454136
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            1.0569962898451397,
+            17.968936927367373
+          ],
+          "right_foot": [
+            -18.920368663260795,
+            18.920240020372418
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 14.931417178137508,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 3, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_16",
+      "time": 0.45,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -36.534218346041
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            11.215791492492299,
+            -1.187877854801152
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            2.7685134926207464,
+            -7.658401541426521
+          ],
+          "left_hand": [
+            16.387901680366426,
+            -13.944273012693758
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            4.365640906219182,
+            17.46256362487673
+          ],
+          "left_foot": [
+            -1.65698690046427,
+            36.534218346041
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -1.6466028613554524,
+            -8.905314467109802
+          ],
+          "right_hand": [
+            11.215791492492299,
+            -1.187877854801152
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            9.539979969834656,
+            15.26396795173545
+          ],
+          "right_foot": [
+            -10.20883484196345,
+            18.423778321623146
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 4, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_17",
+      "time": 0.48,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -35.88854373034319
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "head": [
+            6.799929717120042,
+            -32.47589256135869
+          ],
+          "scarf_root": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "weapon_socket": [
+            3.4951122121254024,
+            1.1370568793040068
+          ],
+          "left_shoulder": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "left_elbow": [
+            4.457323288790951,
+            -7.543728184423342
+          ],
+          "left_hand": [
+            16.55339593540925,
+            -16.414181458610095
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            0,
+            17.999998579858893
+          ],
+          "left_foot": [
+            -8.944272575242149,
+            35.88854373034319
+          ],
+          "right_shoulder": [
+            4.457323288790951,
+            -21.543729229156263
+          ],
+          "right_elbow": [
+            -5.002820440484468,
+            -11.223572433583078
+          ],
+          "right_hand": [
+            3.4951122121254024,
+            1.1370568793040068
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            11.853081761015964,
+            13.546379155446816
+          ],
+          "right_foot": [
+            -7.670661591356758,
+            17.88498878930742
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.689369175439197,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 5, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_18",
+      "time": 0.51,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -32.00313704724389
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            2.8017219664904998,
+            -2.7496604909097293
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            7.1987019229637665,
+            -7.873076853062582
+          ],
+          "left_hand": [
+            13.484573394231003,
+            -21.492465040808263
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -2.232625046458927,
+            17.861000371671416
+          ],
+          "left_foot": [
+            -16.374761722031398,
+            32.00313704724389
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -7.334147830190479,
+            -13.806972996379889
+          ],
+          "right_hand": [
+            2.8017219664904998,
+            -2.7496604909097293
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            14.127888372403893,
+            11.153596083476758
+          ],
+          "right_foot": [
+            -3.2369763811826804,
+            21.076375942669088
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 6, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_19",
+      "time": 0.54,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.2375058395328
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.65716140136914,
+            -32.504938197402666
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            1.746044525233338,
+            -2.865133985545171
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            7.521105884482642,
+            -7.944933491569216
+          ],
+          "left_hand": [
+            10.893997846076623,
+            -22.56079865847646
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -5.24090867059795,
+            17.220128489107548
+          ],
+          "left_foot": [
+            -17.73481055093815,
+            32.8375058395328
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -7.752522674350135,
+            -14.474493896147193
+          ],
+          "right_hand": [
+            1.746044525233338,
+            -2.865133985545171
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            14.592224657750213,
+            10.538828919486265
+          ],
+          "right_foot": [
+            0.8849291690883057,
+            25.102830376189544
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 7, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_20",
+      "time": 0.57,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -31.904236189225657
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "head": [
+            7.341657971670296,
+            -32.356669946521876
+          ],
+          "scarf_root": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "weapon_socket": [
+            0.48748378500781975,
+            -2.0992040537814898
+          ],
+          "left_shoulder": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "left_elbow": [
+            8.949380374011355,
+            -7.99338859004094
+          ],
+          "left_hand": [
+            7.798933108656042,
+            -22.949203039660002
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -9.984602744301574,
+            14.97690411645236
+          ],
+          "left_foot": [
+            -25.282827844469836,
+            27.85961999027826
+          ],
+          "right_shoulder": [
+            4.999051543341205,
+            -21.424506614319448
+          ],
+          "right_elbow": [
+            -7.37397788609511,
+            -14.874079269323751
+          ],
+          "right_hand": [
+            0.48748378500781975,
+            -2.0992040537814898
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            14.39999856569889,
+            10.799998924274169
+          ],
+          "right_foot": [
+            10.973174693533414,
+            30.504236189225658
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 13.134022306396332,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 8, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_21",
+      "time": 0.6,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.25933495356599
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "head": [
+            8.06868352316663,
+            -32.1817209695985
+          ],
+          "scarf_root": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "weapon_socket": [
+            -1.520030559326932,
+            2.6264731725051984
+          ],
+          "left_shoulder": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "left_elbow": [
+            10.077820277353432,
+            -8.277199124431771
+          ],
+          "left_hand": [
+            10.077820277353432,
+            -23.277196283158098
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -10.462286661503484,
+            14.647201326104877
+          ],
+          "left_foot": [
+            -26.96843311416823,
+            25.940880477928125
+          ],
+          "right_shoulder": [
+            5.162091728285731,
+            -21.38580858861231
+          ],
+          "right_elbow": [
+            -5.158065067287454,
+            -11.92566485933689
+          ],
+          "right_hand": [
+            -1.520030559326932,
+            2.6264731725051984
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            13.894742857131401,
+            11.442729411755272
+          ],
+          "right_foot": [
+            11.192478465066303,
+            31.25933495356599
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 13.57043438516149,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 9, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_22",
+      "time": 0.63,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -33.18938952583708
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            7.221146767920947,
+            -32.36868724618644
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            -2.0387629564528513,
+            1.1934248099607103
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            8.974036969040107,
+            -8.370909209866745
+          ],
+          "left_hand": [
+            8.974036969040107,
+            -23.37090636859307
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -10.462286661503484,
+            14.647201326104877
+          ],
+          "left_foot": [
+            -27.23116023472504,
+            25.54696914869889
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -6.782179619354145,
+            -13.03682517874317
+          ],
+          "right_hand": [
+            -2.0387629564528513,
+            1.1934248099607103
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            13.546379155446816,
+            11.853081761015964
+          ],
+          "right_foot": [
+            11.951474534261127,
+            31.789389525837077
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 10, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_23",
+      "time": 0.66,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -31.00871318531644
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            7.602534719147194,
+            -32.258709040048466
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            -6.393236561561604,
+            0.9597115989698963
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            9.829425564688854,
+            -8.704743484686363
+          ],
+          "left_hand": [
+            9.829425564688854,
+            -23.70474064341269
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -9.83281927406727,
+            15.076989553569815
+          ],
+          "left_foot": [
+            -27.35713875099639,
+            24.71536526588083
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -7.461942350278517,
+            -14.002169443066876
+          ],
+          "right_hand": [
+            -6.393236561561604,
+            0.9597115989698963
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            14.243128606382813,
+            11.006053923113992
+          ],
+          "right_foot": [
+            18.675551165974277,
+            30.50871318531644
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 11, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_24",
+      "time": 0.69,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -30.1634135284585
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "head": [
+            6.279954060327792,
+            -32.5790097540116
+          ],
+          "scarf_root": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "weapon_socket": [
+            -8.264840196800167,
+            1.3580449791526643
+          ],
+          "left_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "left_elbow": [
+            9.64505264438203,
+            -8.62728052051257
+          ],
+          "left_hand": [
+            17.595035238557696,
+            -21.347252671193637
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -9.809789536757094,
+            15.091983902703223
+          ],
+          "left_foot": [
+            -27.867001256266498,
+            23.690656150088653
+          ],
+          "right_shoulder": [
+            4.314554973040049,
+            -21.57277486520024
+          ],
+          "right_elbow": [
+            -7.196134408083254,
+            -13.603836062884108
+          ],
+          "right_hand": [
+            -8.264840196800167,
+            1.3580449791526643
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            13.827981655426973,
+            11.523318046189143
+          ],
+          "right_foot": [
+            21.0769076763095,
+            30.1634135284585
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 11.30993247402023,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 12, opposite step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    },
+    {
+      "id": "key_25",
+      "time": 0.72,
+      "interpolation": "linear",
+      "pose": {
+        "type": "geometric_sol_pose",
+        "version": 1,
+        "name": "sprite_reference_run",
+        "scarf": {
+          "version": 1,
+          "visible": false,
+          "tails": {
+            "a": {
+              "points": [
+                [
+                  -6,
+                  3
+                ],
+                [
+                  -12,
+                  6
+                ],
+                [
+                  -18,
+                  9
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            },
+            "b": {
+              "points": [
+                [
+                  -4,
+                  4
+                ],
+                [
+                  -8,
+                  8
+                ],
+                [
+                  -12,
+                  12
+                ]
+              ],
+              "width": 3,
+              "layer": "in_front_body"
+            }
+          }
+        },
+        "pins": {},
+        "root": [
+          0,
+          -32.311137254340736
+        ],
+        "facing": 1,
+        "body_facing": 1,
+        "joints": {
+          "torso": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "head": [
+            8.386471242071408,
+            -32.08569018030053
+          ],
+          "scarf_root": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "weapon_socket": [
+            6.4733700027933105,
+            -4.864348202843628
+          ],
+          "left_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "left_elbow": [
+            8.623904496977211,
+            -7.393315204178672
+          ],
+          "left_hand": [
+            20.464185514856432,
+            -16.60242266252918
+          ],
+          "left_hip": [
+            0,
+            0
+          ],
+          "left_knee": [
+            -3.317193369187612,
+            17.6916979690006
+          ],
+          "left_foot": [
+            -23.162752379502635,
+            20.172392845289977
+          ],
+          "right_shoulder": [
+            6.043864813742316,
+            -21.153526848098107
+          ],
+          "right_elbow": [
+            -5.732632509576249,
+            -13.582921425964742
+          ],
+          "right_hand": [
+            6.4733700027933105,
+            -4.864348202843628
+          ],
+          "right_hip": [
+            0,
+            0
+          ],
+          "right_knee": [
+            8.8570297378244,
+            15.67012953615086
+          ],
+          "right_foot": [
+            19.951034883284315,
+            32.311137254340736
+          ]
+        },
+        "weapon_hand": "right",
+        "torso_rotation": 15.945395900922904,
+        "head_rotation": 0,
+        "hand_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "foot_rotations": {
+          "left": 0,
+          "right": 0
+        },
+        "weapon": {
+          "kind": "sword",
+          "layer": "front",
+          "rotation": 22.9183121467424,
+          "visible": false,
+          "attachment": {
+            "position_locked": false,
+            "rotation_locked": false,
+            "position_offset": [
+              0,
+              0
+            ],
+            "grip_rotation_offset": 0
+          }
+        },
+        "notes": "Adapted from Freakerbob stickmanrun frame 1, first step. Original PNGs: references/stickmanrun/. CC0. Timing and retargeting are authored choices.",
+        "floor": {
+          "enabled": true,
+          "height": 1.6,
+          "clearance": 1.6
+        }
+      }
+    }
+  ]
+}

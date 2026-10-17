@@ -39,6 +39,7 @@ const referenceName=uiNode('p','reference-name',referencePanel,'No reference loa
 const referenceOptions=uiNode('div','reference-options',referencePanel);
 function referenceCheckbox(id,text,key){const label=uiNode('label',null,referenceOptions),input=uiNode('input',id,label);input.type='checkbox';label.append(text);input.onchange=()=>{if(!reference)return;snapshot();reference[key]=input.checked;controls();render();};}
 referenceCheckbox('reference-visible',' Show image','visible');referenceCheckbox('reference-locked',' Lock image position','locked');
+referenceCheckbox('reference-flip-x',' Flip horizontally','flip_x');
 for(const [id,text,key,min,max,step] of [['reference-opacity','Opacity','opacity',0,1,.05],['reference-scale','Image scale','scale',.01,100,.05]]){
  const label=uiNode('label',null,referenceOptions,text),input=uiNode('input',id,label);input.type='number';input.min=min;input.max=max;input.step=step;
  input.onchange=()=>{if(!reference)return;try{const next=M.reference.validate({...reference,[key]:Number(input.value)});snapshot();reference=next;controls();render();}catch(e){status(e.message,true);controls();}};
@@ -55,13 +56,14 @@ function paintReferenceAlignment(){
  if(!reference){referenceLayer.replaceChildren();return;}
  let image=$('reference-image');if(!image)image=elem('image',{id:'reference-image','pointer-events':'none',preserveAspectRatio:'none'},referenceLayer);
  for(const [key,value] of Object.entries({x:reference.x,y:reference.y,width:reference.width*reference.scale,height:reference.height*reference.scale,opacity:reference.opacity,visibility:reference.visible?'visible':'hidden'}))image.setAttribute(key,value);
+ image.setAttribute('transform',reference.flip_x?`translate(${2*reference.x+reference.width*reference.scale} 0) scale(-1 1)`:'');
  if(image.getAttribute('href')!==reference.data_url)image.setAttribute('href',reference.data_url);
 }
 function authoringWorkspaceControls(){
  const values=M.proportions.defaults(rig),signature=JSON.stringify(values);if(signature!==proportionsSignature){fillProportionFields(values);proportionsSignature=signature;}
  for(const key of ['head_radius','limb_thickness','overall_scale'])$('appearance-'+key).value=rig[key];
  referenceName.textContent=reference?reference.name:'No reference loaded';referenceOptions.hidden=!reference;fitAlignment.disabled=!reference;
- if(reference){$('reference-visible').checked=reference.visible;$('reference-locked').checked=reference.locked;for(const key of ['scale','opacity']){$('reference-'+key).value=Number(reference[key].toFixed(5));$('reference-'+key).disabled=key!=='opacity'&&reference.locked;}}
+ if(reference){$('reference-visible').checked=reference.visible;$('reference-locked').checked=reference.locked;$('reference-flip-x').checked=!!reference.flip_x;for(const key of ['scale','opacity']){$('reference-'+key).value=Number(reference[key].toFixed(5));$('reference-'+key).disabled=key!=='opacity'&&reference.locked;}}
  alignmentHint.textContent=canvasTool.value==='pose'?'':canvasTool.value==='character'?'Drag to align character; keys stay unchanged':reference?.locked?'Image locked — unlock to drag':'Drag to align reference image';
  $('stage').classList.toggle('alignment-active',canvasTool.value!=='pose');
 }

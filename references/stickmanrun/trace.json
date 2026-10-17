@@ -1,0 +1,19 @@
+{
+  "source": "User-supplied stickmanrun.zip; numeric Layer 1 through Layer 12 order",
+  "description": "Manually traced pixel landmarks before retargeting. A is the initially forward leg and initially forward arm. The second step exchanges A/B between left/right sides.",
+  "cycle_seconds": 0.72,
+  "frames": [
+    {"hip":[32,53],"shoulder":[40,25],"head":[43,11],"knee_a":[45,76],"foot_a":[57,94],"knee_b":[29,69],"foot_b":[5,72],"elbow_a":[43,41],"hand_a":[52,34],"elbow_b":[26,34],"hand_b":[40,44],"lift":0},
+    {"hip":[33,57],"shoulder":[42,27],"head":[43,13],"knee_a":[43,76],"foot_a":[43,94],"knee_b":[32,74],"foot_b":[10,74],"elbow_a":[39,45],"hand_a":[49,46],"elbow_b":[30,43],"hand_b":[45,47],"lift":0},
+    {"hip":[22,55],"shoulder":[30,25],"head":[32,11],"knee_a":[29,75],"foot_a":[25,95],"knee_b":[23,72],"foot_b":[2,73],"elbow_a":[24,43],"hand_a":[37,46],"elbow_b":[29,42],"hand_b":[38,43],"lift":0},
+    {"hip":[17,55],"shoulder":[23,25],"head":[25.5,11],"knee_a":[22,75],"foot_a":[16,94],"knee_b":[27,71],"foot_b":[2,75],"elbow_a":[15,42],"hand_a":[25,48],"elbow_b":[21,43],"hand_b":[34,37],"lift":0},
+    {"hip":[14,54],"shoulder":[20,25],"head":[23,11],"knee_a":[14,75],"foot_a":[5,93],"knee_b":[28,70],"foot_b":[1,76],"elbow_a":[9,37],"hand_a":[20,53],"elbow_b":[20,45],"hand_b":[35,34],"lift":0},
+    {"hip":[20,55],"shoulder":[26,25],"head":[28.5,11],"knee_a":[17,79],"foot_a":[2,94],"knee_b":[39,70],"foot_b":[18,82],"elbow_a":[11,35],"hand_a":[22,47],"elbow_b":[30,44],"hand_b":[36,31],"lift":0},
+    {"hip":[22,55],"shoulder":[28,25],"head":[31,11],"knee_a":[15,78],"foot_a":[3,93],"knee_b":[40,68],"foot_b":[24,85],"elbow_a":[11,35],"hand_a":[20,46],"elbow_b":[32,42],"hand_b":[35,29],"lift":0.4},
+    {"hip":[36,55],"shoulder":[43,25],"head":[46,11],"knee_a":[22,76],"foot_a":[3,92],"knee_b":[52,67],"foot_b":[48,90],"elbow_a":[26,34],"hand_a":[34,47],"elbow_b":[48,42],"hand_b":[47,29],"lift":1.4},
+    {"hip":[37,53],"shoulder":[44,24],"head":[47.5,11],"knee_a":[22,74],"foot_a":[3,87],"knee_b":[54,67],"foot_b":[51,89],"elbow_a":[32,35],"hand_a":[35,47],"elbow_b":[50,40],"hand_b":[50,28],"lift":2},
+    {"hip":[38,55],"shoulder":[44,25],"head":[47.5,12],"knee_a":[23,76],"foot_a":[3,89],"knee_b":[54,69],"foot_b":[52,94],"elbow_a":[31,35],"hand_a":[35,47],"elbow_b":[50,42],"hand_b":[50,30],"lift":1.4},
+    {"hip":[38,55],"shoulder":[44,25],"head":[48,12],"knee_a":[23,78],"foot_a":[3,89],"knee_b":[60,72],"foot_b":[65,94],"elbow_a":[30,34],"hand_a":[31,48],"elbow_b":[50,39],"hand_b":[50,28],"lift":0.5},
+    {"hip":[37,55],"shoulder":[43,25],"head":[45.5,11],"knee_a":[24,75],"foot_a":[3,85],"knee_b":[61,75],"foot_b":[68,93],"elbow_a":[30,34],"hand_a":[29,48],"elbow_b":[50,42],"hand_b":[55,34],"lift":0}
+  ]
+}
